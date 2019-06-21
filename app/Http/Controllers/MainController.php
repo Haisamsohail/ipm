@@ -61,7 +61,7 @@ class MainController extends Controller
 
 		$userLogin = app(UserLogin::class);
 		$response = $userLogin->login($userEmail, $userPassword);
-        //dd($response);        
+        dd($response);
 
 		if(!empty($response))
 		{	

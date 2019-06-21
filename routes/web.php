@@ -14,7 +14,11 @@
 
 
 Route::get('/', 'MainController@login');
-Route::post('/userlogin', 'MainController@userlogin');
+
+//Route::group(['middleware' => ['FindingSession','api']], function ()
+  //  {
+        Route::post('/userlogin', 'MainController@userlogin');
+    //});
 
 // Route::get('/', function () {
 //     return view('welcome');

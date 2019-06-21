@@ -2,17 +2,17 @@
 <html class="fixed">
     <head>
 
-        <script type="text/javascript">
-            $(function() 
-            {
-                $.ajaxSetup({
-                    headers: {
-                 'X-CSRF-Token': $('meta[name="_token"]').attr('content')
-               }
-             });
-            });
+        {{--<script type="text/javascript">--}}
+            {{--$(function()--}}
+            {{--{--}}
+                {{--$.ajaxSetup({--}}
+                    {{--headers: {--}}
+                 {{--'X-CSRF-Token': $('meta[name="_token"]').attr('content')--}}
+               {{--}--}}
+             {{--});--}}
+            {{--});--}}
 
-        </script>
+        {{--</script>--}}
 
         <!-- Basic -->
         <meta charset="UTF-8">
@@ -61,8 +61,8 @@
                     </div>
                     <div class="panel-body">
                         <form action="{{url('/userlogin')}}" method="POST" name="LoginForm">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-<!--                         {{ csrf_field() }} -->
+                            {{--<input type="hidden" name="_token" value="{{csrf_token()}}">--}}
+                         {{ csrf_field() }}
                             <div class="form-group mb-lg">
                                 <label>Username</label>
                                 <div class="input-group input-group-icon">

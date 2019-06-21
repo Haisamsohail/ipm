@@ -281,8 +281,8 @@
         
             <div class="nano">
                 <div class="nano-content">
-                    
-@section('content')
+
+                    @include('Templates/nav')
 
 
 
