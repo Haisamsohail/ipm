@@ -58,16 +58,7 @@
       
         <!-- start: search & user box -->
         <div class="header-right">
-      
-          <form action="pages-search-results.html" class="search nav-form">
-            <div class="input-group input-search">
-              <input type="text" class="form-control" name="q" id="q" placeholder="Search...">
-              <span class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-          </form>
-      
+
           <span class="separator"></span>
       
           <ul class="notifications">
@@ -376,19 +367,6 @@
 
         <section role="main" class="content-body">
           <header class="page-header">
-            <h2>Left Sidebar Big Icons Light</h2>
+            <h2>IPM - ECO Services</h2>
           
-            <div class="right-wrapper pull-right">
-              <ol class="breadcrumbs">
-                <li>
-                  <a href="index.html">
-                    <i class="fa fa-home"></i>
-                  </a>
-                </li>
-                <li><span>Layouts</span></li>
-                <li><span>Left Sidebar Big Icons Light</span></li>
-              </ol>
-          
-              <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
-            </div>
           </header>

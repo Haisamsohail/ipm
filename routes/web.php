@@ -11,14 +11,19 @@
 |
 */
 
-
-
 Route::get('/', 'MainController@login');
+Route::post('/userlogin', 'MainController@userlogin');
 
-//Route::group(['middleware' => ['FindingSession','api']], function ()
-  //  {
-        Route::post('/userlogin', 'MainController@userlogin');
-    //});
+
+
+Route::group(['middleware' => ['FindingSession','api']], function ()
+{
+//    Route::get('/welcome', function () {
+//        return view('welcome');
+//    });
+    Session::flush();
+    Route::get('/welcome', 'MainController@welcome');
+});
 
 // Route::get('/', function () {
 //     return view('welcome');
