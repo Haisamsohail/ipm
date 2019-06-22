@@ -62,12 +62,13 @@ class MainController extends Controller
 		$userLogin = app(UserLogin::class);
 //		dd($userEmail, $userPassword);
 		$response = $userLogin->login($userEmail, $userPassword);
-        dd($response);
+        //dd($response);
 
 		if(!empty($response))
 		{	
 			$request->session()->put('userid', $response[0]->userid);
 			//Session::set('userid', $response[0]->userid);
+            //return redirect()->route('welcome');
             return view('welcome');
 		}
 		else
@@ -84,4 +85,9 @@ class MainController extends Controller
 		$request->session()->flush();
 		return redirect()->action('MainController@login', ['logout' => 'successfully']);
 	}
+
+//    public function welcome(Request $request)
+//    {
+//        return view('welcome');
+//    }
 }

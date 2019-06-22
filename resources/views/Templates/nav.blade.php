@@ -7,6 +7,236 @@
                                     <span>Dashboard</span>
                                 </a>                        
                             </li>
+
+
+                            <li class="nav-parent nav-expanded">
+                                <a href="#">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span>IPM Setting</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li class="nav-parent">
+                                        <a>
+                                            Activity
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <li>
+                                                <a href="layouts-boxed.html">
+                                                    Create Activity
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="layouts-boxed.html">
+                                                    Activity List
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="nav-parent">
+                                        <a>
+                                            Station
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <li>
+                                                <a href="layouts-boxed.html">
+                                                    Create Station
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="layouts-boxed.html">
+                                                    Station List
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+
+
+
+
+
+
+                            <li class="nav-parent nav-expanded nav-active">
+                                <a href="#">
+                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <span>Company</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="index.html">
+                                            Add Company
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-default.html">
+                                            Company List
+                                        </a>
+                                    </li>
+                                    <li class="nav-parent">
+                                        <a>
+                                            Boxed
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <li>
+                                                <a href="layouts-boxed.html">
+                                                    Static Header
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="layouts-boxed-fixed-header.html">
+                                                    Fixed Header
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-parent">
+                                        <a>
+                                            Horizontal Menu Header
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <li>
+                                                <a href="layouts-header-menu.html">
+                                                    Pills
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="layouts-header-menu-stripe.html">
+                                                    Stripe
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="layouts-header-menu-top-line.html">
+                                                    Top Line
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-dark.html">
+                                            Dark
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-dark=header.html">
+                                            Dark Header
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-two-navigations.html">
+                                            Two Navigations
+                                        </a>
+                                    </li>
+                                    <li class="nav-parent">
+                                        <a>
+                                            Tab Navigation
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <li>
+                                                <a href="layouts-tab-navigation-dark.html">
+                                                    Tab Navigation Dark
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="layouts-tab-navigation.html">
+                                                    Tab Navigation Light
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="layouts-tab-navigation-boxed.html">
+                                                    Tab Navigation Boxed
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-light-sidebar.html">
+                                            Light Sidebar
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-left-sidebar-collapsed.html">
+                                            Left Sidebar Collapsed
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-left-sidebar-scroll.html">
+                                            Left Sidebar Scroll
+                                        </a>
+                                    </li>
+                                    <li class="nav-parent">
+                                        <a>
+                                            Left Sidebar Big Icons
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <li>
+                                                <a href="layouts-left-sidebar-big-icons.html">
+                                                    Left Sidebar Big Icons Dark
+                                                </a>
+                                            </li>
+                                            <li class="nav-active">
+                                                <a href="layouts-left-sidebar-big-icons-light.html">
+                                                    Left Sidebar Big Icons Light
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-parent">
+                                        <a>
+                                            Left Sidebar Panel
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <li>
+                                                <a href="layouts-left-sidebar-panel.html">
+                                                    Left Sidebar Panel Dark
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="layouts-left-sidebar-panel-light.html">
+                                                    Left Sidebar Panel Light
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-parent">
+                                        <a>
+                                            Left Sidebar Sizes
+                                        </a>
+                                        <ul class="nav nav-children">
+                                            <li>
+                                                <a href="layouts-sidebar-sizes-xs.html">
+                                                    Left Sidebar XS
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="layouts-sidebar-sizes-sm.html">
+                                                    Left Sidebar SM
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="layouts-sidebar-sizes-md.html">
+                                                    Left Sidebar MD
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="layouts-square-borders.html">
+                                            Square Borders
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+
+
+
                             <li class="nav-parent nav-expanded nav-active">
                                 <a href="#">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
@@ -177,6 +407,7 @@
                                     </li>
                                 </ul>
                             </li>
+
                             <li class="nav-parent">
                                 <a href="#">
                                     <i class="fa fa-copy" aria-hidden="true"></i>
