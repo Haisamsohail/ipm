@@ -34,11 +34,13 @@ class UserLogin extends Connection
 	public function login($userEmail, $userPassword)
 	{
 		$data = array('userEmail' => $userEmail, 'userPassword' => $userPassword);
-		//dd($data);	
+		//dd($data);
 		$login = app(HttpClientCommunication::class);
 		
 		$response = $login->storeData(self::END_POINT_USER."login", $data, true);
-		dd($response);
+		//dd($response);
+		//$array =  (array) $response;
+		//dd(gettype($array));
 		return $response->body();
 		
 	}

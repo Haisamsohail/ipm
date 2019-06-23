@@ -14,6 +14,11 @@
 Route::get('/', 'MainController@login');
 Route::post('/userlogin', 'MainController@userlogin');
 
+Route::get('/CreateActivity', 'ActivityController@CreateActivity');
+Route::post('/AddactivityDB', 'ActivityController@AddactivityDB');
+Route::get('/ActivityList', 'ActivityController@ActivityList');
+Route::get('/DeleteActivity/{activityid}', 'ActivityController@DeleteActivity');
+
 
 
 Route::group(['middleware' => ['FindingSession','api']], function ()

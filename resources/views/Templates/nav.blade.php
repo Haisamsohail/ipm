@@ -2,7 +2,7 @@
                     
                         <ul class="nav nav-main">
                             <li>
-                                <a href="layouts-default.html">
+                                <a href="{{url('/welcome')}}">
                                     <i class="fa fa-home" aria-hidden="true"></i>
                                     <span>Dashboard</span>
                                 </a>                        
@@ -21,13 +21,13 @@
                                         </a>
                                         <ul class="nav nav-children">
                                             <li>
-                                                <a href="layouts-boxed.html">
+                                                <a href="{{url('/CreateActivity')}}">
                                                     Create Activity
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="layouts-boxed.html">
+                                                <a href="{{url('/ActivityList')}}">
                                                     Activity List
                                                 </a>
                                             </li>
@@ -40,13 +40,13 @@
                                         </a>
                                         <ul class="nav nav-children">
                                             <li>
-                                                <a href="layouts-boxed.html">
+                                                <a href="{{url('/CreateStation')}}">
                                                     Create Station
                                                 </a>
                                             </li>
 
                                             <li>
-                                                <a href="layouts-boxed.html">
+                                                <a href="{{url('/StationList')}}">
                                                     Station List
                                                 </a>
                                             </li>

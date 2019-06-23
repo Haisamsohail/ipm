@@ -60,20 +60,22 @@ class MainController extends Controller
 		}
 
 		$userLogin = app(UserLogin::class);
-//		dd($userEmail, $userPassword);
+		//	dd($userEmail, $userPassword);
 		$response = $userLogin->login($userEmail, $userPassword);
-        //dd($response);
+        //dd($response->status);
+        //dd(gettype($response));
+        //dd($response->response[0]->userid);
 
-		if(!empty($response))
-		{	
-			$request->session()->put('userid', $response[0]->userid);
+		if($response->status != "N")
+		{
+			$request->session()->put('userid', $response->response[0]->userid);
 			//Session::set('userid', $response[0]->userid);
             //return redirect()->route('welcome');
             return view('welcome');
 		}
 		else
 		{
-			$request->session()->flush();
+            $request->session()->flush();
 			return redirect()->back()->with('message', 'Invalid credentials!');
 			//return redirect()->action('MainController@login', ['login' => 'error']);
 		}

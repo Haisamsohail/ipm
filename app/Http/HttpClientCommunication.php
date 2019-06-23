@@ -28,7 +28,7 @@ class HttpClientCommunication
 		$headers["Content-Type"] = "application/json";
 //		$headers["Token"] = $token;
 		$this->restConnector->defaultHeaders($headers);
-		$this->url = 'http://ipmapi:8093';
+		$this->url = 'http://localhost/ipmapi/public';
 		//$this->url = 'http://172.16.0.101:8087';
 //		if(env('APP_DEV'))
 //		{
@@ -49,7 +49,7 @@ class HttpClientCommunication
 		{ 
 			//dd($this->url.'/'.$id, $this->headers(), json_encode($data));
 			$this->response = $this->restConnector->post($this->url.'/'.$id, $this->headers(), json_encode($data));
-			dd($this->response);
+			//dd($this->response);
 			return $this->response;
 		}
 		
@@ -95,8 +95,8 @@ class HttpClientCommunication
 //
     public function headers()
     {
-        $this->header['Authorization'] = 'Bearer ' . "XXXXAAA123BBBHAPP";
-		$this->header['channelcode'] = 'HEALTHAPP';
+  //       $this->header['Authorization'] = 'Bearer ' . "XXXXAAA123BBBHAPP";
+		// $this->header['channelcode'] = 'HEALTHAPP';
 //		$this->header['Content-Type'] = 'application/json';
 //		$this->header['Connection'] = 'Keep-Alive';
 		

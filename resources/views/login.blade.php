@@ -16,7 +16,7 @@
 
         <!-- Basic -->
         <meta charset="UTF-8">
-        <title>IPM - ECO Services</title>
+        <title>IPM - Integrated Pest Management Services  - ECO Services</title>
         <meta name="keywords" content="IPM - ECO Services" />
         <meta name="description" content="IPM - ECO Services">
         <meta name="author" content="okler.net">
@@ -48,7 +48,7 @@
 
     </head>
     <body>
-    
+
         <!-- start: page -->
         <section class="body-sign">
             <div class="center-sign">

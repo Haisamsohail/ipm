@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <meta charset="UTF-8">
-        <title>IPM - ECO Services</title>
+        <title>Integrated Pest Management Services</title>
         <meta name="keywords" content="IPM - ECO Services" />
         <meta name="description" content="IPM - ECO Services">
         <meta name="author" content="okler.net">
@@ -40,6 +40,8 @@
 
     <!-- Head Libs -->
     <script src="{{ asset('/public/assets/vendor/modernizr/modernizr.js')}}"></script>
+
+    
 
   </head>
   <body>
@@ -247,7 +249,7 @@
                   <a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="fa fa-lock"></i> Lock Screen</a>
                 </li>
                 <li>
-                  <a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="fa fa-power-off"></i> Logout</a>
+                  <a role="menuitem" tabindex="-1" href="{{url('/')}}"><i class="fa fa-power-off"></i> Logout</a>
                 </li>
               </ul>
             </div>
@@ -365,8 +367,8 @@
         </aside>
         <!-- end: sidebar -->
 
-        <section role="main" class="content-body">
-          <header class="page-header">
-            <h2>IPM - ECO Services</h2>
-          
-          </header>
+
+          {{--<section role="main" class="content-body">--}}
+              {{--<header class="page-header">--}}
+                  {{--<h2>Integrated Pest Management</h2>--}}
+              {{--</header>--}}
