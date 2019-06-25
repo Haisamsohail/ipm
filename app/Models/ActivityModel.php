@@ -21,9 +21,9 @@ class ActivityModel extends Connection
     {
             parent::__construct();
     }
-	public function AddactivityDB($activitytype, $activityName, $activitydescription)
+	public function AddactivityDB($activitytype, $activityName, $activitydescription, $stationid)
 	{
-		$data = array('activitytype' => $activitytype, 'activityName' => $activityName, 'activitydescription' => $activitydescription);
+		$data = array('activitytype' => $activitytype, 'activityName' => $activityName, 'activitydescription' => $activitydescription,  'stationid' => $stationid);
 		//dd($data);	
         $AddactivityDBCallAPI = app(HttpClientCommunication::class);
 		
@@ -35,9 +35,10 @@ class ActivityModel extends Connection
 	}
 
 
-    public function ActivityList()
+    public function ActivityList($stationid)
     {
         $data = array();
+        $data = array('stationid' => $stationid);
         $ActivityListCallAPI = app(HttpClientCommunication::class);
         $response = $ActivityListCallAPI->storeData(self::END_POINT_USER."ActivityList", $data, true);
         //dd($response);
@@ -46,10 +47,10 @@ class ActivityModel extends Connection
         return $response->body();
     }
 
-    public function DeleteActivity($activityid)
+    public function DeleteActivity($stationid,$activityid)
     {
         $data = array();
-        $data = array('activityid' => $activityid);
+        $data = array('activityid' => $activityid, 'stationid' => $stationid);
         $ActivityListCallAPI = app(HttpClientCommunication::class);
         $response = $ActivityListCallAPI->storeData(self::END_POINT_USER."DeleteActivity", $data, true);
         //dd($response);

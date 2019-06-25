@@ -51,16 +51,21 @@ class MainController extends Controller
 	}
 	
 	public function userlogin(Request $request)
-	{	
+	{
+
 		$userEmail = request('username');
 		$userPassword = request('password');
+        //dd($userEmail);
 		if(empty($userEmail) & empty($userEmail))
 		{
 			return ["status"=> 404 , "sendadvisor" => "Post data cannot be null"];
 		}
 
+
+
 		$userLogin = app(UserLogin::class);
 		//	dd($userEmail, $userPassword);
+
 		$response = $userLogin->login($userEmail, $userPassword);
         //dd($response->status);
         //dd(gettype($response));

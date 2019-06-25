@@ -34,7 +34,7 @@ class ActivityController extends Controller
 		date_default_timezone_set("Asia/Karachi");
 	}
 
-	public function CreateActivity( )
+	public function CreateActivity( $stationid)
 	{
             return view('CreateActivity');
 	}
@@ -43,17 +43,19 @@ class ActivityController extends Controller
     {
         $activitytype = request('activitytype');
         $activityName = request('activityName');
+        $stationid = request('stationid');
         $activitydescription = request('activitydescription');
 
-        if(empty($activitytype) & empty($activityName) & empty($activitydescription))
+        if(empty($activitytype) & empty($activityName) & empty($activitydescription) & empty($stationid))
         {
             return ["status"=> 404 , "sendadvisor" => "Post data cannot be null"];
         }
         $AddactivityDBMod = app(ActivityModel::class);
-        $response = $AddactivityDBMod->AddactivityDB($activitytype, $activityName,$activitydescription );
+        $response = $AddactivityDBMod->AddactivityDB($activitytype, $activityName,$activitydescription, $stationid );
         if($response->status == "Y")
         {
-            return redirect()->back()->with('messageForActivity', 'Activity Added.....!');
+            //dd($stationid);
+            return redirect()->action('ActivityController@ActivityList', [$stationid]);
         }
         else
         {
@@ -61,11 +63,11 @@ class ActivityController extends Controller
         }
     }
 
-    public function ActivityList( )
+    public function ActivityList($stationid )
     {
-        $AddactivityDBMod = app(ActivityModel::class);
-        $response = $AddactivityDBMod->ActivityList();
-        //dd($response);
+        $ActivityListObject = app(ActivityModel::class);
+        $response = $ActivityListObject->ActivityList($stationid);
+        //dd($response->status);
         if($response->status == "Y")
         {
             return View('ActivityList')->with('ActivityList', $response->response);
@@ -77,18 +79,18 @@ class ActivityController extends Controller
     }
 
 
-    public function DeleteActivity($activityid )
+    public function DeleteActivity($stationid,$activityid )
     {
         $AddactivityDBMod = app(ActivityModel::class);
-        $response = $AddactivityDBMod->DeleteActivity($activityid);
+        $response = $AddactivityDBMod->DeleteActivity($stationid,$activityid);
 
         if($response->status == "Y")
         {
-            return redirect()->action('ActivityController@ActivityList');
+            return redirect()->action('ActivityController@ActivityList', [$stationid]);
         }
         else
         {
-            return redirect()->action('ActivityController@CreateActivity');
+            return redirect()->action('ActivityController@CreateActivity', [$stationid]);
         }
     }
 

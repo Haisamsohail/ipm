@@ -194,6 +194,7 @@ class Request
 		$this->proxy['port'] = $port;
 		$this->proxy['tunnel'] = $tunnel;
 		$this->proxy['address'] = $address;
+
 	}
 
 	/**

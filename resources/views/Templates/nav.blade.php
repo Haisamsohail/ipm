@@ -15,24 +15,24 @@
                                     <span>IPM Setting</span>
                                 </a>
                                 <ul class="nav nav-children">
-                                    <li class="nav-parent">
-                                        <a>
-                                            Activity
-                                        </a>
-                                        <ul class="nav nav-children">
-                                            <li>
-                                                <a href="{{url('/CreateActivity')}}">
-                                                    Create Activity
-                                                </a>
-                                            </li>
+                                    {{--<li class="nav-parent">--}}
+                                        {{--<a>--}}
+                                            {{--Activity--}}
+                                        {{--</a>--}}
+                                        {{--<ul class="nav nav-children">--}}
+                                            {{--<li>--}}
+                                                {{--<a href="{{url('/CreateActivity')}}">--}}
+                                                    {{--Create Activity--}}
+                                                {{--</a>--}}
+                                            {{--</li>--}}
 
-                                            <li>
-                                                <a href="{{url('/ActivityList')}}">
-                                                    Activity List
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                            {{--<li>--}}
+                                                {{--<a href="{{url('/ActivityList')}}">--}}
+                                                    {{--Activity List--}}
+                                                {{--</a>--}}
+                                            {{--</li>--}}
+                                        {{--</ul>--}}
+                                    {{--</li>--}}
 
                                     <li class="nav-parent">
                                         <a>

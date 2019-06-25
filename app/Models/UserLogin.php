@@ -36,7 +36,8 @@ class UserLogin extends Connection
 		$data = array('userEmail' => $userEmail, 'userPassword' => $userPassword);
 		//dd($data);
 		$login = app(HttpClientCommunication::class);
-		
+		//dd($login);
+
 		$response = $login->storeData(self::END_POINT_USER."login", $data, true);
 		//dd($response);
 		//$array =  (array) $response;

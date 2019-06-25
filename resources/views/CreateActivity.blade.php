@@ -9,7 +9,6 @@
     </header>
 
 
-
     <form action="{{url('/AddactivityDB')}}" method="POST" name="AddactivityForm">
       {{ csrf_field() }}
       <div class="panel-body">
@@ -33,6 +32,7 @@
             <label class="col-sm-3 control-label">Activity Name <span class="required">*</span></label>
             <div class="col-sm-9">
               <input type="text" name="activityName" id="activityName" class="form-control" required/>
+              <input type="hidden" name="stationid" id="stationid" class="form-control" value="{{request()->route('stationid')}}" required/>
             </div>
           </div>
 

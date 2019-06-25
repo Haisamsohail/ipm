@@ -24,10 +24,23 @@ class HttpClientCommunication
 	public function __construct()
 	{
 		$this->restConnector = new \App\Comms\REST\Request();
+
 		$headers ["Accept"] = "application/json";
 		$headers["Content-Type"] = "application/json";
 //		$headers["Token"] = $token;
 		$this->restConnector->defaultHeaders($headers);
+		//$this->restConnector->o
+
+//		$this->restConnector->proxy()
+//
+//
+
+
+
+
+        $this->restConnector->proxy('', '3128','http://webproxy.efulife.com:3128');
+
+
 		$this->url = 'http://localhost/ipmapi/public';
 		//$this->url = 'http://172.16.0.101:8087';
 //		if(env('APP_DEV'))
@@ -46,7 +59,8 @@ class HttpClientCommunication
 	public function storeData($id =null, $data, $post = false)
 	{ 
 		if ($post === true)
-		{ 
+		{
+		    //dd($this->url);
 			//dd($this->url.'/'.$id, $this->headers(), json_encode($data));
 			$this->response = $this->restConnector->post($this->url.'/'.$id, $this->headers(), json_encode($data));
 			//dd($this->response);
