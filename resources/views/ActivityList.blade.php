@@ -5,7 +5,7 @@
 
   <section role="main" class="content-body">
     <header class="page-header">
-      <h2>IPM - Activity List</h2>
+      <h2>IPM - Activity / {{ $stationname }} </h2>
     </header>
 
     <a href="{{url('/CreateActivity',request()->route('stationid'))}}" ><i class="glyphicon glyphicon-flash"></i> Add New Activity</a>

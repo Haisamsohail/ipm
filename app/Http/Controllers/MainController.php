@@ -36,9 +36,16 @@ class MainController extends Controller
 	}
 	public function login(Request $request) 
 	{
+        $userid = "";
+        if (Session::has('userid'))
+        {
+            $userid  = Session::all()['userid'];
+        }
+
+        //dd($value);
 		//dd($request->session()->exists('userEmail') && $request->session()->exists('userPassword'));
 		//dd(Session::get('userId'));
-		if ($request->session()->has('userId')) 
+		if ($userid !=null)
 		{
             return view('welcome');
             //return redirect()->action('HomeController@home', ['login' => 'sessionFound']);
@@ -87,8 +94,9 @@ class MainController extends Controller
 		//... dd($response);
 	}
 	
-	public function logout(Request $request) 
+	public function Logout(Request $request)
 	{
+	    //dd("sdfj");
 		$request->session()->flush();
 		return redirect()->action('MainController@login', ['logout' => 'successfully']);
 	}

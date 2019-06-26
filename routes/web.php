@@ -13,6 +13,7 @@
 
 Route::get('/', 'MainController@login');
 Route::post('/userlogin', 'MainController@userlogin');
+Route::get('/Logout', 'MainController@Logout');
 
 //Route::get('/CreateActivity', 'ActivityController@CreateActivity');
 //Route::post('/AddactivityDB', 'ActivityController@AddactivityDB');
@@ -41,6 +42,13 @@ Route::post('/EditActivity', 'ActivityController@EditActivity');
 //Route::get('/CreateActivity', 'ActivityController@CreateActivity');
 //Route::get('/CreateStation', 'StationController@CreateStation');
 /********** Create Activity End   ***************************/
+
+
+
+
+/********** Create Company Start ***************************/
+Route::get('/CreateCompany', 'CompanyController@CreateCompany');
+/********** Create Company End   ***************************/
 
 
 Route::group(['middleware' => ['FindingSession','api']], function ()

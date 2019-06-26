@@ -12,69 +12,38 @@
                             <li class="nav-parent nav-expanded">
                                 <a href="#">
                                     <i class="fa fa-columns" aria-hidden="true"></i>
-                                    <span>IPM Setting</span>
+                                    <span>Station</span>
                                 </a>
+
                                 <ul class="nav nav-children">
-                                    {{--<li class="nav-parent">--}}
-                                        {{--<a>--}}
-                                            {{--Activity--}}
-                                        {{--</a>--}}
-                                        {{--<ul class="nav nav-children">--}}
-                                            {{--<li>--}}
-                                                {{--<a href="{{url('/CreateActivity')}}">--}}
-                                                    {{--Create Activity--}}
-                                                {{--</a>--}}
-                                            {{--</li>--}}
-
-                                            {{--<li>--}}
-                                                {{--<a href="{{url('/ActivityList')}}">--}}
-                                                    {{--Activity List--}}
-                                                {{--</a>--}}
-                                            {{--</li>--}}
-                                        {{--</ul>--}}
-                                    {{--</li>--}}
-
-                                    <li class="nav-parent">
-                                        <a>
-                                            Station
+                                    <li>
+                                        <a href="{{url('/CreateStation')}}">
+                                            Create Station
                                         </a>
-                                        <ul class="nav nav-children">
-                                            <li>
-                                                <a href="{{url('/CreateStation')}}">
-                                                    Create Station
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a href="{{url('/StationList')}}">
-                                                    Station List
-                                                </a>
-                                            </li>
-                                        </ul>
                                     </li>
 
+                                    <li>
+                                        <a href="{{url('/StationList')}}">
+                                            Station List
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
 
 
-
-
-
-
-
-                            <li class="nav-parent nav-expanded nav-active">
+                            <li class="nav-parent nav-expanded">
                                 <a href="#">
-                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <i class="fa fa-home" aria-hidden="true"></i>
                                     <span>Company</span>
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
-                                        <a href="index.html">
+                                        <a href="{{url('/CreateCompany')}}">
                                             Add Company
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="layouts-default.html">
+                                        <a href="{{url('/CompanyList')}}">
                                             Company List
                                         </a>
                                     </li>

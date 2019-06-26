@@ -67,10 +67,13 @@ class ActivityController extends Controller
     {
         $ActivityListObject = app(ActivityModel::class);
         $response = $ActivityListObject->ActivityList($stationid);
+        //dd($response->response[0]->stationname);
         //dd($response->status);
+
         if($response->status == "Y")
         {
-            return View('ActivityList')->with('ActivityList', $response->response);
+
+            return View('ActivityList', ['ActivityList' => $response->response, 'stationname' => $response->response[0]->stationname ]);
         }
         else
         {
