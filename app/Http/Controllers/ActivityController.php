@@ -74,7 +74,8 @@ class ActivityController extends Controller
         }
         else
         {
-            return redirect()->action('ActivityController@CreateActivity');
+            return redirect()->action('ActivityController@CreateActivity', [$stationid]);
+            //return redirect()->action('ActivityController@CreateActivity');
         }
     }
 
@@ -84,6 +85,43 @@ class ActivityController extends Controller
         $AddactivityDBMod = app(ActivityModel::class);
         $response = $AddactivityDBMod->DeleteActivity($stationid,$activityid);
 
+        if($response->status == "Y")
+        {
+            return redirect()->action('ActivityController@ActivityList', [$stationid]);
+        }
+        else
+        {
+            return redirect()->action('ActivityController@CreateActivity', [$stationid]);
+        }
+    }
+
+
+    public function EditPageActivity($stationid,$activityid )
+    {
+        $StationListObject = app(ActivityModel::class);
+        $response = $StationListObject->EditPageActivity($stationid,$activityid);
+        //dd($response);
+        if($response->status == "Y")
+        {
+            return View('EditPageActivity')->with('EditPageActivity', $response->response);
+        }
+        else
+        {
+            return redirect()->action('ActivityController@CreateActivity');
+        }
+    }
+
+    public function EditActivity(Request $request )
+    {
+        $activitytype = request('activitytype');
+        $activityName = request('activityName');
+        $activitydescription = request('activitydescription');
+        $activityid = request('activityid');
+        $stationid = request('stationid');
+
+        $StationListObject = app(ActivityModel::class);
+        $response = $StationListObject->EditActivity($activitytype, $activityName, $activitydescription, $activityid);
+        //dd($response);
         if($response->status == "Y")
         {
             return redirect()->action('ActivityController@ActivityList', [$stationid]);

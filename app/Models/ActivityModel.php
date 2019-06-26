@@ -58,4 +58,30 @@ class ActivityModel extends Connection
         //dd(gettype($response));
         return $response->body();
     }
+
+    public function EditPageActivity($stationid,$activityid)
+    {
+        $data = array();
+        $data = array('stationid' => $stationid, 'activityid' => $activityid);
+        $StationListCallAPI = app(HttpClientCommunication::class);
+        $response = $StationListCallAPI->storeData(self::END_POINT_USER."EditPageActivity", $data, true);
+        //dd($response);
+        //$array =  (array) $response;
+        //dd(gettype($response));
+        return $response->body();
+    }
+
+    public function EditActivity($activitytype, $activityName, $activitydescription, $activityid)
+    {
+        $data = array();
+        $data = array('activitytype' => $activitytype, 'activityName' => $activityName, 'activitydescription' => $activitydescription,
+            'activityid' => $activityid);
+        //dd($data);
+        $StationListCallAPI = app(HttpClientCommunication::class);
+        $response = $StationListCallAPI->storeData(self::END_POINT_USER."EditActivity", $data, true);
+        //dd($response);
+        //$array =  (array) $response;
+        //dd(gettype($response));
+        return $response->body();
+    }
 }

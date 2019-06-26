@@ -110,8 +110,6 @@ class StationController extends Controller
 
     public function EditStation(Request $request )
     {
-        //dd($request);
-
         $stationname = request('stationname');
         $stationdescription = request('stationdescription');
         $stationid = request('stationid');

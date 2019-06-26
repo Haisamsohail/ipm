@@ -36,6 +36,8 @@ Route::get('/ActivityList/{stationid}', 'ActivityController@ActivityList');
 Route::get('/DeleteActivity/{stationid}/{activityid}', 'ActivityController@DeleteActivity');
 Route::get('/CreateActivity/{stationid}', 'ActivityController@CreateActivity');
 Route::post('/AddactivityDB', 'ActivityController@AddactivityDB');
+Route::get('/EditPageActivity/{stationid}/{activityid}', 'ActivityController@EditPageActivity');
+Route::post('/EditActivity', 'ActivityController@EditActivity');
 //Route::get('/CreateActivity', 'ActivityController@CreateActivity');
 //Route::get('/CreateStation', 'StationController@CreateStation');
 /********** Create Activity End   ***************************/

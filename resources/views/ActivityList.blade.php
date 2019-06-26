@@ -44,7 +44,7 @@
             {{--@endif--}}
             {{--</td>--}}
             <td>
-              <a href="{{url('/EditActivity',[request()->route('stationid'), $Activity->activityid])}}" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+              <a href="{{url('/EditPageActivity',[request()->route('stationid'), $Activity->activityid])}}" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
               &nbsp;&nbsp;&nbsp;&nbsp;
               <a href="{{url('/DeleteActivity',[request()->route('stationid'), $Activity->activityid])}}" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
             </td>
