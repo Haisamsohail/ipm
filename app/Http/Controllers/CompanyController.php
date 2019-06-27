@@ -12,6 +12,7 @@ namespace App\Http\Controllers;
  use App\Models\StationModel;
  use Symfony\Component\HttpFoundation\Request;
  use App\Models\UserLogin;
+ use App\Models\CompanyModel;
  use App\Http\Controllers\Controller;
 // use App\Http\HttpClientCommunication;
 
@@ -35,95 +36,104 @@ class CompanyController extends Controller
 		date_default_timezone_set("Asia/Karachi");
 	}
 
-	public function CreateStation( )
+	public function CreateCompany( )
 	{
-            return view('CreateStation');
+            $StationListObject = app(CompanyModel::class);
+            $response = $StationListObject->IndustryList();
+            return view('CreateCompany')->with('IndustryList', $response->response);
 	}
 
-    public function AddStationDB(Request $request )
+    public function AddCompanyDB(Request $request )
     {
-        $stationname = request('stationname');
-        $stationdescription = request('stationdescription');
+        $companyindustrytypeid = request('companyindustrytypeid');
+        $companyname = request('companyname');
+        $companyurl = request('companyurl');
 
-        if(empty($stationname) & empty($stationdescription))
+        if(empty($companyindustrytypeid) & empty($companyname) & empty($companyurl))
         {
             return ["status"=> 404 , "sendadvisor" => "Post data cannot be null"];
         }
-        $AddStation_Odject = app(StationModel::class);
-        $response = $AddStation_Odject->AddStationDB($stationname, $stationdescription );
+        $AddStation_Odject = app(CompanyModel::class);
+        $response = $AddStation_Odject->AddCompanyDB($companyindustrytypeid, $companyname, $companyurl );
         if($response->status == "Y")
         {
-            return redirect()->back()->with('messageForStation', 'Station Added.....!');
+            return redirect()->back()->with('messageForCompany', 'Company Added.....!');
         }
         else
         {
-            return redirect()->back()->with('messageForStation', 'Fail To Add Station .....!');
+            return redirect()->back()->with('messageForCompany', 'Fail To Add Company .....!');
         }
     }
 
-    public function StationList( )
+    public function CompanyList( )
     {
-        $StationListObject = app(StationModel::class);
-        $response = $StationListObject->StationList();
+        $StationListObject = app(CompanyModel::class);
+        $response = $StationListObject->CompanyList();
         //dd($response);
         if($response->status == "Y")
         {
-            return View('StationList')->with('StationList', $response->response);
+            return View('CompanyList')->with('CompanyList', $response->response);
         }
         else
         {
-            return redirect()->action('StationController@CreateStation');
+            return redirect()->action('CompanyController@CreateCompany');
         }
     }
 
 
-    public function DeleteStation($stationid )
+    public function DeleteCompany($companyid )
     {
-        $StationListObject = app(StationModel::class);
-        $response = $StationListObject->DeleteStation($stationid);
+        $StationListObject = app(CompanyModel::class);
+        $response = $StationListObject->DeleteCompany($companyid);
         //dd($response->status);
         if($response->status == "Y")
         {
-            return redirect()->action('StationController@StationList');
+            return redirect()->action('CompanyController@CompanyList');
         }
         else
         {
-            return redirect()->action('StationController@CreateStation');
+            return redirect()->action('CompanyController@CreateCompany');
         }
     }
 
 
-    public function EditPageStation($stationid )
+    public function EditPageCompany($companyid)
     {
-        $StationListObject = app(StationModel::class);
-        $response = $StationListObject->EditPageStation($stationid);
-        //dd($response->status);
-        if($response->status == "Y")
+        $StationListObject = app(CompanyModel::class);
+        $response = $StationListObject->EditPageCompany($companyid);
+
+        $IndustryListObject = app(CompanyModel::class);
+        $responseIndustryList = $IndustryListObject->IndustryList();
+
+
+        //dd($responseIndustryList);
+        if($response->status == true)
         {
-            return View('EditPageStation')->with('EditPageStation', $response->response);
+            return View('EditPageCompany', ['EditPageCompany' => $response->response, 'IndustryList' => $responseIndustryList->response ]);
         }
         else
         {
-            return redirect()->action('StationController@CreateStation');
+            return redirect()->action('CompanyController@CreateCompany');
         }
     }
 
-    public function EditStation(Request $request )
+    public function EditCompany(Request $request )
     {
-        $stationname = request('stationname');
-        $stationdescription = request('stationdescription');
-        $stationid = request('stationid');
+        $companyname = request('companyname');
+        $companyindustrytypeid = request('companyindustrytypeid');
+        $companyid = request('companyid');
+        $companyurl = request('companyurl');
 
-        $StationListObject = app(StationModel::class);
-        $response = $StationListObject->EditStation($stationname, $stationdescription, $stationid);
+        $StationListObject = app(CompanyModel::class);
+        $response = $StationListObject->EditCompany($companyid, $companyname, $companyindustrytypeid, $companyurl);
         //dd($response);
         if($response->status == "Y")
         {
-            return redirect()->action('StationController@StationList');
+            return redirect()->action('CompanyController@CompanyList');
         }
         else
         {
-            return redirect()->action('StationController@CreateStation');
+            return redirect()->action('CompanyController@CreateCompany');
         }
     }
 

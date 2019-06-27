@@ -48,7 +48,27 @@ Route::post('/EditActivity', 'ActivityController@EditActivity');
 
 /********** Create Company Start ***************************/
 Route::get('/CreateCompany', 'CompanyController@CreateCompany');
+Route::post('/AddCompanyDB', 'CompanyController@AddCompanyDB');
+Route::get('/CompanyList', 'CompanyController@CompanyList');
+Route::get('/DeleteCompany/{companyid}', 'CompanyController@DeleteCompany');
+Route::get('/EditPageCompany/{companyid}', 'CompanyController@EditPageCompany');
+Route::post('/EditCompany', 'CompanyController@EditCompany');
+
 /********** Create Company End   ***************************/
+
+
+/********** Create Branch Start ***************************/
+Route::get('/BranchList/{companyid}', 'BranchController@BranchList');
+Route::get('/CreateBranch/{companyid}', 'BranchController@CreateBranch');
+Route::post('/AddBranchDB', 'BranchController@AddBranchDB');
+Route::get('/DeleteBranch/{companyid}/{branchid}', 'BranchController@DeleteBranch');
+Route::get('/EditPageBranch/{companyid}/{branchid}', 'BranchController@EditPageBranch');
+Route::post('/EditBranch', 'BranchController@EditBranch');
+/********** Create Branch End   ***************************/
+
+
+
+
 
 
 Route::group(['middleware' => ['FindingSession','api']], function ()
