@@ -6,6 +6,18 @@
   <section role="main" class="content-body">
     <header class="page-header">
       <h2>IPM - Update Branch</h2>
+      <div class="right-wrapper pull-right" style=" margin-right: 50px; ">
+        <ol class="breadcrumbs">
+          <li>
+            <a href="{{url('/welcome')}}">
+              <i class="fa fa-home"></i>
+            </a>
+          </li>
+          <li> <a href="{{url('/CompanyList')}}"><span>Company List</span></a></li>
+          <li> <a href="{{url('/BranchList',request()->route('companyid'))}}"><span>Branch List</span></a></li>
+        </ol>
+      </div>
+
     </header>
 
     @foreach($EditPageBranch as $key => $BranchData)

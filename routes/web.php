@@ -66,8 +66,21 @@ Route::get('/EditPageBranch/{companyid}/{branchid}', 'BranchController@EditPageB
 Route::post('/EditBranch', 'BranchController@EditBranch');
 /********** Create Branch End   ***************************/
 
+/********** Create Employee Start ***************************/
+Route::get('/EmployeeList/{companyid}/{branchid}', 'EmployeeController@EmployeeList');
+Route::get('/CreateEmployee/{companyid}/{branchid}', 'EmployeeController@CreateEmployee');
+Route::post('/AddEmployeeDB', 'EmployeeController@AddEmployeeDB');
+$router->get('/DeleteEmployee/{companyid}/{branchid}/{employeeid}', 'EmployeeController@DeleteEmployee');
+Route::get('/EditPageEmployee/{companyid}/{branchid}/{employeeid}', 'EmployeeController@EditPageEmployee');
+Route::post('/EditEmployee', 'EmployeeController@EditEmployee');
+/********** Create Employee End   ***************************/
 
-
+/********** Create Location Start ***************************/
+Route::get('/LocationList/{companyid}/{branchid}', 'LocationController@LocationList');
+Route::get('/CreateLocation/{companyid}/{branchid}', 'LocationController@CreateLocation');
+Route::post('/AddLocationDB', 'LocationController@AddLocationDB');
+$router->get('/DeleteEmployee/{companyid}/{branchid}/{employeeid}', 'EmployeeController@DeleteEmployee');
+/********** Create Location End   ***************************/
 
 
 
