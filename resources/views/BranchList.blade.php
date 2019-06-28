@@ -1,7 +1,5 @@
 @extends('master')
-
 @section('content')
-
 
   <section role="main" class="content-body">
     <header class="page-header">
@@ -9,13 +7,9 @@
     </header>
 
     <a href="{{url('/CreateBranch',request()->route('companyid'))}}" ><i class="glyphicon glyphicon-flash"></i> Add New Branch</a>
-
-    <br>
-
-    <br>
+    <br><br>
 
     <div class="panel-body">
-
 
       <table class="table table-bordered table-striped mb-none" id="datatable-default">
         <thead>
@@ -26,6 +20,8 @@
           <th>Address</th>
           <th>Phone</th>
           <th>Email</th>
+          <th>Employee</th>
+          <th>Location</th>
           <th class="hidden-xs">Action</th>
         </tr>
         </thead>
@@ -38,13 +34,6 @@
             <td> {{$Branch->branchaddress}}</td>
             <td> {{$Branch->branchphone}}</td>
             <td> {{$Branch->branchemail}}</td>
-            {{--<td>--}}
-            {{--@if($Activity->activityactive =='Y')--}}
-              {{--Active--}}
-            {{--@else--}}
-              {{--In Active--}}
-            {{--@endif--}}
-            {{--</td>--}}
             <td>
               <a href="{{url('/EditPageBranch',[request()->route('companyid'), $Branch->branchid])}}" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
               &nbsp;&nbsp;&nbsp;&nbsp;
