@@ -77,10 +77,10 @@ class LocationController extends Controller
     }
 
 
-    public function DeleteEmployee($companyid,$branchid,$employeeid  )
+    public function DeleteLocation($companyid,$branchid,$branchlocationid  )
     {
         $AddactivityDBMod = app(LocationModel::class);
-        $response = $AddactivityDBMod->DeleteEmployee($companyid,$branchid,$employeeid);
+        $response = $AddactivityDBMod->DeleteLocation($companyid,$branchid,$branchlocationid);
 
         if($response->status == "Y")
         {
@@ -93,14 +93,14 @@ class LocationController extends Controller
     }
 
 
-    public function EditPageEmployee($companyid,$branchid,$employeeid )
+    public function EditPageLocation($companyid,$branchid,$branchlocationid )
     {
         $StationListObject = app(LocationModel::class);
-        $response = $StationListObject->EditPageEmployee($companyid,$branchid,$employeeid);
+        $response = $StationListObject->EditPageLocation($companyid,$branchid,$branchlocationid);
         //dd($response);
         if($response->status == "Y")
         {
-            return View('EditPageEmployee')->with('EditPageEmployee', $response->response);
+            return View('EditPageLocation')->with('EditPageLocation', $response->response);
         }
         else
         {
@@ -108,13 +108,13 @@ class LocationController extends Controller
         }
     }
 
-    public function EditEmployee(Request $request )
+    public function EditLocation(Request $request )
     {
         $companyid = request('companyid');
         $branchid = request('branchid');
 
         $StationListObject = app(LocationModel::class);
-        $response = $StationListObject->EditEmployee($request->input());
+        $response = $StationListObject->EditLocation($request->input());
         //dd($response);
         if($response->status == "Y")
         {

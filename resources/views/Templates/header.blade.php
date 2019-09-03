@@ -13,7 +13,7 @@
 
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
+      <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Web Fonts  -->
     <link href="{{ asset('/public/assets/stylesheets/skins/fonts.css')}}" rel="stylesheet" type="text/css">
 
@@ -41,7 +41,19 @@
     <!-- Head Libs -->
     <script src="{{ asset('/public/assets/vendor/modernizr/modernizr.js')}}"></script>
 
-    
+        <script src="{{ asset('/public/js/jquery-1.10.1.min.js')}}"></script>
+        <script src="{{ asset('/public/assets/vendor/jquery/jquery.js')}}"></script>
+        {{--<script type="text/javascript">--}}
+            {{--$.ajaxSetup(--}}
+            {{--{--}}
+                {{--headers:--}}
+                    {{--{--}}
+                        {{--'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+                    {{--}--}}
+            {{--});--}}
+        {{--</script>--}}
+
+      {{--<script src="{{ asset('/public/js/main.js')}}"></script>--}}
 
   </head>
   <body>

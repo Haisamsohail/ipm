@@ -11,7 +11,7 @@
 
                             <li class="nav-parent nav-expanded">
                                 <a href="#">
-                                    <i class="fa fa-columns" aria-hidden="true"></i>
+                                    <i class="fa fa-bitbucket" aria-hidden="true"></i>
                                     <span>Station</span>
                                 </a>
 
@@ -49,5 +49,27 @@
                                     </li>
                                 </ul>
                             </li>
+
+
+                            <li class="nav-parent nav-expanded">
+                                <a href="#">
+                                    <i class="fa fa-google-wallet" aria-hidden="true"></i>
+                                    <span>Chemical</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="{{url('/CreateChemical')}}">
+                                            Add Chemical
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('/ChemicalList')}}">
+                                            Chemical List
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
                         </ul>
                     </nav>

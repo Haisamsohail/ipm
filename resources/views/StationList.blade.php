@@ -6,6 +6,19 @@
   <section role="main" class="content-body">
     <header class="page-header">
       <h2>IPM - Station List</h2>
+
+      <div class="right-wrapper pull-right" style=" margin-right: 50px; ">
+        <ol class="breadcrumbs">
+          <li>
+            <a href="{{url('/welcome')}}">
+              <i class="fa fa-home"></i>
+            </a>
+          </li>
+          <li> <a href="{{url('/StationList')}}"><span>Station List</span></a></li>
+        </ol>
+      </div>
+
+
     </header>
 
     <div class="panel-body">

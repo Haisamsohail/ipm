@@ -6,6 +6,19 @@
   <section role="main" class="content-body">
     <header class="page-header">
       <h2>IPM - Activity / {{ $stationname }} </h2>
+
+      <div class="right-wrapper pull-right" style=" margin-right: 50px; ">
+        <ol class="breadcrumbs">
+          <li>
+            <a href="{{url('/welcome')}}">
+              <i class="fa fa-home"></i>
+            </a>
+          </li>
+          <li> <a href="{{url('/StationList')}}"><span>Station List</span></a></li>
+          <li> <a href="{{url('/ActivityList',request()->route('stationid'))}}"><span>Activity  List</span></a></li>
+        </ol>
+      </div>
+
     </header>
 
     <a href="{{url('/CreateActivity',request()->route('stationid'))}}" ><i class="glyphicon glyphicon-flash"></i> Add New Activity</a>

@@ -38,35 +38,35 @@ class LocationModel extends Connection
         return $response->body();
     }
 
-    public function DeleteEmployee($companyid,$branchid,$employeeid)
+    public function DeleteLocation($companyid,$branchid,$branchlocationid)
     {
         $data = array();
-        $data = array('companyid' => $companyid, 'branchid' => $branchid, 'employeeid' => $employeeid);
+        $data = array('companyid' => $companyid, 'branchid' => $branchid, 'branchlocationid' => $branchlocationid);
         $ActivityListCallAPI = app(HttpClientCommunication::class);
-        $response = $ActivityListCallAPI->storeData(self::END_POINT_USER."DeleteEmployee", $data, true);
+        $response = $ActivityListCallAPI->storeData(self::END_POINT_USER."DeleteLocation", $data, true);
         //dd($response);
         //$array =  (array) $response;
         //dd(gettype($response));
         return $response->body();
     }
 
-    public function EditPageEmployee($companyid,$branchid,$employeeid)
+    public function EditPageLocation($companyid,$branchid,$branchlocationid)
     {
         $data = array();
-        $data = array('companyid' => $companyid, 'branchid' => $branchid, 'employeeid' => $employeeid);
+        $data = array('companyid' => $companyid, 'branchid' => $branchid, 'branchlocationid' => $branchlocationid);
         $StationListCallAPI = app(HttpClientCommunication::class);
-        $response = $StationListCallAPI->storeData(self::END_POINT_USER."EditPageEmployee", $data, true);
+        $response = $StationListCallAPI->storeData(self::END_POINT_USER."EditPageLocation", $data, true);
         //dd($response);
         //$array =  (array) $response;
         //dd(gettype($response));
         return $response->body();
     }
 
-    public function EditEmployee($Datarequest)
+    public function EditLocation($Datarequest)
     {
         //dd($data);
         $StationListCallAPI = app(HttpClientCommunication::class);
-        $response = $StationListCallAPI->storeData(self::END_POINT_USER."EditEmployee", $Datarequest, true);
+        $response = $StationListCallAPI->storeData(self::END_POINT_USER."EditLocation", $Datarequest, true);
         //dd($response);
         //$array =  (array) $response;
         //dd(gettype($response));

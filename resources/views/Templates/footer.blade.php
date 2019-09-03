@@ -2,9 +2,8 @@
 
 </div>
 </section>
-<h1>Footer Section</h1>
     <!-- Vendor -->
-    <script src="{{ asset('/public/assets/vendor/jquery/jquery.js')}}"></script>
+    {{--<script src="{{ asset('/public/assets/vendor/jquery/jquery.js')}}"></script>--}}
         <script src="{{ asset('/public/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js')}}"></script>
         <script src="{{ asset('/public/assets/vendor/bootstrap/js/bootstrap.js')}}"></script>
         <script src="{{ asset('/public/assets/vendor/nanoscroller/nanoscroller.js')}}"></script>

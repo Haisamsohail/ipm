@@ -45,7 +45,6 @@ Route::post('/EditActivity', 'ActivityController@EditActivity');
 
 
 
-
 /********** Create Company Start ***************************/
 Route::get('/CreateCompany', 'CompanyController@CreateCompany');
 Route::post('/AddCompanyDB', 'CompanyController@AddCompanyDB');
@@ -53,7 +52,6 @@ Route::get('/CompanyList', 'CompanyController@CompanyList');
 Route::get('/DeleteCompany/{companyid}', 'CompanyController@DeleteCompany');
 Route::get('/EditPageCompany/{companyid}', 'CompanyController@EditPageCompany');
 Route::post('/EditCompany', 'CompanyController@EditCompany');
-
 /********** Create Company End   ***************************/
 
 
@@ -66,6 +64,7 @@ Route::get('/EditPageBranch/{companyid}/{branchid}', 'BranchController@EditPageB
 Route::post('/EditBranch', 'BranchController@EditBranch');
 /********** Create Branch End   ***************************/
 
+
 /********** Create Employee Start ***************************/
 Route::get('/EmployeeList/{companyid}/{branchid}', 'EmployeeController@EmployeeList');
 Route::get('/CreateEmployee/{companyid}/{branchid}', 'EmployeeController@CreateEmployee');
@@ -75,20 +74,51 @@ Route::get('/EditPageEmployee/{companyid}/{branchid}/{employeeid}', 'EmployeeCon
 Route::post('/EditEmployee', 'EmployeeController@EditEmployee');
 /********** Create Employee End   ***************************/
 
+
+
 /********** Create Location Start ***************************/
 Route::get('/LocationList/{companyid}/{branchid}', 'LocationController@LocationList');
 Route::get('/CreateLocation/{companyid}/{branchid}', 'LocationController@CreateLocation');
 Route::post('/AddLocationDB', 'LocationController@AddLocationDB');
-$router->get('/DeleteEmployee/{companyid}/{branchid}/{employeeid}', 'EmployeeController@DeleteEmployee');
+$router->get('/DeleteLocation/{companyid}/{branchid}/{branchlocationid}', 'LocationController@DeleteLocation');
+Route::get('/EditPageLocation/{companyid}/{branchid}/{branchlocationid}', 'LocationController@EditPageLocation');
+Route::post('/EditLocation', 'LocationController@EditLocation');
 /********** Create Location End   ***************************/
+
+
+
+/********** Create Station Start ***************************/
+Route::get('/StationApplyList/{companyid}/{branchid}/{branchlocationid}', 'StationApplyController@StationApplyList');
+$router->get('/DeleteStationApply/{companyid}/{branchid}/{branchlocationid}/{stationapplyid}', 'StationApplyController@DeleteStationApply');
+Route::get('/CreateStationApply/{companyid}/{branchid}/{branchlocationid}', 'StationApplyController@CreateStationApply');
+Route::post('/CheckStation', 'StationApplyController@CheckStation');
+Route::post('/AddStationApplyDB', 'StationApplyController@AddStationApplyDB');
+Route::get('/EditPageStationApply/{companyid}/{branchid}/{branchlocationid}/{stationapplyid}', 'StationApplyController@EditPageStationApply');
+Route::post('/EditStationApply', 'StationApplyController@EditStationApply');
+Route::get('qrcode', function () {
+    return QrCode::size(300)->generate('A basic example of QR code!');
+});
+/********** Create Station End   ***************************/
+
+
+
+
+
+
+/********** Create Chemical Start ***************************/
+Route::get('/CreateChemical', 'ChemicalController@CreateChemical');
+Route::post('/AddChemicalDB', 'ChemicalController@AddChemicalDB');
+Route::get('/ChemicalList', 'ChemicalController@ChemicalList');
+Route::get('/DeleteChemical/{stationid}', 'ChemicalController@DeleteChemical');
+Route::get('/EditPageChemical/{stationid}', 'ChemicalController@EditPageChemical');
+Route::post('/EditChemical', 'ChemicalController@EditChemical');
+/********** Create Chemical End   ***************************/
+
 
 
 
 Route::group(['middleware' => ['FindingSession','api']], function ()
 {
-//    Route::get('/welcome', function () {
-//        return view('welcome');
-//    });
     Session::flush();
     Route::get('/welcome', 'MainController@welcome');
 });

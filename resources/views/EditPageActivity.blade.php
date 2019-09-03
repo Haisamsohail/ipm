@@ -6,6 +6,20 @@
   <section role="main" class="content-body">
     <header class="page-header">
       <h2>IPM - Update Activity</h2>
+
+      <div class="right-wrapper pull-right" style=" margin-right: 50px; ">
+        <ol class="breadcrumbs">
+          <li>
+            <a href="{{url('/welcome')}}">
+              <i class="fa fa-home"></i>
+            </a>
+          </li>
+          <li> <a href="{{url('/StationList')}}"><span>Station List</span></a></li>
+          <li> <a href="{{url('/ActivityList',request()->route('stationid'))}}"><span>Activity  List</span></a></li>
+        </ol>
+      </div>
+
+
     </header>
 
     @foreach($EditPageActivity as $key => $ActivityData)
@@ -22,6 +36,8 @@
               <option value="CheckBox">CheckBox</option>
               <option value="Input">Input</option>
               <option value="Observation">Observation</option>
+              <option value="Correctice Action">Correctice Action</option>
+              <option value="Fumigation">Fumigation</option>
 
             </select>
           </div>
@@ -32,7 +48,7 @@
           <label class="col-sm-3 control-label">Activity Name <span class="required">*</span></label>
           <div class="col-sm-9">
             <input type="text" name="activityName" id="activityName" value="{{$ActivityData->activityName}}" class="form-control" required/>
-            <input type="hidden" name="activityid" id="activityid" class="form-control"value="{{$ActivityData->activityid}}" required/>
+            <input type="hidden" name="activityid" id="activityid" class="form-control" value="{{$ActivityData->activityid}}" required/>
             <input type="hidden" name="stationid" id="stationid" class="form-control" value="{{$ActivityData->stationid}}" required/>
           </div>
         </div>

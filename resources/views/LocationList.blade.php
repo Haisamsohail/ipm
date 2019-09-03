@@ -48,8 +48,8 @@
             <td> {{$key  + 1}}</td>
             <td> {{$Location->branchlocationname}}</td>
             <td style=" text-align: center; ">
-              <a href="{{url('/StationList',[request()->route('companyid'), request()->route('branchid'), $Location->branchlocationid])}}">
-                <i class="glyphicon glyphicon-barcode"></i></a>
+              <a href="{{url('/StationApplyList',[request()->route('companyid'), request()->route('branchid'), $Location->branchlocationid])}}">
+                <i class="glyphicon glyphicon-tower"></i></a>
             </td>
             <td>
               <a href="{{url('/EditPageLocation',[request()->route('companyid'), request()->route('branchid'), $Location->branchlocationid])}}" class="on-default edit-row"><i class="fa fa-pencil"></i></a>

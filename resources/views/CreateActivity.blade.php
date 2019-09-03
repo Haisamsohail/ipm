@@ -6,6 +6,20 @@
   <section role="main" class="content-body">
     <header class="page-header">
       <h2>IPM - Create Activity</h2>
+
+      <div class="right-wrapper pull-right" style=" margin-right: 50px; ">
+        <ol class="breadcrumbs">
+          <li>
+            <a href="{{url('/welcome')}}">
+              <i class="fa fa-home"></i>
+            </a>
+          </li>
+          <li> <a href="{{url('/StationList')}}"><span>Station List</span></a></li>
+          <li> <a href="{{url('/ActivityList',request()->route('stationid'))}}"><span>Activity  List</span></a></li>
+        </ol>
+      </div>
+
+
     </header>
 
 
@@ -22,6 +36,8 @@
                 <option value="CheckBox">CheckBox</option>
                 <option value="Input">Input</option>
                 <option value="Observation">Observation</option>
+                <option value="Correctice Action">Correctice Action</option>
+                <option value="Fumigation">Fumigation</option>
 
               </select>
             </div>
