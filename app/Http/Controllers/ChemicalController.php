@@ -9,11 +9,9 @@
 
     namespace App\Http\Controllers;
 
-    use App\Models\ActivityModel;
+    use App\Models\ChemicalModel;
     use Symfony\Component\HttpFoundation\Request;
-    use App\Models\BranchModel;
     use App\Http\Controllers\Controller;
-// use App\Http\HttpClientCommunication;
 
     use Illuminate\Foundation\Bus\DispatchesJobs;
     use Illuminate\Routing\Controller as BaseController;
@@ -35,93 +33,85 @@
             return view('CreateChemical');
         }
 
-        public function AddBranchDB(Request $request )
+        public function AddChemicalDB(Request $request )
         {
-
-            $companyid = request('companyid');
-
-            if(empty($branchname) & empty($branchlocation) & empty($branchaddress) & empty($companyid))
+            $chemicalname = request('chemicalname');
+            if(empty($chemicalname))
             {
                 return ["status"=> 404 , "sendadvisor" => "Post data cannot be null"];
             }
-            $AddactivityDBMod = app(BranchModel::class);
-            $response = $AddactivityDBMod->AddBranchDB($request->input());
+            $ChemicalMod = app(ChemicalModel::class);
+            $response = $ChemicalMod->AddChemicalDB($request->input());
             if($response->status == "Y")
             {
                 //dd($stationid);
-                return redirect()->action('BranchController@BranchList', [$companyid]);
+                return redirect()->action('ChemicalController@ChemicalList');
             }
             else
             {
-                return redirect()->back()->with('messageForActivity', 'Fail To Add Activity .....!');
+                return redirect()->back()->with('messageForActivity', 'Fail To Add Chemical .....!');
             }
         }
 
-        public function BranchList($companyid )
+        public function ChemicalList(Request $request)
         {
-            $ActivityListObject = app(BranchModel::class);
-            $response = $ActivityListObject->BranchList($companyid);
-            //dd($response->response[0]->companyname);
-            //dd($response->status);
-
-            if($response->status == "Y")
-            {
-
-                return View('BranchList', ['BranchList' => $response->response, 'companyname' => $response->response[0]->companyname ]);
-            }
-            else
-            {
-                return redirect()->action('BranchController@CreateBranch', [$companyid]);
-                //return redirect()->action('ActivityController@CreateActivity');
-            }
-        }
-
-
-        public function DeleteBranch($companyid,$branchid )
-        {
-            $AddactivityDBMod = app(BranchModel::class);
-            $response = $AddactivityDBMod->DeleteBranch($companyid,$branchid);
-
-            if($response->status == "Y")
-            {
-                return redirect()->action('BranchController@BranchList', [$companyid]);
-            }
-            else
-            {
-                return redirect()->action('BranchController@CreateBranch', [$companyid]);
-            }
-        }
-
-
-        public function EditPageBranch($companyid,$branchid )
-        {
-            $StationListObject = app(BranchModel::class);
-            $response = $StationListObject->EditPageBranch($companyid,$branchid);
+            $ChemicalMod = app(ChemicalModel::class);
+            $response = $ChemicalMod->ChemicalList();
             //dd($response);
             if($response->status == "Y")
             {
-                return View('EditPageBranch')->with('EditPageBranch', $response->response);
+                return View('ChemicalList')->with('ChemicalList', $response->response);
             }
             else
             {
-                return redirect()->action('BranchController@CreateBranch');
+                return redirect()->action('ChemicalController@CreateChemical');
             }
         }
 
-        public function EditBranch(Request $request )
-        {
-            $companyid = request('companyid');
 
-            $StationListObject = app(BranchModel::class);
-            $response = $StationListObject->EditBranch($request->input());
-            //dd($response);
+        public function DeleteChemical($chemicalid)
+        {
+            $ChemicalMod = app(ChemicalModel::class);
+            $response = $ChemicalMod->DeleteChemical($chemicalid);
+
             if($response->status == "Y")
             {
-                return redirect()->action('BranchController@BranchList', [$companyid]);
+                return redirect()->action('ChemicalController@ChemicalList');
             }
             else
             {
-                return redirect()->action('BranchController@CreateBranch', [$companyid]);
+                return redirect()->action('ChemicalController@CreateChemical');
+            }
+        }
+
+
+        public function EditPageChemical($chemicalid)
+        {
+            $StationListObject = app(ChemicalModel::class);
+            $response = $StationListObject->EditPageChemical($chemicalid);
+            //dd($response);
+            if($response->status == "Y")
+            {
+                return View('EditPageChemical')->with('EditPageChemical', $response->response);
+            }
+            else
+            {
+                return redirect()->action('ChemicalController@CreateChemical');
+            }
+        }
+
+        public function EditChemical(Request $request )
+        {
+            $StationListObject = app(ChemicalModel::class);
+            $response = $StationListObject->EditChemical($request->input());
+            //dd($response);
+            if($response->status == "Y")
+            {
+                return redirect()->action('ChemicalController@ChemicalList');
+            }
+            else
+            {
+                return redirect()->action('ChemicalController@CreateChemical');
             }
         }
     }

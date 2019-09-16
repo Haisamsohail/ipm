@@ -19,7 +19,7 @@
         {
             //dd($data);
             //var_dump($data);
-            $Query3 = "SELECT A.activityid AS activityid, A.activitytype AS activitytype, A.activityName AS activityName, A.activitydescription AS activitydescription FROM stationapply SA, activity A WHERE SA.stationapplyid = '{$data->ScanQRcode}' AND SA.stationid = A.stationid";
+            $Query3 = "SELECT A.activityid AS activityid, A.activitytype AS activitytype, A.activityName AS activityName, A.activitydescription AS activitydescription FROM stationapply SA, activity A WHERE SA.stationapplyid = '{$data->ScanQRcode}' AND SA.stationid = A.stationid AND A.activityactive = 'Y'";
             //// dd($Query1);
             $results = app('db')->connection('hsl')->select($Query3);
             //dd($results);

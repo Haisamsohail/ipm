@@ -109,10 +109,20 @@ Route::get('qrcode', function () {
 Route::get('/CreateChemical', 'ChemicalController@CreateChemical');
 Route::post('/AddChemicalDB', 'ChemicalController@AddChemicalDB');
 Route::get('/ChemicalList', 'ChemicalController@ChemicalList');
-Route::get('/DeleteChemical/{stationid}', 'ChemicalController@DeleteChemical');
-Route::get('/EditPageChemical/{stationid}', 'ChemicalController@EditPageChemical');
+Route::get('/DeleteChemical/{chemicalid}', 'ChemicalController@DeleteChemical');
+Route::get('/EditPageChemical/{chemicalid}', 'ChemicalController@EditPageChemical');
 Route::post('/EditChemical', 'ChemicalController@EditChemical');
 /********** Create Chemical End   ***************************/
+
+
+/********** Create Dilution Start ***************************/
+Route::get('/CreateDilution', 'DilutionController@CreateDilution');
+Route::post('/AddDilutionDB', 'DilutionController@AddDilutionDB');
+Route::get('/DilutionList', 'DilutionController@DilutionList');
+Route::get('/DeleteDilution/{dilutionid}', 'DilutionController@DeleteDilution');
+Route::get('/EditPageDilution/{dilutionid}', 'DilutionController@EditPageDilution');
+Route::post('/EditDilution', 'DilutionController@EditDilution');
+/********** Create Dilution End   ***************************/
 
 
 

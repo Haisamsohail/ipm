@@ -13,7 +13,7 @@
               <i class="fa fa-home"></i>
             </a>
           </li>
-          <li> <a href="{{url('/CompanyList')}}"><span>Chemical List</span></a></li>
+          <li> <a href="{{url('/ChemicalList')}}"><span>Chemical List</span></a></li>
         </ol>
       </div>
     </header>
@@ -40,7 +40,7 @@
           <div class="form-group">
             <label class="col-sm-3 control-label">Chemical Name <span class="required">*</span></label>
             <div class="col-sm-9">
-              <input type="text" name="companyname" id="companyname" class="form-control" required/>
+              <input type="text" name="chemicalname" id="chemicalname" class="form-control" required/>
             </div>
           </div>
 

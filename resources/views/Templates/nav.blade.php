@@ -67,6 +67,32 @@
                                             Chemical List
                                         </a>
                                     </li>
+
+                                    <li>
+                                        <a href="{{url('/CreateDilution')}}">
+                                            Add Dilution
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('/DilutionList')}}">
+                                            Dilution List
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li class="nav-parent nav-expanded">
+                                <a href="#">
+                                    <i class="fa fa-google-wallet" aria-hidden="true"></i>
+                                    <span>Reports</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="{{url('/ActivityReport')}}">
+                                            Activity Report
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
 
