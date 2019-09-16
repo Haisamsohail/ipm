@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6820b1bd-44e2-4513-b846-d08cc930b902" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Templates/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Templates/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Templates/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Templates/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Templates/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Templates/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="84" column="29" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
+            <state relative-caret-position="212">
+              <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -337,12 +332,12 @@
       <workItem from="1561963719492" duration="1855000" />
       <workItem from="1566548288226" duration="1010000" />
       <workItem from="1567485996096" duration="5762000" />
-      <workItem from="1568614165804" duration="11076000" />
+      <workItem from="1568614165804" duration="11695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19703000" />
+    <option name="totallyTimeSpent" value="20322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -539,8 +534,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="84" column="29" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
+        <state relative-caret-position="212">
+          <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
         </state>
       </provider>
     </entry>

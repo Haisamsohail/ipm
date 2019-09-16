@@ -58,9 +58,7 @@
               @endforeach
             </select>
           </div>
-
-
-
+          
         </div>
       </div>
 
@@ -72,12 +70,10 @@
             </div>
           </div>
         </footer>
-
     </form>
 
 
     <ul class="nav nav-tabs">
-
       @foreach($StationList as $key => $Station)
         <li><a data-toggle="tab" href="#{{$Station->stationid}}">{{$Station->stationname}}</a></li>
       @endforeach
@@ -89,9 +85,7 @@
           <p>Some content.</p>
         </div>
       @endforeach
-
     </div>
-
 
   </section>
 @stop
