@@ -127,6 +127,14 @@ Route::post('/EditDilution', 'DilutionController@EditDilution');
 
 
 
+    /********** Create Reports Start ***************************/
+    Route::get('/ActivityReport', 'ActivityReportController@ActivityReport');
+    Route::get('/SearchActivityReport', 'ActivityReportController@SearchActivityReport');
+
+    /********** Create Reports End   ***************************/
+
+
+
 Route::group(['middleware' => ['FindingSession','api']], function ()
 {
     Session::flush();

@@ -84,13 +84,37 @@
 
                             <li class="nav-parent nav-expanded">
                                 <a href="#">
-                                    <i class="fa fa-google-wallet" aria-hidden="true"></i>
+                                    <i class="fa fa-ravelry" aria-hidden="true"></i>
                                     <span>Reports</span>
                                 </a>
                                 <ul class="nav nav-children">
                                     <li>
                                         <a href="{{url('/ActivityReport')}}">
                                             Activity Report
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{url('/TrendReport')}}">
+                                            Trend Report
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{url('/PieChartReport')}}">
+                                            Pie Chart Report
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{url('/ObservationReport')}}">
+                                            Observation Report
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{url('/CorrectiveActionReport')}}">
+                                            Corrective Action Report
                                         </a>
                                     </li>
                                 </ul>

@@ -19,10 +19,10 @@
         
         <!-- Theme Initialization Files -->
         <script src="{{ asset('/public/assets/javascripts/theme.init.js')}}"></script>
-    
+
     <!-- Theme Base, Components and Settings -->
     <script src="{{ asset('/public/assets/javascripts/theme.js')}}"></script>
-    
+
     <!-- Theme Custom -->
     <script src="{{ asset('/public/assets/javascripts/theme.custom.js')}}"></script>
     

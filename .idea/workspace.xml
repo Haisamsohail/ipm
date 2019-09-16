@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6820b1bd-44e2-4513-b846-d08cc930b902" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ipm (1).sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ipm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ipm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LocationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/LocationModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LocationModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/ActivityList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ActivityList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/BranchList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/BranchList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/CreateActivity.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/CreateActivity.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/EditPageActivity.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/EditPageActivity.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/EditPageStation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/EditPageStation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/LocationList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/LocationList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/StationList.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/StationList.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Templates/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Templates/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Templates/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Templates/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Templates/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Templates/nav.blade.php" afterDir="false" />
@@ -34,50 +21,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/StationApplyList.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="109" column="63" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="63" />
+            <state relative-caret-position="180">
+              <caret line="131" column="37" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChemicalController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+            <state relative-caret-position="200">
+              <caret line="44" column="97" selection-start-line="44" selection-start-column="86" selection-end-line="44" selection-end-column="97" />
               <folding>
-                <element signature="e#10#120#0#PHP" expanded="true" />
-                <element signature="e#157#186#0#PHP" expanded="true" />
+                <element signature="e#164#193#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/CreateChemical.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BranchController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompanyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="129" selection-end-column="5" />
+            <state relative-caret-position="291">
+              <caret line="67" column="20" lean-forward="true" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
               <folding>
                 <element signature="e#227#256#0#PHP" expanded="true" />
               </folding>
@@ -85,25 +53,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/Templates/nav.blade.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="56" column="50" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="50" />
+            <state relative-caret-position="180">
+              <caret line="84" column="29" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/StationApplyModel.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/StationList.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="46" column="90" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="90" />
+            <state relative-caret-position="224">
+              <caret line="40" column="30" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -111,16 +74,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StationApplyController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="83" column="10" selection-start-line="83" selection-start-column="10" selection-end-line="83" selection-end-column="10" />
+            <state relative-caret-position="-2600">
+              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="29" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/BranchList.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-720" />
           </provider>
         </entry>
       </file>
@@ -132,6 +88,7 @@
       <find>StationApplyList</find>
       <find>$StationApplyList</find>
       <find>AddCompanyForm</find>
+      <find>select2</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,10 +99,14 @@
       <list>
         <option value="$PROJECT_DIR$/app/Http/Controllers/StationApplyController.php" />
         <option value="$PROJECT_DIR$/resources/views/StationApplyList.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Templates/nav.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ChemicalController.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateChemical.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Templates/nav.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Templates/footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Templates/header.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" />
+        <option value="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" />
       </list>
     </option>
   </component>
@@ -288,6 +249,24 @@
             <path>
               <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
               <item name="ipm" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ipm" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ipm" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ipm" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -295,6 +274,13 @@
               <item name="ipm" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ipm" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
@@ -317,6 +303,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\ser\htdocs\ipm\resources\views" />
+      <recent name="C:\ser\htdocs\ipm\app\Http\Controllers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -350,18 +337,19 @@
       <workItem from="1561963719492" duration="1855000" />
       <workItem from="1566548288226" duration="1010000" />
       <workItem from="1567485996096" duration="5762000" />
+      <workItem from="1568614165804" duration="11076000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8627000" />
+    <option name="totallyTimeSpent" value="19703000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.25718608" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22012103" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
@@ -407,6 +395,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/CompanyList.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -421,71 +420,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/StationList.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-684" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/BranchList.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/StationApplyModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="46" column="90" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StationApplyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="83" column="10" selection-start-line="83" selection-start-column="10" selection-end-line="83" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateChemical.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/StationApplyList.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/CreateChemical.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChemicalController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+        <state relative-caret-position="540">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
           <folding>
             <element signature="e#10#120#0#PHP" expanded="true" />
-            <element signature="e#157#186#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Templates/nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="56" column="50" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="109" column="63" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BranchController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
+        <state relative-caret-position="300">
           <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="129" selection-end-column="5" />
           <folding>
             <element signature="e#227#256#0#PHP" expanded="true" />
@@ -493,10 +448,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/StationApplyModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="46" column="90" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/BranchList.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/CreateChemical.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Templates/nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="956">
+          <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Templates/footer.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="29" column="82" lean-forward="true" selection-start-line="29" selection-start-column="82" selection-end-line="29" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Templates/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="131" column="37" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompanyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="67" column="20" lean-forward="true" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
+          <folding>
+            <element signature="e#227#256#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StationApplyController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2600">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="44" column="97" selection-start-line="44" selection-start-column="86" selection-end-line="44" selection-end-column="97" />
+          <folding>
+            <element signature="e#164#193#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/StationList.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="40" column="30" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="84" column="29" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
         </state>
       </provider>
     </entry>

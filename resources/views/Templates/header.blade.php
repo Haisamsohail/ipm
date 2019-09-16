@@ -43,17 +43,6 @@
 
         <script src="{{ asset('/public/js/jquery-1.10.1.min.js')}}"></script>
         <script src="{{ asset('/public/assets/vendor/jquery/jquery.js')}}"></script>
-        {{--<script type="text/javascript">--}}
-            {{--$.ajaxSetup(--}}
-            {{--{--}}
-                {{--headers:--}}
-                    {{--{--}}
-                        {{--'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
-                    {{--}--}}
-            {{--});--}}
-        {{--</script>--}}
-
-      {{--<script src="{{ asset('/public/js/main.js')}}"></script>--}}
 
   </head>
   <body>
