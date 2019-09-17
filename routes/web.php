@@ -130,6 +130,7 @@ Route::post('/EditDilution', 'DilutionController@EditDilution');
     /********** Create Reports Start ***************************/
     Route::get('/ActivityReport', 'ActivityReportController@ActivityReport');
     Route::get('/SearchActivityReport', 'ActivityReportController@SearchActivityReport');
+    Route::post('/HassanTest', 'ActivityReportController@HassanTest');
 
     /********** Create Reports End   ***************************/
 

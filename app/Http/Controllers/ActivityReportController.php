@@ -30,6 +30,14 @@
             date_default_timezone_set("Asia/Karachi");
         }
 
+        public function HassanTest(Request $req)
+        {
+            echo "AAA".$req->taskID;
+
+
+        }
+
+
         public function ActivityReport()
         {
             $ChemicalMod = app(CompanyModel::class);

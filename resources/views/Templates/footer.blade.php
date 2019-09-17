@@ -29,7 +29,33 @@
     <!-- Theme Initialization Files -->
     <script src="{{ asset('/public/assets/javascripts/theme.init.js')}}"></script>
 
+<script>
 
+    $(document).ready(function(evt)
+    {
+        $.ajax(
+            {
+                type:'POST',
+                url:'HassanTest',
+                data:
+                    {
+                        taskID: "Test valuie"
+                    },
+                success:function(data)
+                {
+                    console.log(date);
+                    var responseHSL = JSON.parse(data);
+                    // $("#taskID").val(responseHSL[0].taskID);
+                    //
+                    // $("#employeeName").val(responseHSL[0].employeeName);
+                    // $("#employeeEmail").val(responseHSL[0].employeeEmail);
+                    // $("#employeeCity").val(responseHSL[0].employeeCity);
+                    // var selectedValue = responseHSL[0].employeeERPUser;
+                }
+            });
+    });
+
+</script>
 
 
   </body>
