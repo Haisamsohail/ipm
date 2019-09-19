@@ -33,6 +33,11 @@
 
     $(document).ready(function(evt)
     {
+
+        $.ajaxSetup({
+            headers:
+                { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+        });
         $.ajax(
             {
                 type:'POST',
@@ -43,8 +48,7 @@
                     },
                 success:function(data)
                 {
-                    console.log(date);
-                    var responseHSL = JSON.parse(data);
+                    //var responseHSL = JSON.parse(data);
                     // $("#taskID").val(responseHSL[0].taskID);
                     //
                     // $("#employeeName").val(responseHSL[0].employeeName);
