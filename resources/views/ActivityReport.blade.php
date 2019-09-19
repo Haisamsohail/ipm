@@ -88,88 +88,97 @@
           <h3>{{$Station->stationname}}</h3>
           <p>Some content.</p>
 
-          {{--<table class="table table-bordered table-striped mb-none" id="datatable-default">--}}
-            {{--<thead>--}}
-            {{--<tr>--}}
-              {{--<th>Location</th>--}}
-              {{--<th>Station Number</th>--}}
-              {{--<th>Activity 1</th>--}}
-              {{--<th>Activity 2</th>--}}
-              {{--<th>Activity 3</th>--}}
-              {{--<th>Activity 4</th>--}}
-              {{--<th>Activity 5</th>--}}
-              {{--<th>Activity 6</th>--}}
-            {{--</tr>--}}
-            {{--</thead>--}}
-            {{--<tbody>--}}
-              {{--<tr>--}}
-                {{--<td rowspan="2" style=" text-align: center; vertical-align: middle; ">MD Room</td>--}}
-                {{--<td>101</td>--}}
-                {{--<td>4</td>--}}
-                {{--<td>5</td>--}}
-                {{--<td>0</td>--}}
-                {{--<td>8</td>--}}
-                {{--<td>3</td>--}}
-                {{--<td>4</td>--}}
-              {{--</tr>--}}
-              {{--<tr>--}}
-                {{--<td>101</td>--}}
-                {{--<td>4</td>--}}
-                {{--<td>5</td>--}}
-                {{--<td>0</td>--}}
-                {{--<td>8</td>--}}
-                {{--<td>3</td>--}}
-                {{--<td>4</td>--}}
-              {{--</tr>--}}
-            {{--</tbody>--}}
-          {{--</table>--}}
+          <table class="table table-bordered table-striped mb-none" id="datatable-default">
+            <thead>
+            <tr>
+              <th>Location</th>
+              <th>Station Number</th>
+              <th>Activity 1</th>
+              <th>Activity 2</th>
+              <th>Activity 3</th>
+              <th>Activity 4</th>
+              <th>Activity 5</th>
+              <th>Activity 6</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2" style=" text-align: center; vertical-align: middle; ">MD Room</td>
+                <td>101</td>
+                <td>4</td>
+                <td>5</td>
+                <td>0</td>
+                <td>8</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>101</td>
+                <td>4</td>
+                <td>5</td>
+                <td>0</td>
+                <td>8</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+              <tr style=" background: #86ad55; color: white; ">
+                <td colspan="2" style=" text-align: center; vertical-align: middle; ">Count</td>
+                <td>5</td>
+                <td>0</td>
+                <td>8</td>
+                <td>8</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+            </tbody>
+          </table>
 
 
-          {{--<br>--}}
-          {{--<table class="table table-bordered table-striped mb-none" id="datatable-default">--}}
-            {{--<thead>--}}
-            {{--<tr>--}}
-              {{--<th>Location</th>--}}
-              {{--<th>Station Number</th>--}}
-              {{--<th>Activity 1</th>--}}
-              {{--<th>Activity 2</th>--}}
-              {{--<th>Activity 3</th>--}}
-              {{--<th>Activity 4</th>--}}
-              {{--<th>Activity 5</th>--}}
-              {{--<th>Activity 6</th>--}}
-            {{--</tr>--}}
-            {{--</thead>--}}
-            {{--<tbody>--}}
-            {{--<tr>--}}
-              {{--<td rowspan="3" style=" text-align: center; vertical-align: middle; ">Canteen</td>--}}
-              {{--<td>101</td>--}}
-              {{--<td>4</td>--}}
-              {{--<td>5</td>--}}
-              {{--<td>0</td>--}}
-              {{--<td>8</td>--}}
-              {{--<td>3</td>--}}
-              {{--<td>4</td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-              {{--<td>101</td>--}}
-              {{--<td>4</td>--}}
-              {{--<td>5</td>--}}
-              {{--<td>0</td>--}}
-              {{--<td>8</td>--}}
-              {{--<td>3</td>--}}
-              {{--<td>4</td>--}}
-            {{--</tr>--}}
-            {{--<tr>--}}
-              {{--<td>101</td>--}}
-              {{--<td>4</td>--}}
-              {{--<td>5</td>--}}
-              {{--<td>0</td>--}}
-              {{--<td>8</td>--}}
-              {{--<td>3</td>--}}
-              {{--<td>4</td>--}}
-            {{--</tr>--}}
-            {{--</tbody>--}}
-          {{--</table>--}}
+          <br>
+          <table class="table table-bordered table-striped mb-none" id="datatable-default">
+            <thead>
+            <tr>
+              <th>Location</th>
+              <th>Station Number</th>
+              <th>Activity 1</th>
+              <th>Activity 2</th>
+              <th>Activity 3</th>
+              <th>Activity 4</th>
+              <th>Activity 5</th>
+              <th>Activity 6</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td rowspan="3" style=" text-align: center; vertical-align: middle; ">Canteen</td>
+              <td>101</td>
+              <td>4</td>
+              <td>5</td>
+              <td>0</td>
+              <td>8</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>101</td>
+              <td>4</td>
+              <td>5</td>
+              <td>0</td>
+              <td>8</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>101</td>
+              <td>4</td>
+              <td>5</td>
+              <td>0</td>
+              <td>8</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            </tbody>
+          </table>
 
 
         </div>
