@@ -66,8 +66,8 @@
             {
                 return ["status"=> 404 , "sendadvisor" => "Post data cannot be null"];
             }
-            $ChemicalMod = app(ChemicalModel::class);
-            $response = $ChemicalMod->AddChemicalDB($request->input());
+            $SearchActivityReportMod = app(ActivityReportModel::class);
+            $response = $SearchActivityReportMod->SearchActivityReport($request->input());
             if($response->status == "Y")
             {
                 //dd($stationid);
