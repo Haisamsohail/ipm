@@ -117,6 +117,12 @@
                                             Corrective Action Report
                                         </a>
                                     </li>
+
+                                    <li>
+                                        <a href="{{url('/APPInput')}}">
+                                            APP Input
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
 

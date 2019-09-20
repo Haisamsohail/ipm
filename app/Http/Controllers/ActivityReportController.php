@@ -38,6 +38,23 @@
         }
 
 
+        public function APPInput()
+        {
+            $ActivityReportMod = app(ActivityReportModel::class);
+            $response = $ActivityReportMod->APPInput();
+            //dd($response);
+            if($response->status == "Y")
+            {
+                return View('APPInput', ['APPInput' => $response->response] );
+                //.. return View('ActivityReport')->with('CompanyList', $response->response);
+            }
+            else
+            {
+                return redirect()->back()->with('messageForActivity', 'Failed .....!');
+            }
+        }
+
+
         public function ActivityReport()
         {
             $ChemicalMod = app(CompanyModel::class);
@@ -45,8 +62,6 @@
 
             $StationListObjectA = app(StationModel::class);
             $responseA = $StationListObjectA->StationList();
-
-
             //dd($response);
             if($response->status == "Y")
             {
@@ -55,7 +70,7 @@
             }
             else
             {
-                return redirect()->action('ChemicalController@CreateChemical');
+                return redirect()->back()->with('messageForActivity', 'Failed .....!');
             }
         }
 

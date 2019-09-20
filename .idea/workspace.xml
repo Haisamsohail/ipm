@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6820b1bd-44e2-4513-b846-d08cc930b902" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ActivityReportModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ActivityReportModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Templates/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Templates/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,17 +22,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="131" column="86" selection-start-line="131" selection-start-column="66" selection-end-line="131" selection-end-column="86" />
+            <state relative-caret-position="127">
+              <caret line="130" column="62" selection-start-line="130" selection-start-column="54" selection-end-line="130" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="68" column="33" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="33" />
+            <state relative-caret-position="226">
+              <caret line="47" column="50" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="50" />
               <folding>
                 <element signature="e#10#120#0#PHP" expanded="true" />
                 <element signature="e#164#199#0#PHP" expanded="true" />
@@ -37,11 +41,36 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/APPInput.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="21" column="46" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="46" />
+            <state relative-caret-position="120">
+              <caret line="69" column="119" selection-start-line="69" selection-start-column="119" selection-end-line="69" selection-end-column="119" />
+              <folding>
+                <element signature="e#2081#2141#0#HTML" expanded="true" />
+                <element signature="e#2142#2178#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/ChemicalModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChemicalController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-180">
+              <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+              <folding>
+                <element signature="e#10#120#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,8 +78,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/ActivityReportModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="37" column="53" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="53" />
+            <state relative-caret-position="340">
+              <caret line="29" column="81" selection-start-line="29" selection-start-column="73" selection-end-line="29" selection-end-column="81" />
+              <folding>
+                <element signature="e#28#54#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="21" column="46" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -58,7 +99,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/StationApplyModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
+            <state relative-caret-position="600">
               <caret line="32" column="50" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="50" />
             </state>
           </provider>
@@ -75,8 +116,9 @@
       <find>select2</find>
       <find>HassanTest</find>
       <find>SearchActivityReport</find>
-      <find>$Datarequest</find>
       <find>CheckStation</find>
+      <find>$Datarequest</find>
+      <find>ActivityReport</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -89,13 +131,14 @@
         <option value="$PROJECT_DIR$/resources/views/StationApplyList.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ChemicalController.php" />
         <option value="$PROJECT_DIR$/resources/views/CreateChemical.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Templates/nav.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Templates/header.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Templates/footer.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Templates/nav.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" />
         <option value="$PROJECT_DIR$/app/Models/ActivityReportModel.php" />
+        <option value="$PROJECT_DIR$/resources/views/APPInput.blade.php" />
       </list>
     </option>
   </component>
@@ -237,24 +280,6 @@
             <path>
               <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
               <item name="ipm" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ipm" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ipm" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ipm" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -262,13 +287,6 @@
               <item name="ipm" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ipm" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
@@ -291,8 +309,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ser\htdocs\ipm\app\Models" />
       <recent name="C:\ser\htdocs\ipm\resources\views" />
+      <recent name="C:\ser\htdocs\ipm\app\Models" />
       <recent name="C:\ser\htdocs\ipm\app\Http\Controllers" />
     </key>
   </component>
@@ -331,17 +349,19 @@
       <workItem from="1568696432082" duration="5134000" />
       <workItem from="1568781013681" duration="2690000" />
       <workItem from="1568879750010" duration="5006000" />
+      <workItem from="1568957349403" duration="5744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33752000" />
+    <option name="totallyTimeSpent" value="39496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24962178" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24659607" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
@@ -409,16 +429,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChemicalController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-          <folding>
-            <element signature="e#10#120#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BranchController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -439,13 +449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Templates/nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="956">
-          <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -497,41 +500,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/StationApplyModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="32" column="50" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
+        <state relative-caret-position="420">
           <caret line="21" column="46" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/ActivityReportModel.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/StationApplyModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="37" column="53" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="53" />
+        <state relative-caret-position="600">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Templates/nav.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="121" column="65" selection-start-line="121" selection-start-column="57" selection-end-line="121" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="131" column="86" selection-start-line="131" selection-start-column="66" selection-end-line="131" selection-end-column="86" />
+        <state relative-caret-position="127">
+          <caret line="130" column="62" selection-start-line="130" selection-start-column="54" selection-end-line="130" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/ChemicalList.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChemicalController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
+          <folding>
+            <element signature="e#10#120#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/ChemicalModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="54" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/ActivityReportModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="29" column="81" selection-start-line="29" selection-start-column="73" selection-end-line="29" selection-end-column="81" />
+          <folding>
+            <element signature="e#28#54#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="68" column="33" selection-start-line="68" selection-start-column="13" selection-end-line="68" selection-end-column="33" />
+        <state relative-caret-position="226">
+          <caret line="47" column="50" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="50" />
           <folding>
             <element signature="e#10#120#0#PHP" expanded="true" />
             <element signature="e#164#199#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/APPInput.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="69" column="119" selection-start-line="69" selection-start-column="119" selection-end-line="69" selection-end-column="119" />
+          <folding>
+            <element signature="e#2081#2141#0#HTML" expanded="true" />
+            <element signature="e#2142#2178#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

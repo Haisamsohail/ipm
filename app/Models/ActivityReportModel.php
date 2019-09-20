@@ -21,6 +21,18 @@ class ActivityReportModel extends Connection
     {
             parent::__construct();
     }
+
+
+    public function APPInput()
+    {
+        $data = array();
+        $StationListCallAPI = app(HttpClientCommunication::class);
+        $response = $StationListCallAPI->storeData(self::END_POINT_USER."APPInput", $data, true);
+        return $response->body();
+    }
+
+
+
 	public function AddStationDB($stationname, $stationdescription )
 	{
 		$data = array('stationname' => $stationname, 'stationdescription' => $stationdescription);
@@ -39,9 +51,6 @@ class ActivityReportModel extends Connection
     {
         $StationListCallAPI = app(HttpClientCommunication::class);
         $response = $StationListCallAPI->storeData(self::END_POINT_USER."SearchActivityReport", $Datarequest, true);
-        //dd($response);
-        //$array =  (array) $response;
-        //dd(gettype($response));
         return $response->body();
     }
 
