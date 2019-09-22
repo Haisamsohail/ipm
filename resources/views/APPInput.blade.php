@@ -17,13 +17,27 @@
           <li> <a href="{{url('/StationList')}}"><span>Station List</span></a></li>
         </ol>
       </div>
+      <style>
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          width: 100%;
+          border: 1px solid #ddd;
+        }
 
+        th, td {
+          text-align: left;
+          padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+      </style>
 
     </header>
 
     <div class="panel-body">
-
-      <table class="table table-bordered table-striped mb-none" id="datatable-default">
+      <div style="overflow-x:auto;">
+      <table class="table table-bordered table-striped mb-none" id="example" style="white-space: nowrap;">
         <thead>
         <tr>
           <th>S.NO</th>
@@ -40,15 +54,14 @@
           <th>Number</th>
           <th>Observation</th>
           <th>Observation Image</th>
-          <th>Chemical/th>
+          <th>Chemical</th>
           <th>Dialution</th>
           <th>Consumption</th>
           <th>Correctice Number</th>
           <th>Correctic Image</th>
           <th>Correctice Rootcase</th>
-          <th>Station ID</th>
-          <th>Station ID</th>
-          <th>Station ID</th>
+          <th>Correctice Action</th>
+          <th>Inserted ID</th>
         </tr>
         </thead>
         <tbody>
@@ -67,12 +80,24 @@
             <td> {{$APP->outputcheckbox}}</td>
             <td> {{$APP->outputnumber}}</td>
             <td> {{$APP->outputobservationtext}}</td>
-            <td> <img src="data:image/png;base64,{{$APP->outputobservationImage}}" style=" margin: auto; width: 90px; ">  </td>
+            <td>
+              @if(empty($APP->correcticeactionimage))
+                N/A
+              @else
+                <img src="data:image/png;base64,{{$APP->outputobservationImage}}" style="margin: auto;height: 100px;width: 100px;">
+              @endif
+              </td>
             <td> {{$APP->outputfumigationchemicalid}}</td>
             <td> {{$APP->outputfumigationchemicaldai}}</td>
             <td> {{$APP->outputfumigationchemicalconsumption}}</td>
             <td> {{$APP->correcticeactionnumber}}</td>
-            <td> {{$APP->correcticeactionimage}}</td>
+            <td>
+                @if(empty($APP->correcticeactionimage))
+                      N/A
+                @else
+                      <img src="data:image/png;base64,{{$APP->correcticeactionimage}}" style="margin: auto;height: 100px;width: 100px;">
+                @endif
+            </td>
             <td> {{$APP->correcticeactionrootcase}}</td>
             <td> {{$APP->correcticeactioncorrection}}</td>
             <td> {{$APP->createddate}}</td>
@@ -83,6 +108,7 @@
 
         </tbody>
       </table>
+      </div>
     </div>
 
   </section>
