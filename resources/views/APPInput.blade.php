@@ -81,7 +81,7 @@
             <td> {{$APP->outputnumber}}</td>
             <td> {{$APP->outputobservationtext}}</td>
             <td>
-              @if(empty($APP->correcticeactionimage))
+              @if(empty($APP->outputobservationImage))
                 N/A
               @else
                 <img src="data:image/png;base64,{{$APP->outputobservationImage}}" style="margin: auto;height: 100px;width: 100px;">
