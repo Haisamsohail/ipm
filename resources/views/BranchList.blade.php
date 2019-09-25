@@ -35,7 +35,8 @@
           <th>Phone</th>
           <th>Email</th>
           <th>Employee</th>
-          <th>Station Location</th>
+          <th>Location</th>
+          <th>Station</th>
           <th class="hidden-xs">Action</th>
         </tr>
         </thead>
@@ -55,6 +56,10 @@
             <td style=" text-align: center; ">
               <a href="{{url('/LocationList',[request()->route('companyid'), $Branch->branchid])}}">
                 <i class="glyphicon glyphicon-home"></i></a>
+            </td>
+            <td style=" text-align: center; ">
+              <a href="{{url('/BStation',[request()->route('companyid'), $Branch->branchid])}}">
+                <i class="fa fa-bitbucket"></i></a>
             </td>
             <td>
               <a href="{{url('/EditPageBranch',[request()->route('companyid'), $Branch->branchid])}}" class="on-default edit-row"><i class="fa fa-pencil"></i></a>

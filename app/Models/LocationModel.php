@@ -38,6 +38,15 @@ class LocationModel extends Connection
         return $response->body();
     }
 
+    public function BStation($companyid,$branchid)
+    {
+        $data = array();
+        $data = array('companyid' => $companyid, 'branchid' => $branchid);
+        $ActivityListCallAPI = app(HttpClientCommunication::class);
+        $response = $ActivityListCallAPI->storeData(self::END_POINT_USER."BStation", $data, true);
+        return $response->body();
+    }
+
     public function DeleteLocation($companyid,$branchid,$branchlocationid)
     {
         $data = array();

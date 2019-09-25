@@ -83,12 +83,12 @@
                  var companyid = $("#companyid").val();
                  var branchid = $("#branchid").val();
                  var branchlocationid = $("#branchlocationid").val();
-                 //..   alert(stationapplyno +"\n"+ companyid +"\n"+ branchid +"\n"+ branchlocationid );
+                 //alert(stationapplyno +"\n"+ companyid +"\n"+ branchid +"\n"+ branchlocationid );
                  $.ajax(
                  {
                      type:'post',
                      url:'/ipm/CheckStation',
-                     data:{stationapplyno:stationapplyno,branchlocationid:branchlocationid },
+                     data:{stationapplyno:stationapplyno,branchid:branchid },
                      success:function(data)
                      {
                          if (data == "N")

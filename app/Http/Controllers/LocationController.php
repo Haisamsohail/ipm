@@ -77,6 +77,26 @@ class LocationController extends Controller
     }
 
 
+    public function BStation($companyid,$branchid )
+    {
+        $ActivityListObject = app(LocationModel::class);
+        $response = $ActivityListObject->BStation($companyid,$branchid);
+        //dd($response->response[0]->branchname);
+        //dd($response->status);
+
+        if($response->status == "Y")
+        {
+
+            return View('BStation', ['BStation' => $response->response, 'branchname' => $response->response[0]->branchname ]);
+        }
+        else
+        {
+            return redirect()->action('LocationController@CreateLocation', [$companyid, $branchid]);
+            //return redirect()->action('ActivityController@CreateActivity');
+        }
+    }
+
+
     public function DeleteLocation($companyid,$branchid,$branchlocationid  )
     {
         $AddactivityDBMod = app(LocationModel::class);

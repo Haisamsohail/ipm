@@ -34,29 +34,29 @@
     $(document).ready(function(evt)
     {
 
-        $.ajaxSetup({
-            headers:
-                { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
-        });
-        $.ajax(
-            {
-                type:'POST',
-                url:'HassanTest',
-                data:
-                    {
-                        taskID: "Test valuie"
-                    },
-                success:function(data)
-                {
-                    //var responseHSL = JSON.parse(data);
-                    // $("#taskID").val(responseHSL[0].taskID);
-                    //
-                    // $("#employeeName").val(responseHSL[0].employeeName);
-                    // $("#employeeEmail").val(responseHSL[0].employeeEmail);
-                    // $("#employeeCity").val(responseHSL[0].employeeCity);
-                    // var selectedValue = responseHSL[0].employeeERPUser;
-                }
-            });
+        // $.ajaxSetup({
+        //     headers:
+        //         { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+        // });
+        // $.ajax(
+        //     {
+        //         type:'POST',
+        //         url:'HassanTest',
+        //         data:
+        //             {
+        //                 taskID: "Test valuie"
+        //             },
+        //         success:function(data)
+        //         {
+        //             //var responseHSL = JSON.parse(data);
+        //             // $("#taskID").val(responseHSL[0].taskID);
+        //             //
+        //             // $("#employeeName").val(responseHSL[0].employeeName);
+        //             // $("#employeeEmail").val(responseHSL[0].employeeEmail);
+        //             // $("#employeeCity").val(responseHSL[0].employeeCity);
+        //             // var selectedValue = responseHSL[0].employeeERPUser;
+        //         }
+        //     });
     });
 
 </script>
