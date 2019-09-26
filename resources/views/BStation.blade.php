@@ -16,14 +16,14 @@
           </li>
           <li> <a href="{{url('/CompanyList')}}"><span>Company List</span></a></li>
           <li> <a href="{{url('/BranchList',request()->route('companyid'))}}"><span>Branch List</span></a></li>
-          <li> <a href="{{url('/LocationList',[request()->route('companyid'), request()->route('branchid')])}}"><span>Location List</span></a></li>
+          {{--<li> <a href="{{url('/LocationList',[request()->route('companyid'), request()->route('branchid')])}}"><span>Location List</span></a></li>--}}
         </ol>
       </div>
 
 
     </header>
 
-    <a href="{{url('/CreateLocation',[request()->route('companyid'), request()->route('branchid')])}}" ><i class="glyphicon glyphicon-flash"></i> Add New Location</a>
+    {{--<a href="{{url('/CreateLocation',[request()->route('companyid'), request()->route('branchid')])}}" ><i class="glyphicon glyphicon-flash"></i> Add New Location</a>--}}
 
     <br>
 
@@ -37,6 +37,7 @@
         <thead>
         <tr>
           <th>S.NO</th>
+          <th>Select</th>
           <th>Station</th>
           <th>Station #</th>
           <th>Apply #</th>
@@ -49,14 +50,16 @@
           @foreach($BStation as $key => $Location)
           <tr>
             <td> {{$key  + 1}}</td>
+            <th><input type="checkbox" name="CheckBoxStationApply[]" class="form-control" value="{{$Location->stationapplyid}}"></th>
             <td> {{$Location->stationname}}</td>
             <td> {{$Location->stationapplyid}}</td>
             <td> {{$Location->stationapplyno}}</td>
             <td> {{$Location->branchlocationname}}</td>
             <td> {!! QrCode::size(100)->generate($Location->stationapplyid); !!}</td>
             <td style=" text-align: center; ">
-              <a href="{{url('/BStation',[request()->route('companyid'), $Location->stationapplyid])}}">
-                <i class="fa fa-download"></i></a>
+              <p style=" text-align: center; vertical-align: middle; line-height: 90px; font-size: 2em; "><a href="{{url('/GenerateLabel',[request()->route('companyid'), $Location->stationapplyid])}}" style=" color: #7ea84a; ">
+                  <i class="fa fa-download"></i></a></p>
+
             </td>
 
 

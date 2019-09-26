@@ -79,6 +79,8 @@ Route::post('/EditEmployee', 'EmployeeController@EditEmployee');
 /********** Create Location Start ***************************/
 Route::get('/LocationList/{companyid}/{branchid}', 'LocationController@LocationList');
 Route::get('/BStation/{companyid}/{branchid}', 'LocationController@BStation');
+Route::get('/GenerateLabel/{companyid}/{stationapplyid}', 'LocationController@GenerateLabel');
+//Route::get('/GenerateLabel', 'LocationController@GenerateLabel');
 Route::get('/CreateLocation/{companyid}/{branchid}', 'LocationController@CreateLocation');
 Route::post('/AddLocationDB', 'LocationController@AddLocationDB');
 $router->get('/DeleteLocation/{companyid}/{branchid}/{branchlocationid}', 'LocationController@DeleteLocation');

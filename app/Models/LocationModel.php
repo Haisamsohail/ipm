@@ -47,6 +47,15 @@ class LocationModel extends Connection
         return $response->body();
     }
 
+    public function GenerateLabel($companyid,$stationapplyid)
+    {
+        $data = array();
+        $data = array('companyid' => $companyid, 'stationapplyid' => $stationapplyid);
+        $ActivityListCallAPI = app(HttpClientCommunication::class);
+        $response = $ActivityListCallAPI->storeData(self::END_POINT_USER."GenerateLabel", $data, true);
+        return $response->body();
+    }
+
     public function DeleteLocation($companyid,$branchid,$branchlocationid)
     {
         $data = array();
