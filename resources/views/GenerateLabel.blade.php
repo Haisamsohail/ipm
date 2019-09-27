@@ -50,7 +50,7 @@
       margin-right: auto;
       margin-top: 0px;
       padding-top: 0px;
-      width: 30%;
+      width: 100%;
 
     }
     .page-break {
@@ -61,18 +61,32 @@
 <body>
 
 <div style="border: 2px solid black; padding: 5px; height: 192px; background: white">
-  <p style="text-align: center"><img src="{{ asset('/public/assets/images/logo.png')}}" class="center"  /></p>
-  <p style="text-align: center">
-    <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(65)->generate($stationapplyid)) }} ">
-  </p>
-  <p style="text-align: center" style=" text-align: center; font-size: 10px; margin: 0px; margin-bottom: 10px; padding: 0px; border: 1px solid black" >{{ $companyname }}</p>
+
+  <div style="width: 30%;float: left;font-size: 8px;line-height: 15px;">
+    <br>
+    <p style="text-align: center"><img src="{{ asset('/public/assets/images/logo.png')}}" class="center"  /></p>
+  </div>
+  <div style="width: 70%;float: right;  height: 25px;  font-size: 18px;text-align: center; vertical-align: middle; line-height: 1.5em;">
+    <p style="text-align: center">
+      <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(65)->generate($stationapplyid)) }} ">
+    </p>
+  </div>
+
+  <div style="clear: both;"></div>
+
+
+
+
+
+  <p style="text-align: center" style=" text-align: center; font-size: 12px; margin: 0px;line-height: 15px; margin-bottom: 10px; padding: 0px; border: 1px solid black" >{{ $companyname }}</p>
+  <br>
     <div style="width: 70%;float: left;font-size: 8px;line-height: 15px;">
       Location : {{ $branchlocationname }}
       <br>
       Station : {{ $stationname }}
     </div>
     <div style="width: 30%;float: right; background: black; color: white; height: 25px;  font-size: 18px;text-align: center; vertical-align: middle; line-height: 1.5em;">
-      {{$stationapplyid}}
+      {{$stationapplyno}}
     </div>
   <p style="text-align: center" style=" text-align: center; font-size: 8px; margin: 0px; padding: 0px; line-height: 12px; " >
    </p>
@@ -80,11 +94,18 @@
 
 <div class="page-break"></div>
 <div style="border: 2px solid black; padding: 5px; height: 192px; background: white">
-  <p style="text-align: center"><img src="{{ asset('/public/assets/images/logo.png')}}" class="center"  /></p>
-  <p style="text-align: center">
-    <img src="{{ asset('/public/assets/images/backlabel.jpg')}}" style="margin: auto;width: 50%;" >
-  </p>
-  <p style="text-align: center" style=" text-align: center; font-size: 10px; margin: 0px; margin-bottom: 10px; padding: 0px; border: 1px solid black" >{{ $companyname }}</p>
+<br>
+  <div style="width: 30%;float: left;font-size: 8px;line-height: 15px;">
+    <p style="text-align: center"><img src="{{ asset('/public/assets/images/logo.png')}}" class="center"  /></p>
+  </div>
+  <div style="width: 70%;float: right;  height: 25px;  font-size: 18px;text-align: center; vertical-align: middle; line-height: 1.5em;">
+    <p style="text-align: center">
+      <img src="{{ asset('/public/assets/images/backlabel.jpg')}}" style="margin: auto;width: 50%;" >
+    </p>
+  </div>
+  <div style="clear: both;"></div>
+
+  <p style="text-align: center" style=" text-align: center" style=" text-align: center; font-size: 12px; margin: 0px;line-height: 15px; margin-bottom: 10px; padding: 0px; border: 1px solid black" >{{ $companyname }}</p>
   <div style="width: 70%;float: left;font-size: 8px;line-height: 15px;">
     Location : {{ $branchlocationname }}
     <br>

@@ -51,14 +51,15 @@ class LocationController extends Controller
 
         if($response->status == "Y")
         {
-            $pdf = PDF::loadView('GenerateLabel', ['GenerateLabel' => $response->response, 'companyname' => $response->response[0]->companyname, 'branchlocationname' => $response->response[0]->branchlocationname, 'stationname' => $response->response[0]->stationname, 'stationapplyid' => $response->response[0]->stationapplyid ],[], [
+            $pdf = PDF::loadView('GenerateLabel', ['GenerateLabel' => $response->response, 'companyname' => $response->response[0]->companyname, 'branchlocationname' => $response->response[0]->branchlocationname, 'stationname' => $response->response[0]->stationname, 'stationapplyid' => $response->response[0]->stationapplyid, 'stationapplyno' => $response->response[0]->stationapplyno ],[], [
                 'format' => [50.8, 50.8],
                 'margin_left'          => 1,
                 'margin_right'         => 1,
                 'margin_top'           => 1,
                 'margin_bottom'        => 1,
             ]);
-            return $pdf->download($response->response[0]->stationapplyid.'Station.pdf');
+            return $pdf->stream();
+            //return $pdf->download($response->response[0]->stationapplyid.'Station.pdf');
         }
         else
         {
