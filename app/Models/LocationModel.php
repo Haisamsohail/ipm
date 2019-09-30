@@ -90,4 +90,16 @@ class LocationModel extends Connection
         //dd(gettype($response));
         return $response->body();
     }
+
+
+    public function CheckBoxStationApplyDownload($Datarequest)
+    {
+        //dd($Datarequest);
+        $StationListCallAPI = app(HttpClientCommunication::class);
+        $response = $StationListCallAPI->storeData(self::END_POINT_USER."CheckBoxStationApplyDownload", $Datarequest, true);
+        //dd($response);
+        //$array =  (array) $response;
+        //dd(gettype($response));
+        return $response->body();
+    }
 }

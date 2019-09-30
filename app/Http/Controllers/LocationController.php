@@ -41,8 +41,42 @@ class LocationController extends Controller
             return view('CreateLocation');
 	}
 
+
+    public function CheckBoxStationApplyDownload(Request $request )
+    {
+//        $companyid = explode('/',$request->input('CheckBoxStationApply'));
+
+
+        foreach ($request->input('CheckBoxStationApply') as $arr)
+        {
+//            $this->GenerateLabel($arr[0],$arr[1]);
+            $arr=explode('/',$arr);
+            $this->GenerateLabel($arr[0],$arr[1]);
+        }
+
+
+
+        //$stationapplyid = $request->input('CheckBoxStationApply');
+
+
+        //var_dump($request);
+//        $AddStation_Odject = app(LocationModel::class);
+//        $response = $AddStation_Odject->CheckBoxStationApplyDownload($request->input());
+//        if($response->status == "Y")
+//        {
+//            return redirect()->back()->with('messageForCompany', 'Company Added.....!');
+//        }
+//        else
+//        {
+//            return redirect()->back()->with('messageForCompany', 'Fail To Add Company .....!');
+//        }
+    }
+
+
+
     public function GenerateLabel($companyid,$stationapplyid)
     {
+        //dd($companyid.'--'.$stationapplyid);
         $ActivityListObject = app(LocationModel::class);
         $response = $ActivityListObject->GenerateLabel($companyid,$stationapplyid);
         $data = ['title' => 'Welcome to HDTuto.com'];
@@ -58,16 +92,13 @@ class LocationController extends Controller
                 'margin_top'           => 1,
                 'margin_bottom'        => 1,
             ]);
-            return $pdf->stream();
-            //return $pdf->download($response->response[0]->stationapplyid.'Station.pdf');
+            //return $pdf->stream();
+            return $pdf->download($response->response[0]->stationapplyid.'Station.pdf');
         }
         else
         {
             return redirect()->action('LocationController@CreateLocation', [$companyid, $stationapplyid]);
         }
-
-
-
         //return $pdf->download('itsolutionstuff.pdf');
     }
 
@@ -115,7 +146,6 @@ class LocationController extends Controller
         $response = $ActivityListObject->BStation($companyid,$branchid);
         //dd($response->response[0]->branchname);
         //dd($response->status);
-
         if($response->status == "Y")
         {
 

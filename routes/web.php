@@ -80,6 +80,7 @@ Route::post('/EditEmployee', 'EmployeeController@EditEmployee');
 Route::get('/LocationList/{companyid}/{branchid}', 'LocationController@LocationList');
 Route::get('/BStation/{companyid}/{branchid}', 'LocationController@BStation');
 Route::get('/GenerateLabel/{companyid}/{stationapplyid}', 'LocationController@GenerateLabel');
+Route::post('/CheckBoxStationApplyDownload', 'LocationController@CheckBoxStationApplyDownload');
 //Route::get('/GenerateLabel', 'LocationController@GenerateLabel');
 Route::get('/CreateLocation/{companyid}/{branchid}', 'LocationController@CreateLocation');
 Route::post('/AddLocationDB', 'LocationController@AddLocationDB');

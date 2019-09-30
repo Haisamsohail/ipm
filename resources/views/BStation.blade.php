@@ -25,14 +25,17 @@
 
     {{--<a href="{{url('/CreateLocation',[request()->route('companyid'), request()->route('branchid')])}}" ><i class="glyphicon glyphicon-flash"></i> Add New Location</a>--}}
 
-    <br>
+    <form action="{{url('/CheckBoxStationApplyDownload')}}" method="POST" name="CheckBoxStationApplyForm">
+      {{ csrf_field() }}
 
-    <br>
+      <div class="row">
+        <div class="col-lg-3">
+          <button type="submit" class="btn btn-info">Download</button>
+        </div>
+      </div>
 
+    </br>
     <div class="panel-body">
-
-
-
       <table class="table table-bordered table-striped mb-none" id="datatable-default">
         <thead>
         <tr>
@@ -50,7 +53,7 @@
           @foreach($BStation as $key => $Location)
           <tr>
             <td> {{$key  + 1}}</td>
-            <th><input type="checkbox" name="CheckBoxStationApply[]" class="form-control" value="{{$Location->stationapplyid}}"></th>
+            <th><input type="checkbox" name="CheckBoxStationApply[]" class="form-control" value="{{ request()->route('companyid').'/'.$Location->stationapplyid}}"></th>
             <td> {{$Location->stationname}}</td>
             <td> {{$Location->stationapplyid}}</td>
             <td> {{$Location->stationapplyno}}</td>
@@ -59,18 +62,13 @@
             <td style=" text-align: center; ">
               <p style=" text-align: center; vertical-align: middle; line-height: 90px; font-size: 2em; "><a href="{{url('/GenerateLabel',[request()->route('companyid'), $Location->stationapplyid])}}" style=" color: #7ea84a; ">
                   <i class="fa fa-download"></i></a></p>
-
             </td>
-
-
-
           </tr>
         @endforeach
-
 
         </tbody>
       </table>
     </div>
-
+    </form>
   </section>
 @stop

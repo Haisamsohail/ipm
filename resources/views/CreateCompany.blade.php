@@ -19,8 +19,8 @@
     </header>
 
 
-    <form action="{{url('/AddCompanyDB')}}" method="POST" name="AddCompanyForm">
-      {{ csrf_field() }}
+      <form action="{{url('/AddCompanyDB')}}" method="POST" name="AddCompanyForm">
+        {{ csrf_field() }}
       <div class="panel-body">
 
         <div class="form-group">
