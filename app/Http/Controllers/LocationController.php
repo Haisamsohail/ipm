@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
  use App\Models\LocationModel;
+ use Mpdf\Mpdf;
  use Symfony\Component\HttpFoundation\Request;
  use App\Models\UserLogin;
  use App\Http\Controllers\Controller;
@@ -44,38 +45,51 @@ class LocationController extends Controller
 
     public function CheckBoxStationApplyDownload(Request $request )
     {
-//        $companyid = explode('/',$request->input('CheckBoxStationApply'));
+        $PageArray  = array();
 
-
-        foreach ($request->input('CheckBoxStationApply') as $arr)
+        foreach ($request->input('CheckBoxStationApply') as $key =>$arr)
         {
 //            $this->GenerateLabel($arr[0],$arr[1]);
-            $arr=explode('/',$arr);
-            $this->GenerateLabel($arr[0],$arr[1]);
+            $arr = explode('/', $arr);
+            //$this->GenerateLabel($arr[0],$arr[1]);
+
+            $ActivityListObject = app(LocationModel::class);
+            $response = $ActivityListObject->GenerateLabel($arr[0], $arr[1]);
+            $data = ['title' => 'Welcome to HDTuto.com'];
+            //$pdf = PDF::loadView('GenerateLabel', $data);
+            //dd($response->response[0]->stationapplyid);
+
+            if ($response->status == "Y")
+            {
+
+                $PageArray[$key][0] =  $response->response[0]->companyname;
+                $PageArray[$key][1] =  $response->response[0]->branchlocationname;
+                $PageArray[$key][2] =  $response->response[0]->stationname;
+                $PageArray[$key][3] =  $response->response[0]->stationapplyid;
+                $PageArray[$key][4] =  $response->response[0]->stationapplyno;
+            }
         }
 
+        $pdf = PDF::loadView('GenerateLabel', ['PageArray' => $PageArray], [], [
+            'format' => [50.8, 50.8],
+            'margin_left' => 1,
+            'margin_right' => 1,
+            'margin_top' => 1,
+            'margin_bottom' => 1,
+        ]);
 
-
-        //$stationapplyid = $request->input('CheckBoxStationApply');
-
-
-        //var_dump($request);
-//        $AddStation_Odject = app(LocationModel::class);
-//        $response = $AddStation_Odject->CheckBoxStationApplyDownload($request->input());
-//        if($response->status == "Y")
-//        {
-//            return redirect()->back()->with('messageForCompany', 'Company Added.....!');
-//        }
-//        else
-//        {
-//            return redirect()->back()->with('messageForCompany', 'Fail To Add Company .....!');
-//        }
+//        echo "<PRE>";
+//        dd($PageArray);
+        //return $pdf->download('Stations.pdf');
+        return $pdf->stream();
+        //return $pdf->download($response->response[0]->stationapplyid.'Station.pdf');
     }
 
 
 
     public function GenerateLabel($companyid,$stationapplyid)
     {
+        $PageArray  = array();
         //dd($companyid.'--'.$stationapplyid);
         $ActivityListObject = app(LocationModel::class);
         $response = $ActivityListObject->GenerateLabel($companyid,$stationapplyid);
@@ -85,7 +99,14 @@ class LocationController extends Controller
 
         if($response->status == "Y")
         {
-            $pdf = PDF::loadView('GenerateLabel', ['GenerateLabel' => $response->response, 'companyname' => $response->response[0]->companyname, 'branchlocationname' => $response->response[0]->branchlocationname, 'stationname' => $response->response[0]->stationname, 'stationapplyid' => $response->response[0]->stationapplyid, 'stationapplyno' => $response->response[0]->stationapplyno ],[], [
+
+            $PageArray[0][0] =  $response->response[0]->companyname;
+            $PageArray[0][1] =  $response->response[0]->branchlocationname;
+            $PageArray[0][2] =  $response->response[0]->stationname;
+            $PageArray[0][3] =  $response->response[0]->stationapplyid;
+            $PageArray[0][4] =  $response->response[0]->stationapplyno;
+
+            $pdf = PDF::loadView('GenerateLabel', ['PageArray' => $PageArray],[], [
                 'format' => [50.8, 50.8],
                 'margin_left'          => 1,
                 'margin_right'         => 1,

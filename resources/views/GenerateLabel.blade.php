@@ -54,68 +54,68 @@
 
     }
     .page-break {
-      page-break-after: always;
+      page-break-before: always;
     }
   </style>
 </head>
 <body>
 
-<div style="border: 2px solid black; padding: 5px; height: 192px; background: white">
+@foreach($PageArray as $key => $Page)
 
-  <div style="width: 30%;float: left;font-size: 8px;line-height: 15px;">
-    <br>
-    <p style="text-align: center"><img src="{{ asset('/public/assets/images/logo.png')}}" class="center"  /></p>
-  </div>
-  <div style="width: 70%;float: right;  height: 25px;  font-size: 18px;text-align: center; vertical-align: middle; line-height: 1.5em;">
-    <p style="text-align: center">
-      <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(65)->generate($stationapplyid)) }} ">
-    </p>
-  </div>
+  <div style=" border-radius: 10px;border: 2px solid black; padding: 5px; height: 192px; background: white">
 
-  <div style="clear: both;"></div>
-
-
-
-
-
-  <p style="text-align: center" style=" text-align: center; font-size: 12px; margin: 0px;line-height: 15px; margin-bottom: 10px; padding: 0px; border: 1px solid black" >{{ $companyname }}</p>
-  <br>
-    <div style="width: 70%;float: left;font-size: 8px;line-height: 15px;">
-      Location : {{ $branchlocationname }}
+    <div style="width: 40%;float: left;font-size: 8px;line-height: 15px;">
       <br>
-      Station : {{ $stationname }}
+      <p style="text-align: center"><img src="{{ asset('/public/assets/images/logoeco.png')}}" class="center"  /></p>
     </div>
-    <div style="width: 30%;float: right; background: black; color: white; height: 25px;  font-size: 18px;text-align: center; vertical-align: middle; line-height: 1.5em;">
-      {{$stationapplyno}}
+    <div style="width: 60%;float: right;  height: 25px;  font-size: 18px;text-align: right; vertical-align: middle; line-height: 1.5em;">
+      <p style="float: right ">
+        <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(65)->generate($Page[3])) }} ">
+      </p>
     </div>
-  <p style="text-align: center" style=" text-align: center; font-size: 8px; margin: 0px; padding: 0px; line-height: 12px; " >
-   </p>
-</div>
+
+    <div style="clear: both;"></div>
+
+    <p style="text-align: center" style=" background: black; text-align: center; font-size: 12px; margin: 0px;line-height: 15px; margin-bottom: 10px; padding: 0px; border: 1px solid black; color: white " >{{ $Page[0] }}</p>
+
+    <div style="width: 70%;float: left;font-size: 14px;line-height: 15px;color: black;">
+      &#9656; {{ $Page[1] }}
+      <br>
+      &#9656; {{ $Page[2] }}
+    </div>
+    <div style=" border-radius: 5px;width: 30%;float: right; background: black; color: white; height: 25px;  font-size: 18px;text-align: center; vertical-align: middle; line-height: 1.5em;">
+      {{$Page[4]}}
+    </div>
+
+  </div>
 
 <div class="page-break"></div>
-<div style="border: 2px solid black; padding: 5px; height: 192px; background: white">
-<br>
-  <div style="width: 30%;float: left;font-size: 8px;line-height: 15px;">
-    <p style="text-align: center"><img src="{{ asset('/public/assets/images/logo.png')}}" class="center"  /></p>
-  </div>
-  <div style="width: 70%;float: right;  height: 25px;  font-size: 18px;text-align: center; vertical-align: middle; line-height: 1.5em;">
-    <p style="text-align: center">
-      <img src="{{ asset('/public/assets/images/backlabel.jpg')}}" style="margin: auto;width: 50%;" >
-    </p>
-  </div>
-  <div style="clear: both;"></div>
 
-  <p style="text-align: center" style=" text-align: center" style=" text-align: center; font-size: 12px; margin: 0px;line-height: 15px; margin-bottom: 10px; padding: 0px; border: 1px solid black" >{{ $companyname }}</p>
-  <div style="width: 70%;float: left;font-size: 8px;line-height: 15px;">
-    Location : {{ $branchlocationname }}
+  <div style=" border-radius: 10px;border: 2px solid black; padding: 5px; height: 192px; background: white">
     <br>
-    Station : {{ $stationname }}
+    <div style="width: 40%;float: left;font-size: 8px;line-height: 15px;">
+      <p style="text-align: center"><img src="{{ asset('/public/assets/images/logoeco.png')}}" class="center"  /></p>
+    </div>
+    <div style="width: 60%;float: right;  height: 25px;  font-size: 18px;text-align: right; vertical-align: middle; line-height: 1.5em;">
+      <p style="float: right ">
+        <img src="{{ asset('/public/assets/images/backlabel.jpg')}}" style="margin: auto;width: 50%;" >
+      </p>
+
+    </div>
+    <div style="clear: both;"></div>
+
+    <p style="text-align: center" style=" background: black; text-align: center; font-size: 12px; margin: 0px;line-height: 15px; margin-bottom: 10px; padding: 0px; border: 1px solid black; color: white " >{{ $Page[0] }}</p>
+    <div style="width: 60%;float: left;font-size: 14px;line-height: 15px;color: black;">
+      &#9656; {{ $Page[1] }}
+      <br>
+      &#9656; {{ $Page[2] }}
+    </div>
+    <div style=" border-radius: 5px;width: 30%;float: right; background: black; color: white; height: 25px;  font-size: 18px;text-align: center; vertical-align: middle; line-height: 1.5em;">
+      {{$Page[4]}}
+    </div>
+
   </div>
-  <div style="width: 30%;float: right; background: black; color: white; height: 25px;  font-size: 18px;text-align: center; vertical-align: middle; line-height: 1.5em;">
-    {{$stationapplyid}}
-  </div>
-  <p style="text-align: center" style=" text-align: center; font-size: 8px; margin: 0px; padding: 0px; line-height: 12px; " >
-  </p>
-</div>
+@endforeach
+
 </body>
 </html>
