@@ -92,4 +92,18 @@ class ActivityReportModel extends Connection
         //dd(gettype($response));
         return $response->body();
     }
+
+    public function GetLocations($Datarequest)
+    {
+        $StationListCallAPI = app(HttpClientCommunication::class);
+        $response = $StationListCallAPI->storeData(self::END_POINT_USER."GetLocations", $Datarequest, true);
+        return $response->body();
+    }
+
+    public function SearchActivityReportData($Datarequest)
+    {
+        $StationListCallAPI = app(HttpClientCommunication::class);
+        $response = $StationListCallAPI->storeData(self::END_POINT_USER."SearchActivityReportData", $Datarequest, true);
+        return $response->body();
+    }
 }

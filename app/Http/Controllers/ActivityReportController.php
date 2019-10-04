@@ -9,6 +9,7 @@
 
     namespace App\Http\Controllers;
 
+    use App\Comms\REST\Response;
     use App\Models\ActivityReportModel;
     use App\Models\CompanyModel;
     use App\Models\StationModel;
@@ -33,8 +34,6 @@
         public function HassanTest(Request $req)
         {
             echo "AAA".$req->taskID;
-
-
         }
 
 
@@ -154,5 +153,21 @@
             {
                 return redirect()->action('ChemicalController@CreateChemical');
             }
+        }
+
+        public function GetLocations(Request $request )
+        {
+            //dd($request->input());
+            $ActivityReportModelObject = app(ActivityReportModel::class);
+            $response = $ActivityReportModelObject->GetLocations($request->input());
+            return $response->response;
+        }
+
+        public function SearchActivityReportData(Request $request )
+        {
+            //dd($request->input());
+            $SearchActivityReportDataObject = app(ActivityReportModel::class);
+            $response = $SearchActivityReportDataObject->SearchActivityReportData($request->input());
+            return $response->response;
         }
     }

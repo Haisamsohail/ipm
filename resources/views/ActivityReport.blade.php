@@ -19,7 +19,8 @@
     </header>
 
 
-    <form action="{{url('/SearchActivityReport')}}" method="POST" name="SearchActivityReportForm">
+    <form class="form-horizontal form-bordered" action=""  name="SearchActivityReportForm" id="SearchActivityReportForm" method="POST" onsubmit="return false">
+      {{--<form action="{{url('/SearchActivityReport')}}" method="POST" name="SearchActivityReportForm">--}}
       {{ csrf_field() }}
 
       <div class="panel-body">
@@ -28,7 +29,7 @@
             <div class="col-md-3">
               Select Company<span class="required"> *</span>
               <br>
-              <select data-plugin-selectTwo class="form-control populate" name="companyindustrytypeid" id="companyindustrytypeid" required>
+              <select data-plugin-selectTwo class="form-control populate" name="companyid" id="companyid" required>
                 <option value="">Select Company</option>
                 @foreach($CompanyList as $key => $Company)
                   <option value="{{$Company->companyid}}">{{$Company->companyname}}</option>
@@ -51,11 +52,9 @@
           <div class="col-md-3">
             Select Location<span class="required"> *</span>
             <br>
-            <select data-plugin-selectTwo class="form-control populate" name="companyindustrytypeid" id="companyindustrytypeid" required>
+            <select data-plugin-selectTwo class="form-control populate" name="branchlocationid" id="branchlocationid" required>
               <option value="">Select Location</option>
-              @foreach($CompanyList as $key => $Company)
-                <option value="{{$Company->companyid}}">{{$Company->companyname}}</option>
-              @endforeach
+
             </select>
           </div>
 
@@ -65,7 +64,7 @@
         <footer class="panel-footer">
           <div class="row">
             <div class="col-sm-2 col-sm-offset-10">
-              <button class="btn btn-primary">Search</button>
+              <button class="btn btn-primary" >Search</button>
               <button type="reset" class="btn btn-default">Reset</button>
             </div>
           </div>
@@ -184,5 +183,75 @@
         </div>
       @endforeach
     </div>
+
+
+  <script type="text/javascript">
+      $(document).ready(function()
+      {
+          $("#companyid").change(function()
+          {
+              $('#StationApplyBtn').prop("disabled", true);
+              var companyid = $(this).val();
+              //..  alert(companyid);
+              $.ajax(
+                  {
+                      type:'post',
+                      url:'/ipm/GetLocations',
+                      data:{companyid:companyid},
+                      success:function(data)
+                      {
+                          //..  console.log(data);
+                          var $branchlocationid = $("#branchlocationid");
+                          $branchlocationid.empty();
+                          $branchlocationid.append($("<option />").val('').text('Select location'));
+                          $.each(data, function() {
+                          $branchlocationid.append($("<option />").val(this.branchlocationid).text(this.branchlocationname));
+                          });
+                      },
+                      headers:
+                          {
+                              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                          }
+                  });
+          });
+
+
+
+
+          //... Search Activity Start ...............................
+          $('#SearchActivityReportForm').submit(function(e)
+          {
+              event.preventDefault(); //prevent default action
+              var post_url = $("#SearchActivityReportForm").attr("action"); //get form action url
+              var request_method = $("#SearchActivityReportForm").attr("method"); //get form GET/POST method
+              var form_data = $("#SearchActivityReportForm").serialize();
+
+              $.ajax(
+                  {
+                      type: "POST",
+                      url: '/ipm/SearchActivityReportData',
+                      data : form_data,
+                      success: function(data)
+                      {
+                          alert(data);
+                          //.. 	$('#RaiseRequisitionForm')[0].reset();
+                          // if (data == 'NOTOK')
+                          // {
+                          //     alert('Data Not Updated');
+                          // }
+                          // else
+                          // {
+                          //     window.location = 'RequisitionList.php';
+                          // }
+                      }
+                  });
+
+
+              alert(SearchActivityReportForm + "The paragraph was clicked.");
+          });
+          //... Search Activity End   ...............................
+      });
+  </script>
+
   </section>
 @stop
