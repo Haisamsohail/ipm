@@ -93,73 +93,12 @@
             }
         }
 
-        public function ChemicalList(Request $request)
-        {
-            $ChemicalMod = app(ChemicalModel::class);
-            $response = $ChemicalMod->ChemicalList();
-            //dd($response);
-            if($response->status == "Y")
-            {
-                return View('ChemicalList')->with('ChemicalList', $response->response);
-            }
-            else
-            {
-                return redirect()->action('ChemicalController@CreateChemical');
-            }
-        }
-
-
-        public function DeleteChemical($chemicalid)
-        {
-            $ChemicalMod = app(ChemicalModel::class);
-            $response = $ChemicalMod->DeleteChemical($chemicalid);
-
-            if($response->status == "Y")
-            {
-                return redirect()->action('ChemicalController@ChemicalList');
-            }
-            else
-            {
-                return redirect()->action('ChemicalController@CreateChemical');
-            }
-        }
-
-
-        public function EditPageChemical($chemicalid)
-        {
-            $StationListObject = app(ChemicalModel::class);
-            $response = $StationListObject->EditPageChemical($chemicalid);
-            //dd($response);
-            if($response->status == "Y")
-            {
-                return View('EditPageChemical')->with('EditPageChemical', $response->response);
-            }
-            else
-            {
-                return redirect()->action('ChemicalController@CreateChemical');
-            }
-        }
-
-        public function EditChemical(Request $request )
-        {
-            $StationListObject = app(ChemicalModel::class);
-            $response = $StationListObject->EditChemical($request->input());
-            //dd($response);
-            if($response->status == "Y")
-            {
-                return redirect()->action('ChemicalController@ChemicalList');
-            }
-            else
-            {
-                return redirect()->action('ChemicalController@CreateChemical');
-            }
-        }
-
         public function GetLocations(Request $request )
         {
             //dd($request->input());
             $ActivityReportModelObject = app(ActivityReportModel::class);
             $response = $ActivityReportModelObject->GetLocations($request->input());
+
             return $response->response;
         }
 
@@ -168,6 +107,24 @@
             //dd($request->input());
             $SearchActivityReportDataObject = app(ActivityReportModel::class);
             $response = $SearchActivityReportDataObject->SearchActivityReportData($request->input());
+
+            $ChemicalMod = app(CompanyModel::class);
+            $responseCompanyList = $ChemicalMod->CompanyList();
+
+            //dd($response->response);
+            if($response->status == "Y")
+            {
+                //return redirect()->back()->with(['StationListOnSearch' => $response->response, ]);
+
+                return View('ActivityReport', ['CompanyList' => $responseCompanyList->response, 'StationListOnSearch' => $response->response ]);
+            }
+            else
+                {
+                    return View('ActivityReport', ['CompanyList' => $responseCompanyList->response,  'messageForActivity' => 'Not Station Applied .....!' ]);
+                    //return redirect()->back()->with('messageForActivity', 'Not Station Applied .....!');
+                }
+
+
             return $response->response;
         }
     }

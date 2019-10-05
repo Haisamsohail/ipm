@@ -135,7 +135,7 @@ Route::post('/EditDilution', 'DilutionController@EditDilution');
     Route::get('/APPInput', 'ActivityReportController@APPInput');
     Route::get('/ActivityReport', 'ActivityReportController@ActivityReport');
     Route::get('/SearchActivityReport', 'ActivityReportController@SearchActivityReport');
-    Route::get('/SearchActivityReportData', 'ActivityReportController@SearchActivityReportData');
+    Route::post('/SearchActivityReportData', 'ActivityReportController@SearchActivityReportData');
     Route::post('/HassanTest', 'ActivityReportController@HassanTest');
     Route::post('/GetLocations', 'ActivityReportController@GetLocations');
 

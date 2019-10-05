@@ -19,8 +19,8 @@
     </header>
 
 
-    <form class="form-horizontal form-bordered" action=""  name="SearchActivityReportForm" id="SearchActivityReportForm" method="POST" onsubmit="return false">
-      {{--<form action="{{url('/SearchActivityReport')}}" method="POST" name="SearchActivityReportForm">--}}
+    {{--<form class="form-horizontal form-bordered" action=""  name="SearchActivityReportForm" id="SearchActivityReportForm" method="POST" onsubmit="return false">--}}
+      <form action="{{url('/SearchActivityReportData')}}" method="POST" name="SearchActivityReportForm">
       {{ csrf_field() }}
 
       <div class="panel-body">
@@ -40,13 +40,13 @@
           <div class="col-md-3">
             From<span class="required"> *</span>
             <br>
-            <input type="date" name="DateFrom" id="DateFrom" class="form-control" required/>
+            <input type="date" name="DateFrom" id="DateFrom" class="form-control" />
           </div>
 
           <div class="col-md-3">
             Till<span class="required"> *</span>
             <br>
-            <input type="date" name="DateTill" id="DateTill" class="form-control" required/>
+            <input type="date" name="DateTill" id="DateTill" class="form-control" />
           </div>
 
           <div class="col-md-3">
@@ -73,34 +73,35 @@
 
 
 
-    <ul class="nav nav-tabs">
-      @foreach($StationList as $key => $Station)
-        <li><a data-toggle="tab" href="#{{$Station->stationid}}">{{$Station->stationname}}</a></li>
-      @endforeach
-    </ul>
+    @if(isset($StationListOnSearch))
+      <ul class="nav nav-tabs">
+        @foreach($StationListOnSearch as $key => $Station)
+          <li><a data-toggle="tab" href="#{{$Station->stationid}}">{{$Station->stationname}}</a></li>
+        @endforeach
+      </ul>
 
 
 
-    <div class="tab-content">
-      @foreach($StationList as $key => $Station)
-        <div id="{{$Station->stationid}}" class="tab-pane fade">
-          <h3>{{$Station->stationname}}</h3>
-          <p>Some content.</p>
+      <div class="tab-content">
+        @foreach($StationListOnSearch as $key => $Station)
+          <div id="{{$Station->stationid}}" class="tab-pane fade">
+            <h3>{{$Station->stationname}}</h3>
+            <p>Some content.</p>
 
-          <table class="table table-bordered table-striped mb-none" id="datatable-default">
-            <thead>
-            <tr>
-              <th>Location</th>
-              <th>Station Number</th>
-              <th>Activity 1</th>
-              <th>Activity 2</th>
-              <th>Activity 3</th>
-              <th>Activity 4</th>
-              <th>Activity 5</th>
-              <th>Activity 6</th>
-            </tr>
-            </thead>
-            <tbody>
+            <table class="table table-bordered table-striped mb-none" id="datatable-default">
+              <thead>
+              <tr>
+                <th>Location</th>
+                <th>Station Number</th>
+                <th>Activity 1</th>
+                <th>Activity 2</th>
+                <th>Activity 3</th>
+                <th>Activity 4</th>
+                <th>Activity 5</th>
+                <th>Activity 6</th>
+              </tr>
+              </thead>
+              <tbody>
               <tr>
                 <td rowspan="2" style=" text-align: center; vertical-align: middle; ">MD Room</td>
                 <td>101</td>
@@ -129,60 +130,63 @@
                 <td>3</td>
                 <td>4</td>
               </tr>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
 
 
-          <br>
-          <table class="table table-bordered table-striped mb-none" id="datatable-default">
-            <thead>
-            <tr>
-              <th>Location</th>
-              <th>Station Number</th>
-              <th>Activity 1</th>
-              <th>Activity 2</th>
-              <th>Activity 3</th>
-              <th>Activity 4</th>
-              <th>Activity 5</th>
-              <th>Activity 6</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td rowspan="3" style=" text-align: center; vertical-align: middle; ">Canteen</td>
-              <td>101</td>
-              <td>4</td>
-              <td>5</td>
-              <td>0</td>
-              <td>8</td>
-              <td>3</td>
-              <td>4</td>
-            </tr>
-            <tr>
-              <td>101</td>
-              <td>4</td>
-              <td>5</td>
-              <td>0</td>
-              <td>8</td>
-              <td>3</td>
-              <td>4</td>
-            </tr>
-            <tr>
-              <td>101</td>
-              <td>4</td>
-              <td>5</td>
-              <td>0</td>
-              <td>8</td>
-              <td>3</td>
-              <td>4</td>
-            </tr>
-            </tbody>
-          </table>
+            <br>
+            <table class="table table-bordered table-striped mb-none" id="datatable-default">
+              <thead>
+              <tr>
+                <th>Location</th>
+                <th>Station Number</th>
+                <th>Activity 1</th>
+                <th>Activity 2</th>
+                <th>Activity 3</th>
+                <th>Activity 4</th>
+                <th>Activity 5</th>
+                <th>Activity 6</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td rowspan="3" style=" text-align: center; vertical-align: middle; ">Canteen</td>
+                <td>101</td>
+                <td>4</td>
+                <td>5</td>
+                <td>0</td>
+                <td>8</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>101</td>
+                <td>4</td>
+                <td>5</td>
+                <td>0</td>
+                <td>8</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>101</td>
+                <td>4</td>
+                <td>5</td>
+                <td>0</td>
+                <td>8</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+              </tbody>
+            </table>
 
 
-        </div>
-      @endforeach
-    </div>
+          </div>
+        @endforeach
+      </div>
+    @endif
+
+
 
 
   <script type="text/javascript">
@@ -219,36 +223,36 @@
 
 
           //... Search Activity Start ...............................
-          $('#SearchActivityReportForm').submit(function(e)
-          {
-              event.preventDefault(); //prevent default action
-              var post_url = $("#SearchActivityReportForm").attr("action"); //get form action url
-              var request_method = $("#SearchActivityReportForm").attr("method"); //get form GET/POST method
-              var form_data = $("#SearchActivityReportForm").serialize();
-
-              $.ajax(
-                  {
-                      type: "POST",
-                      url: '/ipm/SearchActivityReportData',
-                      data : form_data,
-                      success: function(data)
-                      {
-                          alert(data);
-                          //.. 	$('#RaiseRequisitionForm')[0].reset();
-                          // if (data == 'NOTOK')
-                          // {
-                          //     alert('Data Not Updated');
-                          // }
-                          // else
-                          // {
-                          //     window.location = 'RequisitionList.php';
-                          // }
-                      }
-                  });
-
-
-              alert(SearchActivityReportForm + "The paragraph was clicked.");
-          });
+          // $('#SearchActivityReportForm').submit(function(e)
+          // {
+          //     event.preventDefault(); //prevent default action
+          //     var post_url = $("#SearchActivityReportForm").attr("action"); //get form action url
+          //     var request_method = $("#SearchActivityReportForm").attr("method"); //get form GET/POST method
+          //     var form_data = $("#SearchActivityReportForm").serialize();
+          //
+          //     $.ajax(
+          //         {
+          //             type: "POST",
+          //             url: '/ipm/SearchActivityReportData',
+          //             data : form_data,
+          //             success: function(data)
+          //             {
+          //                 alert(data);
+          //                 //.. 	$('#RaiseRequisitionForm')[0].reset();
+          //                 // if (data == 'NOTOK')
+          //                 // {
+          //                 //     alert('Data Not Updated');
+          //                 // }
+          //                 // else
+          //                 // {
+          //                 //     window.location = 'RequisitionList.php';
+          //                 // }
+          //             }
+          //         });
+          //
+          //
+          //     alert(SearchActivityReportForm + "The paragraph was clicked.");
+          // });
           //... Search Activity End   ...............................
       });
   </script>
