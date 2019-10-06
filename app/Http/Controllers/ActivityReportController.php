@@ -114,16 +114,42 @@
             //dd($response->response);
             if($response->status == "Y")
             {
-                //return redirect()->back()->with(['StationListOnSearch' => $response->response, ]);
-
-                return View('ActivityReport', ['CompanyList' => $responseCompanyList->response, 'StationListOnSearch' => $response->response ]);
+                $DataIntoArray  = array();
+                //dd($response->response);
+                $Start = 0;
+                $CompanyName = 0;
+                foreach ($response->response as $key => $stationidvalue)
+                {
+                    $GetLocationsBaseonStationCompanyObject = app(ActivityReportModel::class);
+                    $GetLocationsBaseonStationCompanyResponse = $GetLocationsBaseonStationCompanyObject->SearchActivityReportDataByLocAndStation($stationidvalue->stationid, $request->input("companyid") , $request->input("branchlocationid"));
+                    //dd($GetLocationsBaseonStationCompanyResponse);
+                    if($GetLocationsBaseonStationCompanyResponse->status == "Y")
+                    {
+//                        /dd(($GetLocationsBaseonStationCompanyResponse->response));
+                        foreach ($GetLocationsBaseonStationCompanyResponse->response as $keyIn => $GetLocSatvalue)
+                        {
+                            $DataIntoArray[$Start][0] = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationid;
+                            $DataIntoArray[$Start][1] = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationname;
+                            $DataIntoArray[$Start][2] = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->branchlocationid;
+                            $DataIntoArray[$Start][3] = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->branchlocationname;
+                            $DataIntoArray[$Start][4] = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->companyname;
+                            $DataIntoArray[$Start][5] = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationapplyno;
+                            $CompanyName = $GetLocationsBaseonStationCompanyResponse->response[0]->companyname;;
+                            $Start++;
+                        }
+                        //dd($GetLocationsBaseonStationCompanyResponse->response[0]->branchlocationname);
+                    }
+                }
+                //dd($DataIntoArray);
+//                echo "<PRE>";
+//                var_dump($DataIntoArray);
+//                exit();
+                return View('ActivityReport', ['CompanyList' => $responseCompanyList->response, 'StationListOnSearch' => $response->response, 'DataIntoArray' => $DataIntoArray, 'CompanyName' => $CompanyName ]);
             }
             else
-                {
-                    return View('ActivityReport', ['CompanyList' => $responseCompanyList->response,  'messageForActivity' => 'Not Station Applied .....!' ]);
-                    //return redirect()->back()->with('messageForActivity', 'Not Station Applied .....!');
-                }
-
+            {
+                    return View('ActivityReport', ['CompanyList' => $responseCompanyList->response,  'messageForActivity' => 'No Station Applied .....!' ]);
+            }
 
             return $response->response;
         }

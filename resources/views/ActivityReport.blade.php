@@ -72,8 +72,9 @@
     </form>
 
 
-
+    {{--{{dd($DataIntoArray)}}--}}
     @if(isset($StationListOnSearch))
+      <h4>{{ $CompanyName}}</h4>
       <ul class="nav nav-tabs">
         @foreach($StationListOnSearch as $key => $Station)
           <li><a data-toggle="tab" href="#{{$Station->stationid}}">{{$Station->stationname}}</a></li>
@@ -85,100 +86,73 @@
       <div class="tab-content">
         @foreach($StationListOnSearch as $key => $Station)
           <div id="{{$Station->stationid}}" class="tab-pane fade">
-            <h3>{{$Station->stationname}}</h3>
-            <p>Some content.</p>
+            <h3>{{$key.' / '.$Station->stationname}}</h3>
 
-            <table class="table table-bordered table-striped mb-none" id="datatable-default">
-              <thead>
-              <tr>
-                <th>Location</th>
-                <th>Station Number</th>
-                <th>Activity 1</th>
-                <th>Activity 2</th>
-                <th>Activity 3</th>
-                <th>Activity 4</th>
-                <th>Activity 5</th>
-                <th>Activity 6</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td rowspan="2" style=" text-align: center; vertical-align: middle; ">MD Room</td>
-                <td>101</td>
-                <td>4</td>
-                <td>5</td>
-                <td>0</td>
-                <td>8</td>
-                <td>3</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>101</td>
-                <td>4</td>
-                <td>5</td>
-                <td>0</td>
-                <td>8</td>
-                <td>3</td>
-                <td>4</td>
-              </tr>
-              <tr style=" background: #86ad55; color: white; ">
-                <td colspan="2" style=" text-align: center; vertical-align: middle; ">Count</td>
-                <td>5</td>
-                <td>0</td>
-                <td>8</td>
-                <td>8</td>
-                <td>3</td>
-                <td>4</td>
-              </tr>
-              </tbody>
-            </table>
+            @foreach($DataIntoArray as $index => $MainArrayElement)
+              @if($MainArrayElement[0] == $Station->stationid)
+                {{ $index .' _ '.$MainArrayElement[1]}}
 
 
-            <br>
-            <table class="table table-bordered table-striped mb-none" id="datatable-default">
-              <thead>
-              <tr>
-                <th>Location</th>
-                <th>Station Number</th>
-                <th>Activity 1</th>
-                <th>Activity 2</th>
-                <th>Activity 3</th>
-                <th>Activity 4</th>
-                <th>Activity 5</th>
-                <th>Activity 6</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <td rowspan="3" style=" text-align: center; vertical-align: middle; ">Canteen</td>
-                <td>101</td>
-                <td>4</td>
-                <td>5</td>
-                <td>0</td>
-                <td>8</td>
-                <td>3</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>101</td>
-                <td>4</td>
-                <td>5</td>
-                <td>0</td>
-                <td>8</td>
-                <td>3</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>101</td>
-                <td>4</td>
-                <td>5</td>
-                <td>0</td>
-                <td>8</td>
-                <td>3</td>
-                <td>4</td>
-              </tr>
-              </tbody>
-            </table>
+                <table class="table table-bordered table-striped mb-none" id="datatable-default">
+                  <thead>
+                  <tr style=" background: #86ad55; color: white; ">
+                    <th>Location</th>
+                    <th>Station Number</th>
+                    <th>Activity 1</th>
+                    <th>Activity 2</th>
+                    <th>Activity 3</th>
+                    <th>Activity 4</th>
+                    <th>Activity 5</th>
+                    <th>Activity 6</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td rowspan="2" style=" text-align: center; vertical-align: middle; ">{{$MainArrayElement[3]}}</td>
+                    <td>{{$MainArrayElement[5]}}</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>4</td>
+                  </tr>
+                  <tr>
+                    <td>101</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>4</td>
+                  </tr>
+                  <tr style=" background: #86ad55; color: white; ">
+                    <td colspan="2" style=" text-align: center; vertical-align: middle; ">Count</td>
+                    <td>5</td>
+                    <td>0</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>4</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <br>
+              @endif
+              {{--<tr>--}}
+                {{--<td>{{ $nameArrayElement[1] }}</td>--}}
+              {{--</tr>--}}
+            @endforeach
+
+            {{--@foreach($DataIntoArray as $keyIndex => $InnerAllData)--}}
+              {{--@foreach ($InnerAllData as $day)--}}
+                {{--{{  $day }}--}}
+              {{--@endforeach--}}
+                {{--{{$InnerAllData['stationname']}}--}}
+
+            {{--@endforeach--}}
+
+
 
 
           </div>
@@ -208,6 +182,7 @@
                           var $branchlocationid = $("#branchlocationid");
                           $branchlocationid.empty();
                           $branchlocationid.append($("<option />").val('').text('Select location'));
+                          $branchlocationid.append($("<option />").val('All').text('All location'));
                           $.each(data, function() {
                           $branchlocationid.append($("<option />").val(this.branchlocationid).text(this.branchlocationname));
                           });
