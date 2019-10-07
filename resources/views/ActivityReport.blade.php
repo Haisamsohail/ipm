@@ -81,76 +81,53 @@
         @endforeach
       </ul>
 
-
-
+    {{--{{dd($DataIntoArray)}}--}}
       <div class="tab-content">
         @foreach($StationListOnSearch as $key => $Station)
           <div id="{{$Station->stationid}}" class="tab-pane fade">
             <h3>{{$key.' / '.$Station->stationname}}</h3>
 
-            @foreach($DataIntoArray as $index => $MainArrayElement)
-              @if($MainArrayElement[0] == $Station->stationid)
-                {{ $index .' _ '.$MainArrayElement[1]}}
 
+            @foreach($DataIntoArrayTemp[$Station->stationid]  as $brancLocationID => $brancLocationData)
+              <table class="table table-bordered table-striped mb-none" id="datatable-default">
+                <thead>
+                <tr style=" background: #86ad55; color: white; ">
+                  <th>Location</th>
+                  <th>Station Number</th>
+                    @foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)
+                    <th>{{$Heading}}</th>
+                    @endforeach
+                </tr>
+                </thead>
+                <tbody>
+                    @php
+                    $rowCounter = 1;
+                    @endphp
+                    @foreach($brancLocationData as $brancLocationDataSingle)
 
-                <table class="table table-bordered table-striped mb-none" id="datatable-default">
-                  <thead>
-                  <tr style=" background: #86ad55; color: white; ">
-                    <th>Location</th>
-                    <th>Station Number</th>
-                    <th>Activity 1</th>
-                    <th>Activity 2</th>
-                    <th>Activity 3</th>
-                    <th>Activity 4</th>
-                    <th>Activity 5</th>
-                    <th>Activity 6</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td rowspan="2" style=" text-align: center; vertical-align: middle; ">{{$MainArrayElement[3]}}</td>
-                    <td>{{$MainArrayElement[5]}}</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>8</td>
-                    <td>3</td>
-                    <td>4</td>
-                  </tr>
-                  <tr>
-                    <td>101</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>8</td>
-                    <td>3</td>
-                    <td>4</td>
-                  </tr>
-                  <tr style=" background: #86ad55; color: white; ">
-                    <td colspan="2" style=" text-align: center; vertical-align: middle; ">Count</td>
-                    <td>5</td>
-                    <td>0</td>
-                    <td>8</td>
-                    <td>8</td>
-                    <td>3</td>
-                    <td>4</td>
-                  </tr>
-                  </tbody>
-                </table>
-                <br>
-              @endif
-              {{--<tr>--}}
-                {{--<td>{{ $nameArrayElement[1] }}</td>--}}
-              {{--</tr>--}}
+                      <tr>
+                        @if($rowCounter == 1)
+                        <td style=" text-align: center; vertical-align: middle; " rowspan="{!! count($brancLocationData) !!}">{{$brancLocationDataSingle[3]}}</td>
+                        @endif
+                        <td>{{$brancLocationDataSingle[5]}}</td>
+
+                          @foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)
+                            <td>1</td>
+                          @endforeach
+
+                      </tr>
+                      @php
+                        $rowCounter++;
+                      @endphp
+                    @endforeach
+                </tbody>
+              </table>
+              <br>
+
             @endforeach
 
-            {{--@foreach($DataIntoArray as $keyIndex => $InnerAllData)--}}
-              {{--@foreach ($InnerAllData as $day)--}}
-                {{--{{  $day }}--}}
-              {{--@endforeach--}}
-                {{--{{$InnerAllData['stationname']}}--}}
 
-            {{--@endforeach--}}
+
 
 
 

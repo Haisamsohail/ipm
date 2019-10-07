@@ -13,6 +13,7 @@
     use App\Models\ActivityReportModel;
     use App\Models\CompanyModel;
     use App\Models\StationModel;
+    use App\Models\ActivityModel;
     use Symfony\Component\HttpFoundation\Request;
     use App\Http\Controllers\Controller;
 
@@ -23,9 +24,10 @@
     use DB;
     use Session;
 
-    class ActivityReportController  extends Controller
+    class ActivityReportController extends Controller
     {
         protected $token = null;
+
         public function __construct()
         {
             date_default_timezone_set("Asia/Karachi");
@@ -33,7 +35,7 @@
 
         public function HassanTest(Request $req)
         {
-            echo "AAA".$req->taskID;
+            echo "AAA" . $req->taskID;
         }
 
 
@@ -42,13 +44,10 @@
             $ActivityReportMod = app(ActivityReportModel::class);
             $response = $ActivityReportMod->APPInput();
             //dd($response);
-            if($response->status == "Y")
-            {
-                return View('APPInput', ['APPInput' => $response->response] );
+            if ($response->status == "Y") {
+                return View('APPInput', ['APPInput' => $response->response]);
                 //.. return View('ActivityReport')->with('CompanyList', $response->response);
-            }
-            else
-            {
+            } else {
                 return redirect()->back()->with('messageForActivity', 'Failed .....!');
             }
         }
@@ -62,38 +61,31 @@
             $StationListObjectA = app(StationModel::class);
             $responseA = $StationListObjectA->StationList();
             //dd($response);
-            if($response->status == "Y")
-            {
-                return View('ActivityReport', ['CompanyList' => $response->response, 'StationList' => $responseA->response] );
+            if ($response->status == "Y") {
+                return View('ActivityReport', ['CompanyList' => $response->response, 'StationList' => $responseA->response]);
                 //.. return View('ActivityReport')->with('CompanyList', $response->response);
-            }
-            else
-            {
+            } else {
                 return redirect()->back()->with('messageForActivity', 'Failed .....!');
             }
         }
 
-        public function SearchActivityReport(Request $request )
+        public function SearchActivityReport(Request $request)
         {
             $chemicalname = request('chemicalname');
-            if(empty($chemicalname))
-            {
-                return ["status"=> 404 , "sendadvisor" => "Post data cannot be null"];
+            if (empty($chemicalname)) {
+                return ["status" => 404, "sendadvisor" => "Post data cannot be null"];
             }
             $SearchActivityReportMod = app(ActivityReportModel::class);
             $response = $SearchActivityReportMod->SearchActivityReport($request->input());
-            if($response->status == "Y")
-            {
+            if ($response->status == "Y") {
                 //dd($stationid);
                 return redirect()->action('ChemicalController@ChemicalList');
-            }
-            else
-            {
+            } else {
                 return redirect()->back()->with('messageForActivity', 'Fail To Add Chemical .....!');
             }
         }
 
-        public function GetLocations(Request $request )
+        public function GetLocations(Request $request)
         {
             //dd($request->input());
             $ActivityReportModelObject = app(ActivityReportModel::class);
@@ -102,7 +94,7 @@
             return $response->response;
         }
 
-        public function SearchActivityReportData(Request $request )
+        public function SearchActivityReportData(Request $request)
         {
             //dd($request->input());
             $SearchActivityReportDataObject = app(ActivityReportModel::class);
@@ -112,22 +104,52 @@
             $responseCompanyList = $ChemicalMod->CompanyList();
 
             //dd($response->response);
-            if($response->status == "Y")
+            if ($response->status == "Y")
             {
-                $DataIntoArray  = array();
+                $DataIntoArray = array();
                 //dd($response->response);
                 $Start = 0;
                 $CompanyName = 0;
-                foreach ($response->response as $key => $stationidvalue)
+                $DataIntoArrayTemp = [];
+                $ProductHeading = array();
+                $hassan=[];
+                $AllStationInArray = [];
+
+                $StationListMod = app(StationModel::class);
+                $ResponseStationListObj = $StationListMod->StationList();
+
+                foreach ($ResponseStationListObj->response as $StationListkey => $SingleStationID)
                 {
-                    $GetLocationsBaseonStationCompanyObject = app(ActivityReportModel::class);
-                    $GetLocationsBaseonStationCompanyResponse = $GetLocationsBaseonStationCompanyObject->SearchActivityReportDataByLocAndStation($stationidvalue->stationid, $request->input("companyid") , $request->input("branchlocationid"));
-                    //dd($GetLocationsBaseonStationCompanyResponse);
-                    if($GetLocationsBaseonStationCompanyResponse->status == "Y")
+                    $ActivityListMod = app(ActivityModel::class);
+                    $ResponseActivityListObj = $ActivityListMod->ActivityList($SingleStationID->stationid);
+
+                    foreach ($ResponseActivityListObj->response as $SingleActivityName)
                     {
+                        $ProductHeading[$SingleStationID->stationid][] = $SingleActivityName->activityName;
+                    }
+                }
+//                echo "<pre>";print_r($ProductHeading);echo "</pre>";
+//                die('Call');
+
+                foreach ($response->response as $key => $stationidvalue) {
+                    $GetLocationsBaseonStationCompanyObject = app(ActivityReportModel::class);
+                    $GetLocationsBaseonStationCompanyResponse = $GetLocationsBaseonStationCompanyObject->SearchActivityReportDataByLocAndStation($stationidvalue->stationid, $request->input("companyid"), $request->input("branchlocationid"));
+                    //dd($GetLocationsBaseonStationCompanyResponse);
+                    if ($GetLocationsBaseonStationCompanyResponse->status == "Y") {
 //                        /dd(($GetLocationsBaseonStationCompanyResponse->response));
-                        foreach ($GetLocationsBaseonStationCompanyResponse->response as $keyIn => $GetLocSatvalue)
-                        {
+
+
+                        foreach ($GetLocationsBaseonStationCompanyResponse->response as $keyIn => $GetLocSatvalue) {
+                            $DataIntoArrayTemp[$GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationid][$GetLocationsBaseonStationCompanyResponse->response[$keyIn]->branchlocationid][] = [
+                                $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationid,
+                                $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationname,
+                                $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->branchlocationid,
+                                $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->branchlocationname,
+                                $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->companyname,
+                                $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationapplyno
+
+                            ];
+
                             $DataIntoArray[$Start][0] = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationid;
                             $DataIntoArray[$Start][1] = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationname;
                             $DataIntoArray[$Start][2] = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->branchlocationid;
@@ -140,15 +162,25 @@
                         //dd($GetLocationsBaseonStationCompanyResponse->response[0]->branchlocationname);
                     }
                 }
+                //echo "<pre>";print_r($DataIntoArrayTemp);echo "</pre>";die('Call');
+                //echo "<pre>";print_r($DataIntoArrayTemp);echo "</pre>";die('Call');
                 //dd($DataIntoArray);
 //                echo "<PRE>";
 //                var_dump($DataIntoArray);
 //                exit();
-                return View('ActivityReport', ['CompanyList' => $responseCompanyList->response, 'StationListOnSearch' => $response->response, 'DataIntoArray' => $DataIntoArray, 'CompanyName' => $CompanyName ]);
-            }
-            else
-            {
-                    return View('ActivityReport', ['CompanyList' => $responseCompanyList->response,  'messageForActivity' => 'No Station Applied .....!' ]);
+                //echo "<pre>";print_r($DataIntoArray);echo "</pre>";die('Call');
+                return View('ActivityReport',
+                    [
+                        'CompanyList' => $responseCompanyList->response,
+                        'StationListOnSearch' => $response->response,
+                        'DataIntoArray' => $DataIntoArray,
+                        'CompanyName' => $CompanyName,
+                        'DataIntoArrayTemp' => $DataIntoArrayTemp,
+                        'ProductHeading' => $ProductHeading
+                    ]
+                );
+            } else {
+                return View('ActivityReport', ['CompanyList' => $responseCompanyList->response, 'messageForActivity' => 'No Station Applied .....!']);
             }
 
             return $response->response;
