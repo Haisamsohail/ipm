@@ -116,4 +116,14 @@ class ActivityReportModel extends Connection
         $response = $StationListCallAPI->storeData(self::END_POINT_USER."SearchActivityReportDataByLocAndStation", $data, true);
         return $response->body();
     }
+
+    public function DailyActicityCount($stationid, $activityid)
+    {
+        $data = array();
+        $data = array('stationid' => $stationid, 'activityid' => $activityid);
+        //dd($data);
+        $StationListCallAPI = app(HttpClientCommunication::class);
+        $response = $StationListCallAPI->storeData(self::END_POINT_USER."DailyActicityCount", $data, true);
+        return $response->body();
+    }
 }

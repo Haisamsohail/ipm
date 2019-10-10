@@ -111,9 +111,36 @@
                         @endif
                         <td>{{$brancLocationDataSingle[5]}}</td>
 
-                          @foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)
-                            <td>1</td>
-                          @endforeach
+
+                            {{--@foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)--}}
+                                {{--<th>{{$Heading}}</th>--}}
+                            {{--@endforeach--}}
+
+{{dd($ProductHeading)}}}
+
+                            @foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)
+                                <td>
+                                    {{--@foreach($CountActivityArrayIntoArray[$Station->stationid]  as $CountActivityIndex => $CountActivitystationid)--}}
+                                        {{--@if($Station->stationid == $CountActivityIndex)--}}
+
+                                    {{--@endforeach--}}
+
+                                    {{$Heading}}
+                                </td>
+                            @endforeach
+
+
+
+                          {{--@foreach($CountActivityArrayIntoArray[$Station->stationid]  as $CountActivityIndex => $CountActivitystationid)--}}
+                              {{--{{dd($CountActivityIndex)}}--}}
+                                {{----}}
+                                {{--@if($Station->stationid == $CountActivityIndex)--}}
+                                    {{--<td>--}}
+                                        {{--Haisam--}}
+                                        {{--{{$CountActivityIndex}}--}}
+                                    {{--</td>--}}
+                                {{--@endif--}}
+                          {{--@endforeach--}}
 
                       </tr>
                       @php

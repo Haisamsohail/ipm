@@ -111,6 +111,7 @@
                 $Start = 0;
                 $CompanyName = 0;
                 $DataIntoArrayTemp = [];
+                $CountActivityArrayIntoArray = [];
                 $ProductHeading = array();
                 $hassan=[];
                 $AllStationInArray = [];
@@ -126,9 +127,15 @@
                     foreach ($ResponseActivityListObj->response as $SingleActivityName)
                     {
                         $ProductHeading[$SingleStationID->stationid][] = $SingleActivityName->activityName;
+
+                        $ActivityCountMod = app(ActivityReportModel::class);
+                        $ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($SingleStationID->stationid,$SingleActivityName->activityid);
+                        $CountActivityArrayIntoArray[$SingleStationID->stationid][$SingleActivityName->activityid] = $ResponseActivityCountObj->response[0]->CounT;
+//                        echo "<pre>";print_r($ResponseActivityCountObj->response[0]->CounT);echo "</pre>";
+//                        die('Call');
                     }
                 }
-//                echo "<pre>";print_r($ProductHeading);echo "</pre>";
+//                echo "<pre>";print_r($CountActivityArrayIntoArray);echo "</pre>";
 //                die('Call');
 
                 foreach ($response->response as $key => $stationidvalue) {
@@ -176,7 +183,8 @@
                         'DataIntoArray' => $DataIntoArray,
                         'CompanyName' => $CompanyName,
                         'DataIntoArrayTemp' => $DataIntoArrayTemp,
-                        'ProductHeading' => $ProductHeading
+                        'ProductHeading' => $ProductHeading,
+                        'CountActivityArrayIntoArray' => $CountActivityArrayIntoArray
                     ]
                 );
             } else {

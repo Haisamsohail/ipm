@@ -7,7 +7,9 @@
     <list default="true" id="6820b1bd-44e2-4513-b846-d08cc930b902" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ActivityReportModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ActivityReportModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2620">
-              <caret line="140" selection-start-line="140" selection-end-line="140" />
+            <state relative-caret-position="2820">
+              <caret line="141" column="35" selection-start-line="141" selection-start-column="17" selection-end-line="141" selection-end-column="35" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
@@ -35,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
+            <state relative-caret-position="252">
+              <caret line="128" column="72" lean-forward="true" selection-start-line="128" selection-start-column="72" selection-end-line="128" selection-end-column="72" />
               <folding>
                 <element signature="e#10#120#0#PHP" expanded="true" />
                 <element signature="e#164#192#0#PHP" expanded="true" />
@@ -46,10 +48,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StationController.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="66" column="51" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="51" />
+            <state relative-caret-position="1200">
+              <caret line="64" column="74" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="74" />
+              <folding>
+                <element signature="e#227#256#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -57,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="1420">
               <caret line="75" column="54" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="54" />
               <folding>
                 <element signature="e#227#256#0#PHP" expanded="true" />
@@ -69,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/ActivityReportModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="119" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="2460">
+              <caret line="123" column="10" selection-start-line="123" selection-start-column="10" selection-end-line="123" selection-end-column="10" />
               <folding>
                 <element signature="e#28#54#0#PHP" expanded="true" />
               </folding>
@@ -81,12 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="98" column="31" lean-forward="true" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
-              <folding>
-                <element signature="e#3332#3376#0#HTML" expanded="true" />
-                <element signature="e#4018#4071#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="26">
+              <caret line="118" column="20" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -120,6 +121,7 @@
       <find>$StationListOnSearch</find>
       <find>$DataIntoArrayTemp</find>
       <find>$brancLocationData</find>
+      <find>$ProductHeading</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,8 +146,8 @@
         <option value="$PROJECT_DIR$/resources/views/GenerateLabel.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Models/ActivityReportModel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" />
         <option value="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" />
       </list>
     </option>
   </component>
@@ -250,6 +252,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -275,33 +278,10 @@
               <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ipm" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ipm" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ipm" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ipm" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -367,17 +347,21 @@
       <workItem from="1570292419087" duration="496000" />
       <workItem from="1570292952766" duration="22229000" />
       <workItem from="1570421948646" duration="14604000" />
+      <workItem from="1570595853279" duration="1856000" />
+      <workItem from="1570714602806" duration="3876000" />
+      <workItem from="1570718506887" duration="391000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131099000" />
+    <option name="totallyTimeSpent" value="137222000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.23524962" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23903178" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
@@ -583,16 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChemicalController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-768">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-          <folding>
-            <element signature="e#10#120#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -613,26 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="64" column="35" lean-forward="true" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="35" />
-          <folding>
-            <element signature="e#227#256#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2620">
-          <caret line="140" selection-start-line="140" selection-end-line="140" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/GenerateLabel.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -647,24 +601,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/StationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="1000">
           <caret line="66" column="51" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/ActivityReportModel.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChemicalController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        <state relative-caret-position="-1240">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
           <folding>
-            <element signature="e#28#54#0#PHP" expanded="true" />
+            <element signature="e#10#120#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2820">
+          <caret line="141" column="35" selection-start-line="141" selection-start-column="17" selection-end-line="141" selection-end-column="35" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/LocationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="64" column="74" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="74" />
+          <folding>
+            <element signature="e#227#256#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="1420">
           <caret line="75" column="54" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="54" />
           <folding>
             <element signature="e#227#256#0#PHP" expanded="true" />
@@ -672,21 +646,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/ActivityReportModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2460">
+          <caret line="123" column="10" selection-start-line="123" selection-start-column="10" selection-end-line="123" selection-end-column="10" />
+          <folding>
+            <element signature="e#28#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="98" column="31" lean-forward="true" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
-          <folding>
-            <element signature="e#3332#3376#0#HTML" expanded="true" />
-            <element signature="e#4018#4071#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="26">
+          <caret line="118" column="20" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
+        <state relative-caret-position="252">
+          <caret line="128" column="72" lean-forward="true" selection-start-line="128" selection-start-column="72" selection-end-line="128" selection-end-column="72" />
           <folding>
             <element signature="e#10#120#0#PHP" expanded="true" />
             <element signature="e#164#192#0#PHP" expanded="true" />

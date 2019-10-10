@@ -139,6 +139,7 @@ Route::post('/EditDilution', 'DilutionController@EditDilution');
     Route::post('/HassanTest', 'ActivityReportController@HassanTest');
     Route::post('/GetLocations', 'ActivityReportController@GetLocations');
     Route::post('/SearchActivityReportDataByLocAndStation', 'ActivityReportController@SearchActivityReportDataByLocAndStation');
+    Route::get('/DailyActicityCount', 'ActivityReportController@DailyActicityCount');
 
 
 
