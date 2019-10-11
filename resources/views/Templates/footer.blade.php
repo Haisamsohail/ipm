@@ -29,10 +29,18 @@
     <!-- Theme Initialization Files -->
     <script src="{{ asset('/public/assets/javascripts/theme.init.js')}}"></script>
 
+    <script src="{{ asset('/public/js/jquery.min.js')}}"></script>
+    <script src="{{ asset('/public/js/moment.min.js')}}"></script>
+    <script src="{{ asset('/public/js/daterangepicker.min.js')}}"></script>
 <script>
 
     $(document).ready(function(evt)
     {
+        $('input[name="daterange"]').daterangepicker({
+            opens: 'left'
+        }, function(start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        });
 
         // $.ajaxSetup({
         //     headers:

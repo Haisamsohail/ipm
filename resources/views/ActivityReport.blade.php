@@ -2,7 +2,6 @@
 
 @section('content')
 
-
   <section role="main" class="content-body">
     <header class="page-header">
       <h2>IPM - Activity Report</h2>
@@ -18,15 +17,14 @@
       </div>
     </header>
 
-
-    {{--<form class="form-horizontal form-bordered" action=""  name="SearchActivityReportForm" id="SearchActivityReportForm" method="POST" onsubmit="return false">--}}
       <form action="{{url('/SearchActivityReportData')}}" method="POST" name="SearchActivityReportForm">
       {{ csrf_field() }}
 
       <div class="panel-body">
+
         <div class="form-group">
 
-            <div class="col-md-3">
+            <div class="col-md-5">
               Select Company<span class="required"> *</span>
               <br>
               <select data-plugin-selectTwo class="form-control populate" name="companyid" id="companyid" required>
@@ -38,18 +36,11 @@
             </div>
 
           <div class="col-md-3">
-            From<span class="required"> *</span>
+            From - Till<span class="required"> *</span>
             <br>
-            <input type="date" name="DateFrom" id="DateFrom" class="form-control" />
+              <input type="text" name="daterange"  class="form-control" />
           </div>
-
-          <div class="col-md-3">
-            Till<span class="required"> *</span>
-            <br>
-            <input type="date" name="DateTill" id="DateTill" class="form-control" />
-          </div>
-
-          <div class="col-md-3">
+          <div class="col-md-4">
             Select Location<span class="required"> *</span>
             <br>
             <select data-plugin-selectTwo class="form-control populate" name="branchlocationid" id="branchlocationid" required>
@@ -87,7 +78,7 @@
           <div id="{{$Station->stationid}}" class="tab-pane fade">
             <h3>{{$key.' / '.$Station->stationname}}</h3>
 
-
+              {{--{{dd($ProductHeading)}}}--}}
             @foreach($DataIntoArrayTemp[$Station->stationid]  as $brancLocationID => $brancLocationData)
               <table class="table table-bordered table-striped mb-none" id="datatable-default">
                 <thead>
@@ -95,7 +86,13 @@
                   <th>Location</th>
                   <th>Station Number</th>
                     @foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)
-                    <th>{{$Heading}}</th>
+                    <th>
+                        {{--@foreach($Heading as $HeadingData)--}}
+                            {{--{{$HeadingData}}--}}
+                        {{--@endforeach--}}
+                        {{--{{dd($Heading)}}--}}
+                        {{$Heading[0]}}
+                    </th>
                     @endforeach
                 </tr>
                 </thead>
@@ -111,21 +108,20 @@
                         @endif
                         <td>{{$brancLocationDataSingle[5]}}</td>
 
-
                             {{--@foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)--}}
-                                {{--<th>{{$Heading}}</th>--}}
+                                {{--<td>{{$HeadingIndex}}</td>--}}
                             {{--@endforeach--}}
-
-{{dd($ProductHeading)}}}
 
                             @foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)
                                 <td>
-                                    {{--@foreach($CountActivityArrayIntoArray[$Station->stationid]  as $CountActivityIndex => $CountActivitystationid)--}}
-                                        {{--@if($Station->stationid == $CountActivityIndex)--}}
+                                    @foreach($CountActivityArrayIntoArray[$Station->stationid]  as $CountActivityIndex => $CountActivitystationid)
+                                        @if($HeadingIndex== $CountActivityIndex)
+                                            {{$CountActivitystationid}}
+                                        @endif
 
-                                    {{--@endforeach--}}
+                                    @endforeach
 
-                                    {{$Heading}}
+
                                 </td>
                             @endforeach
 

@@ -126,7 +126,7 @@
 
                     foreach ($ResponseActivityListObj->response as $SingleActivityName)
                     {
-                        $ProductHeading[$SingleStationID->stationid][] = $SingleActivityName->activityName;
+                        $ProductHeading[$SingleStationID->stationid][$SingleActivityName->activityid][] = $SingleActivityName->activityName;
 
                         $ActivityCountMod = app(ActivityReportModel::class);
                         $ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($SingleStationID->stationid,$SingleActivityName->activityid);

@@ -37,6 +37,7 @@
 
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{{ asset('/public/assets/stylesheets/theme-custom.css')}}">
+      <link rel="stylesheet" href="{{ asset('/public/css/daterangepicker.css')}}">
 
     <!-- Head Libs -->
     <script src="{{ asset('/public/assets/vendor/modernizr/modernizr.js')}}"></script>
