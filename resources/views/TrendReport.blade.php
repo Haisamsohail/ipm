@@ -4,7 +4,7 @@
 
   <section role="main" class="content-body">
     <header class="page-header">
-      <h2>IPM - Activity Report</h2>
+      <h2>IPM - Trend Report</h2>
       <div class="right-wrapper pull-right" style=" margin-right: 50px; ">
         <ol class="breadcrumbs">
           <li>
@@ -12,12 +12,12 @@
               <i class="fa fa-home"></i>
             </a>
           </li>
-          <li> <a href="{{url('/ActivityReport')}}"><span>Activity Report</span></a></li>
+          <li> <a href="{{url('/TrendReport')}}"><span>Trend Report</span></a></li>
         </ol>
       </div>
     </header>
 
-      <form action="{{url('/SearchActivityReportData')}}" method="POST" name="SearchActivityReportForm">
+      <form action="{{url('/SearchTrendReportData')}}" method="POST" name="SearchActivityReportForm">
       {{ csrf_field() }}
 
       <div class="panel-body">
@@ -195,42 +195,6 @@
                           }
                   });
           });
-
-
-
-
-          //... Search Activity Start ...............................
-          // $('#SearchActivityReportForm').submit(function(e)
-          // {
-          //     event.preventDefault(); //prevent default action
-          //     var post_url = $("#SearchActivityReportForm").attr("action"); //get form action url
-          //     var request_method = $("#SearchActivityReportForm").attr("method"); //get form GET/POST method
-          //     var form_data = $("#SearchActivityReportForm").serialize();
-          //
-          //     $.ajax(
-          //         {
-          //             type: "POST",
-          //             url: '/ipm/SearchActivityReportData',
-          //             data : form_data,
-          //             success: function(data)
-          //             {
-          //                 alert(data);
-          //                 //.. 	$('#RaiseRequisitionForm')[0].reset();
-          //                 // if (data == 'NOTOK')
-          //                 // {
-          //                 //     alert('Data Not Updated');
-          //                 // }
-          //                 // else
-          //                 // {
-          //                 //     window.location = 'RequisitionList.php';
-          //                 // }
-          //             }
-          //         });
-          //
-          //
-          //     alert(SearchActivityReportForm + "The paragraph was clicked.");
-          // });
-          //... Search Activity End   ...............................
       });
   </script>
 

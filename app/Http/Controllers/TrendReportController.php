@@ -24,7 +24,7 @@
     use DB;
     use Session;
 
-    class ActivityReportController extends Controller
+    class TrendReportController extends Controller
     {
         protected $token = null;
 
@@ -33,27 +33,9 @@
             date_default_timezone_set("Asia/Karachi");
         }
 
-        public function HassanTest(Request $req)
-        {
-            echo "AAA" . $req->taskID;
-        }
 
 
-        public function APPInput()
-        {
-            $ActivityReportMod = app(ActivityReportModel::class);
-            $response = $ActivityReportMod->APPInput();
-            //dd($response);
-            if ($response->status == "Y") {
-                return View('APPInput', ['APPInput' => $response->response]);
-                //.. return View('ActivityReport')->with('CompanyList', $response->response);
-            } else {
-                return redirect()->back()->with('messageForActivity', 'Failed .....!');
-            }
-        }
-
-
-        public function ActivityReport()
+        public function TrendReport()
         {
             $ChemicalMod = app(CompanyModel::class);
             $response = $ChemicalMod->CompanyList();
@@ -62,7 +44,7 @@
             $responseA = $StationListObjectA->StationList();
             //dd($response);
             if ($response->status == "Y") {
-                return View('ActivityReport', ['CompanyList' => $response->response, 'StationList' => $responseA->response]);
+                return View('TrendReport', ['CompanyList' => $response->response, 'StationList' => $responseA->response]);
                 //.. return View('ActivityReport')->with('CompanyList', $response->response);
             } else {
                 return redirect()->back()->with('messageForActivity', 'Failed .....!');
@@ -94,7 +76,7 @@
             return $response->response;
         }
 
-        public function SearchActivityReportData(Request $request)
+        public function SearchTrendReportData(Request $request)
         {
             //dd($request->input("daterange"));
             $SearchActivityReportDataObject = app(ActivityReportModel::class);
@@ -109,6 +91,7 @@
                 $DataIntoArray = array();
                 //dd($response->response);
                 $Start = 0;
+                $StartCHeck = 1;
                 $CompanyName = 0;
                 $DataIntoArrayTemp = [];
                 $CountActivityArrayIntoArray = [];
@@ -154,15 +137,18 @@
                             $stationapplyid2 = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationapplyid;
 
                             //dd($ProductHeading);
+
                             foreach ($ProductHeading[$stationid2] as $KeyStationid => $HeadingIndex2)
                             {
                                 $ActivityCountMod = app(ActivityReportModel::class);
-                                //$ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($stationapplyid2,$KeyStationid,$request->input("daterange"));
-                                $ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($stationapplyid2,$KeyStationid);
+                                $ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($stationapplyid2,$KeyStationid,$request->input("daterange"));
                                 //dd($ResponseActivityCountObj->response);
                                 $CountActivityArrayIntoArray[$stationapplyid2][$KeyStationid] = $ResponseActivityCountObj->response[0]->CounT;
+                                $StartCHeck++;
 
                             }
+
+
                             //dd($CountActivityArrayIntoArray);
 
 
@@ -180,6 +166,7 @@
                         //dd($GetLocationsBaseonStationCompanyResponse->response[0]->branchlocationname);
                     }
                 }
+                //dd($StartCHeck);
                 //echo "<pre>";print_r($DataIntoArrayTemp);echo "</pre>";die('Call');
                 //echo "<pre>";print_r($DataIntoArrayTemp);echo "</pre>";die('Call');
                 //dd($DataIntoArray);
@@ -187,7 +174,7 @@
 //                var_dump($DataIntoArray);
 //                exit();
 //                echo "<pre>";print_r($DataIntoArrayTemp);echo "</pre>";die('Call');
-                return View('ActivityReport',
+                return View('TrendReport',
                     [
                         'CompanyList' => $responseCompanyList->response,
                         'StationListOnSearch' => $response->response,
@@ -199,7 +186,7 @@
                     ]
                 );
             } else {
-                return View('ActivityReport', ['CompanyList' => $responseCompanyList->response, 'messageForActivity' => 'No Station Applied .....!']);
+                return View('TrendReport', ['CompanyList' => $responseCompanyList->response, 'messageForActivity' => 'No Station Applied .....!']);
             }
 
             return $response->response;

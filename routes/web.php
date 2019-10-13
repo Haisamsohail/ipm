@@ -141,9 +141,16 @@ Route::post('/EditDilution', 'DilutionController@EditDilution');
     Route::post('/SearchActivityReportDataByLocAndStation', 'ActivityReportController@SearchActivityReportDataByLocAndStation');
     Route::get('/DailyActicityCount', 'ActivityReportController@DailyActicityCount');
 
-
-
     /********** Create Reports End   ***************************/
+
+    /********** Trend Reports Start ***************************/
+    Route::get('/TrendReport', 'TrendReportController@TrendReport');
+    Route::get('/SearchTrendReport', 'TrendReportController@SearchTrendReport');
+    Route::post('/SearchTrendReportData', 'TrendReportController@SearchTrendReportData');
+    Route::post('/SearchTrendReportDataByLocAndStation', 'TrendReportController@SearchTrendReportDataByLocAndStation');
+    Route::get('/DailyTrendReportCount', 'TrendReportController@DailyTrendReportCount');
+    /********** Trend Reports End   ***************************/
+
 
 
 
