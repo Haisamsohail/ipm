@@ -152,15 +152,22 @@
 
                             $stationid2 = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationid;
                             $stationapplyid2 = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationapplyid;
+                            $activityids =  array_keys($ProductHeading[$stationid2]);
+                            $ActivityCountMod = app(ActivityReportModel::class);
+                            $ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($stationapplyid2,$activityids);
+                            echo "<pre>";print_r($ResponseActivityCountObj->response);echo "</pre>";die('Call');
+                            $CountActivityArrayIntoArray[$stationapplyid2][$KeyStationid] = $ResponseActivityCountObj->response[0]->CounT;
 
+
+                            //echo "<pre>";print_r();echo "</pre>";die('Call');
                             //dd($ProductHeading);
                             foreach ($ProductHeading[$stationid2] as $KeyStationid => $HeadingIndex2)
                             {
-                                $ActivityCountMod = app(ActivityReportModel::class);
+
                                 //$ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($stationapplyid2,$KeyStationid,$request->input("daterange"));
                                 $ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($stationapplyid2,$KeyStationid);
                                 //dd($ResponseActivityCountObj->response);
-                                $CountActivityArrayIntoArray[$stationapplyid2][$KeyStationid] = $ResponseActivityCountObj->response[0]->CounT;
+
 
                             }
                             //dd($CountActivityArrayIntoArray);

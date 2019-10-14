@@ -120,7 +120,7 @@ class ActivityReportModel extends Connection
     }
 
     //public function DailyActicityCount($stationid, $activityid)
-    public function DailyActicityCount($stationid, $activityid, $daterange)
+    public function DailyActicityCount_($stationid, $activityid, $daterange)
     {
         $data = array();
         $data = array('stationid' => $stationid, 'activityid' => $activityid, 'daterange' => $daterange);
@@ -129,6 +129,20 @@ class ActivityReportModel extends Connection
         //  dd($data);
         $StationListCallAPI = app(HttpClientCommunication::class);
         $response = $StationListCallAPI->storeData(self::END_POINT_USER."DailyActicityCount", $data, true);
+        //dd($response->body());
+        return $response->body();
+    }
+
+    public function DailyActicityCount($stationid, $activityids)
+    {
+        $data = array();
+        $data = array('stationid' => $stationid, 'activityids' => $activityids);
+        //$data = array('stationid' => $stationid, 'activityid' => $activityid);
+
+        //  dd($data);
+        $StationListCallAPI = app(HttpClientCommunication::class);
+        $response = $StationListCallAPI->storeData(self::END_POINT_USER."DailyActicityCount", $data, true);
+
         //dd($response->body());
         return $response->body();
     }
