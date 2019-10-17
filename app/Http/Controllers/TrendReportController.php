@@ -14,6 +14,7 @@
     use App\Models\CompanyModel;
     use App\Models\StationModel;
     use App\Models\ActivityModel;
+    use App\Models\TrendReportModel;
     use Symfony\Component\HttpFoundation\Request;
     use App\Http\Controllers\Controller;
 
@@ -51,26 +52,26 @@
             }
         }
 
-        public function SearchActivityReport(Request $request)
-        {
-            $chemicalname = request('chemicalname');
-            if (empty($chemicalname)) {
-                return ["status" => 404, "sendadvisor" => "Post data cannot be null"];
-            }
-            $SearchActivityReportMod = app(ActivityReportModel::class);
-            $response = $SearchActivityReportMod->SearchActivityReport($request->input());
-            if ($response->status == "Y") {
-                //dd($stationid);
-                return redirect()->action('ChemicalController@ChemicalList');
-            } else {
-                return redirect()->back()->with('messageForActivity', 'Fail To Add Chemical .....!');
-            }
-        }
+//        public function SearchActivityReport(Request $request)
+//        {
+//            $chemicalname = request('chemicalname');
+//            if (empty($chemicalname)) {
+//                return ["status" => 404, "sendadvisor" => "Post data cannot be null"];
+//            }
+//            $SearchActivityReportMod = app(TrendReportModel::class);
+//            $response = $SearchActivityReportMod->SearchActivityReport($request->input());
+//            if ($response->status == "Y") {
+//                //dd($stationid);
+//                return redirect()->action('ChemicalController@ChemicalList');
+//            } else {
+//                return redirect()->back()->with('messageForActivity', 'Fail To Add Chemical .....!');
+//            }
+//        }
 
         public function GetLocations(Request $request)
         {
             //dd($request->input());
-            $ActivityReportModelObject = app(ActivityReportModel::class);
+            $ActivityReportModelObject = app(TrendReportModel::class);
             $response = $ActivityReportModelObject->GetLocations($request->input());
 
             return $response->response;
@@ -79,7 +80,7 @@
         public function SearchTrendReportData(Request $request)
         {
             //dd($request->input("daterange"));
-            $SearchActivityReportDataObject = app(ActivityReportModel::class);
+            $SearchActivityReportDataObject = app(TrendReportModel::class);
             $response = $SearchActivityReportDataObject->SearchActivityReportData($request->input());
 
             $ChemicalMod = app(CompanyModel::class);
@@ -114,7 +115,7 @@
 //                die('Call');
 
                 foreach ($response->response as $key => $stationidvalue) {
-                    $GetLocationsBaseonStationCompanyObject = app(ActivityReportModel::class);
+                    $GetLocationsBaseonStationCompanyObject = app(TrendReportModel::class);
                     $GetLocationsBaseonStationCompanyResponse = $GetLocationsBaseonStationCompanyObject->SearchActivityReportDataByLocAndStation($stationidvalue->stationid, $request->input("companyid"), $request->input("branchlocationid"));
                     //dd($GetLocationsBaseonStationCompanyResponse);
                     if ($GetLocationsBaseonStationCompanyResponse->status == "Y") {
@@ -140,7 +141,7 @@
 
                             foreach ($ProductHeading[$stationid2] as $KeyStationid => $HeadingIndex2)
                             {
-                                $ActivityCountMod = app(ActivityReportModel::class);
+                                $ActivityCountMod = app(TrendReportModel::class);
                                 $ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($stationapplyid2,$KeyStationid,$request->input("daterange"));
                                 //dd($ResponseActivityCountObj->response);
                                 $CountActivityArrayIntoArray[$stationapplyid2][$KeyStationid] = $ResponseActivityCountObj->response[0]->CounT;

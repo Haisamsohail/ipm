@@ -156,7 +156,9 @@
                             $ActivityCountMod = app(ActivityReportModel::class);
                             $ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($stationapplyid2,$activityids);
                             echo "<pre>";print_r($ResponseActivityCountObj->response);echo "</pre>";die('Call');
-                            $CountActivityArrayIntoArray[$stationapplyid2][$KeyStationid] = $ResponseActivityCountObj->response[0]->CounT;
+
+
+                            //$CountActivityArrayIntoArray[$stationapplyid2][$KeyStationid] = $ResponseActivityCountObj->response[0]->CounT;
 
 
                             //echo "<pre>";print_r();echo "</pre>";die('Call');
