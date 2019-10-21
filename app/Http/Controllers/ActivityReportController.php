@@ -90,7 +90,7 @@
             //dd($request->input());
             $ActivityReportModelObject = app(ActivityReportModel::class);
             $response = $ActivityReportModelObject->GetLocations($request->input());
-
+            //dd($response);
             return $response->response;
         }
 
@@ -154,11 +154,12 @@
                             $stationapplyid2 = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationapplyid;
                             $activityids =  array_keys($ProductHeading[$stationid2]);
                             $ActivityCountMod = app(ActivityReportModel::class);
+
                             $ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($stationapplyid2,$activityids);
                             echo "<pre>";print_r($ResponseActivityCountObj->response);echo "</pre>";die('Call');
 
 
-                            //$CountActivityArrayIntoArray[$stationapplyid2][$KeyStationid] = $ResponseActivityCountObj->response[0]->CounT;
+                            $CountActivityArrayIntoArray[$stationapplyid2][$KeyStationid] = $ResponseActivityCountObj->response[0]->CounT;
 
 
                             //echo "<pre>";print_r();echo "</pre>";die('Call');

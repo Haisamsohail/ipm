@@ -95,43 +95,19 @@
                 <tbody style=" text-align: center; ">
                 {{--{{dd($CountActivityArrayIntoArray)}}--}}
                     @php
-                                $rowCounter = 1;
-                                $Counts = [];
-                                 $OneOrZero = 0;
+                        $rowCounter = 1;
+                        $Counts = [];
+                        $OneOrZero = 0;
                     @endphp
+
                     @foreach($brancLocationData as $brancLocationDataSingle)
                       <tr>
                         @if($rowCounter == 1)
-                        <td style=" text-align: center; vertical-align: middle; " rowspan="{!! count($brancLocationData) !!}">{{$brancLocationDataSingle[3]}}</td>
+                        <td style=" text-align: center; vertical-align: middle; " rowspan="{!! count($brancLocationData) !!}">
+                            {{$brancLocationDataSingle[3]}}
+                        </td>
                         @endif
-                            <td>{{$brancLocationDataSingle[5]}} </td>
-
-
-
-                            @foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)
-                                <td>
-                                        @foreach($CountActivityArrayIntoArray[$brancLocationDataSingle[6]]  as $CountActivityIndex => $CountActivitystationid)
-                                            @if($HeadingIndex== $CountActivityIndex)
-                                                @php
-                                                        if($OneOrZero == 0)
-                                                        {
-                                                            $Counts[$HeadingIndex] = $CountActivitystationid;
-                                                        }
-                                                        else
-                                                        {
-                                                            $Counts[$HeadingIndex] = $CountActivitystationid +  $Counts[$HeadingIndex];
-                                                        }
-
-                                                @endphp
-                                                {{$CountActivitystationid}}
-                                            @endif
-
-                                        @endforeach
-                                    </td>
-                                    @php
-                                @endphp
-                            @endforeach
-
+                        <td>{{$brancLocationDataSingle[5]}} </td>
                       </tr>
 
                       @php
@@ -144,21 +120,16 @@
                     @endforeach
 
                 {{--{{dd($Counts)}}--}}
-                    <tr style="background: #86ad55; color: white;">
-                        <td colspan="2" style=" text-align: center; vertical-align: middle; ">Count</td>
-
-                        @foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)
-                            <td>
-                                {{$Counts[$HeadingIndex]}}
-                            </td>
-                        @endforeach
-                    </tr>
                 </tbody>
               </table>
               <br>
             @endforeach
           </div>
         @endforeach
+
+
+
+
       </div>
     @endif
 

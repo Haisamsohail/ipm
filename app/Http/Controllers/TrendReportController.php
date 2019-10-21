@@ -14,10 +14,9 @@
     use App\Models\CompanyModel;
     use App\Models\StationModel;
     use App\Models\ActivityModel;
-    use App\Models\TrendReportModel;
     use Symfony\Component\HttpFoundation\Request;
     use App\Http\Controllers\Controller;
-
+    use Barryvdh\Debugbar\Facade as Debugbar;
     use Illuminate\Foundation\Bus\DispatchesJobs;
     use Illuminate\Routing\Controller as BaseController;
     use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -52,26 +51,26 @@
             }
         }
 
-//        public function SearchActivityReport(Request $request)
-//        {
-//            $chemicalname = request('chemicalname');
-//            if (empty($chemicalname)) {
-//                return ["status" => 404, "sendadvisor" => "Post data cannot be null"];
-//            }
-//            $SearchActivityReportMod = app(TrendReportModel::class);
-//            $response = $SearchActivityReportMod->SearchActivityReport($request->input());
-//            if ($response->status == "Y") {
-//                //dd($stationid);
-//                return redirect()->action('ChemicalController@ChemicalList');
-//            } else {
-//                return redirect()->back()->with('messageForActivity', 'Fail To Add Chemical .....!');
-//            }
-//        }
+        public function SearchActivityReport(Request $request)
+        {
+            $chemicalname = request('chemicalname');
+            if (empty($chemicalname)) {
+                return ["status" => 404, "sendadvisor" => "Post data cannot be null"];
+            }
+            $SearchActivityReportMod = app(ActivityReportModel::class);
+            $response = $SearchActivityReportMod->SearchActivityReport($request->input());
+            if ($response->status == "Y") {
+                //dd($stationid);
+                return redirect()->action('ChemicalController@ChemicalList');
+            } else {
+                return redirect()->back()->with('messageForActivity', 'Fail To Add Chemical .....!');
+            }
+        }
 
         public function GetLocations(Request $request)
         {
             //dd($request->input());
-            $ActivityReportModelObject = app(TrendReportModel::class);
+            $ActivityReportModelObject = app(ActivityReportModel::class);
             $response = $ActivityReportModelObject->GetLocations($request->input());
 
             return $response->response;
@@ -79,17 +78,23 @@
 
         public function SearchTrendReportData(Request $request)
         {
-            //dd($request->input("daterange"));
-            $SearchActivityReportDataObject = app(TrendReportModel::class);
-            $response = $SearchActivityReportDataObject->SearchActivityReportData($request->input());
+            $TestArrayTemp = array();
+
+            //..    dd($request->input("daterange"));
+            //..    dd($request);
+            $Obj_ActivityReportModel = app(ActivityReportModel::class);
+            $response = $Obj_ActivityReportModel->SearchActivityReportData($request->input());
 
             $ChemicalMod = app(CompanyModel::class);
             $responseCompanyList = $ChemicalMod->CompanyList();
 
-            //dd($response->response);
+
+            //..    Unique ( stationid, stationname )
+            //..    dd($response->response);
             if ($response->status == "Y")
             {
                 $DataIntoArray = array();
+                $daterange = $request->input("daterange");
                 //dd($response->response);
                 $Start = 0;
                 $StartCHeck = 1;
@@ -98,11 +103,9 @@
                 $CountActivityArrayIntoArray = [];
                 $ProductHeading = array();
 
-                $StationListMod = app(StationModel::class);
-                $ResponseStationListObj = $StationListMod->StationList();
-                //dd($ResponseStationListObj->response);
-                foreach ($ResponseStationListObj->response as $StationListkey => $SingleStationID)
+                foreach ($response->response as $StationListkey => $SingleStationID)
                 {
+                    //dd($SingleStationID->stationid);
                     $ActivityListMod = app(ActivityModel::class);
                     $ResponseActivityListObj = $ActivityListMod->ActivityList($SingleStationID->stationid);
 
@@ -110,18 +113,11 @@
                     {
                         $ProductHeading[$SingleStationID->stationid][$SingleActivityName->activityid]= $SingleActivityName->activityName;
                     }
-                }
-//                echo "<pre>";print_r($ProductHeading);echo "</pre>";
-//                die('Call');
 
-                foreach ($response->response as $key => $stationidvalue) {
-                    $GetLocationsBaseonStationCompanyObject = app(TrendReportModel::class);
-                    $GetLocationsBaseonStationCompanyResponse = $GetLocationsBaseonStationCompanyObject->SearchActivityReportDataByLocAndStation($stationidvalue->stationid, $request->input("companyid"), $request->input("branchlocationid"));
-                    //dd($GetLocationsBaseonStationCompanyResponse);
-                    if ($GetLocationsBaseonStationCompanyResponse->status == "Y") {
-//                        /dd(($GetLocationsBaseonStationCompanyResponse->response));
-
-
+                    $GetLocationsBaseonStationCompanyResponse = $Obj_ActivityReportModel->SearchActivityReportDataByLocAndStation($SingleStationID->stationid, $request->input("companyid"), $request->input("branchlocationid"));
+                    //..    dd($GetLocationsBaseonStationCompanyResponse);
+                    if ($GetLocationsBaseonStationCompanyResponse->status == "Y")
+                    {
                         foreach ($GetLocationsBaseonStationCompanyResponse->response as $keyIn => $GetLocSatvalue)
                         {
                             $DataIntoArrayTemp[$GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationid][$GetLocationsBaseonStationCompanyResponse->response[$keyIn]->branchlocationid][] = [
@@ -136,23 +132,24 @@
 
                             $stationid2 = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationid;
                             $stationapplyid2 = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationapplyid;
+                            //..    dd($ProductHeading[$stationid2]);
+                            $activityids =  array_keys($ProductHeading[$stationid2]);
+                            //..    dd($activityids);
+                            $TestArrayTemp[] = [$stationapplyid2,$activityids];
+                            $ResponseActivityCountObj = $Obj_ActivityReportModel->DailyActicityCount($stationapplyid2,$activityids,$daterange);
+                            //dd($ResponseActivityCountObj);
 
-                            //dd($ProductHeading);
-
-                            foreach ($ProductHeading[$stationid2] as $KeyStationid => $HeadingIndex2)
+                            if(is_array($ResponseActivityCountObj->response))
                             {
-                                $ActivityCountMod = app(TrendReportModel::class);
-                                $ResponseActivityCountObj = $ActivityCountMod->DailyActicityCount($stationapplyid2,$KeyStationid,$request->input("daterange"));
-                                //dd($ResponseActivityCountObj->response);
-                                $CountActivityArrayIntoArray[$stationapplyid2][$KeyStationid] = $ResponseActivityCountObj->response[0]->CounT;
-                                $StartCHeck++;
-
+                                foreach ($ResponseActivityCountObj->response as $KeyCount => $CountValue)
+                                {
+                                    $CountActivityArrayIntoArray[$stationid2][$CountValue->activityid] = $CountValue->CounT;
+                                }
                             }
 
 
-                            //dd($CountActivityArrayIntoArray);
 
-
+//                            echo "<pre>";print_r($CountActivityArrayIntoArray);echo "</pre>";die('Call');
 
                             $DataIntoArray[$Start][0] = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationid;
                             $DataIntoArray[$Start][1] = $GetLocationsBaseonStationCompanyResponse->response[$keyIn]->stationname;
@@ -164,17 +161,19 @@
                             $CompanyName = $GetLocationsBaseonStationCompanyResponse->response[0]->companyname;;
                             $Start++;
                         }
-                        //dd($GetLocationsBaseonStationCompanyResponse->response[0]->branchlocationname);
                     }
+//                    echo "<pre>";print_r($CountActivityArrayIntoArray);echo "</pre>";
+//                    die('Call');
                 }
-                //dd($StartCHeck);
-                //echo "<pre>";print_r($DataIntoArrayTemp);echo "</pre>";die('Call');
-                //echo "<pre>";print_r($DataIntoArrayTemp);echo "</pre>";die('Call');
-                //dd($DataIntoArray);
-//                echo "<PRE>";
-//                var_dump($DataIntoArray);
-//                exit();
-//                echo "<pre>";print_r($DataIntoArrayTemp);echo "</pre>";die('Call');
+
+//                Debugbar::info($CountActivityArrayIntoArray);
+//                Debugbar::error('Error!');
+//                Debugbar::warning('Watch out…');
+//                Debugbar::addMessage('Another message', 'mylabel');
+//                echo "<pre>";print_r($CountActivityArrayIntoArray);echo "</pre>";
+//                die('Call');
+
+//                echo "<pre>";print_r($TestArrayTemp);echo "</pre>";die('Call');
                 return View('TrendReport',
                     [
                         'CompanyList' => $responseCompanyList->response,

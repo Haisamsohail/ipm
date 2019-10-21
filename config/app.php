@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Meneses\LaravelMpdf\LaravelMpdfServiceProvider::class,
+        'Barryvdh\Debugbar\ServiceProvider',
 
         /*
          * Package Service Providers...
@@ -227,6 +228,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'PDF' => Meneses\LaravelMpdf\Facades\LaravelMpdf::class,
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
     ],
 

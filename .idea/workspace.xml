@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6820b1bd-44e2-4513-b846-d08cc930b902" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/ipm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ipm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ActivityReportModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ActivityReportModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/TrendReportModel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/TrendReport.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/TrendReport.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="57" column="14" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
+            <state relative-caret-position="178">
+              <caret line="139" column="30" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="30" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
@@ -32,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="157" column="74" selection-start-line="157" selection-start-column="49" selection-end-line="157" selection-end-column="74" />
+            <state relative-caret-position="278">
+              <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
               <folding>
                 <element signature="e#10#120#0#PHP" expanded="true" />
                 <element signature="e#164#192#0#PHP" expanded="true" />
@@ -46,12 +54,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/ActivityReportModel.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="145" column="10" selection-start-line="145" selection-start-column="10" selection-end-line="145" selection-end-column="10" />
+            <state relative-caret-position="-376">
+              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
               <folding>
-                <element signature="e#28#54#0#PHP" expanded="true" />
+                <element signature="e#164#192#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,8 +68,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="40" column="48" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="48" />
+            <state relative-caret-position="-1073">
+              <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/ActivityReportModel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
+              <folding>
+                <element signature="e#28#54#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/TrendReport.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="56" />
+              <folding>
+                <element signature="e#2908#2952#0#HTML" expanded="true" />
+                <element signature="e#3359#3388#0#HTML" expanded="true" />
+                <element signature="e#3826#3879#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>branchlocationid</find>
       <find>$responseCompanyList</find>
       <find>$ChemicalMod</find>
       <find>$DataIntoArray</find>
@@ -108,6 +141,7 @@
       <find>ActivityReportModel</find>
       <find>daterange</find>
       <find>DailyActicityCount</find>
+      <find>GetLocations</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -136,11 +170,11 @@
         <option value="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Templates/footer.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/TrendReport.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/TrendReportModel.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" />
         <option value="$PROJECT_DIR$/app/Models/ActivityReportModel.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" />
+        <option value="$PROJECT_DIR$/resources/views/TrendReport.blade.php" />
       </list>
     </option>
   </component>
@@ -232,9 +266,11 @@
       <path value="$PROJECT_DIR$/vendor/setasign/fpdi" />
       <path value="$PROJECT_DIR$/vendor/mpdf/mpdf" />
       <path value="$PROJECT_DIR$/vendor/carlos-meneses/laravel-mpdf" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -245,6 +281,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -287,20 +324,15 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ipm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ipm" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ipm2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -373,19 +405,22 @@
       <workItem from="1570992051139" duration="2879000" />
       <workItem from="1571025522533" duration="5646000" />
       <workItem from="1571198607496" duration="599000" />
-      <workItem from="1571288016804" duration="1912000" />
+      <workItem from="1571288016804" duration="2510000" />
+      <workItem from="1571470852241" duration="1803000" />
+      <workItem from="1571634274766" duration="95000" />
+      <workItem from="1571639433615" duration="3548000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174624000" />
+    <option name="totallyTimeSpent" value="180668000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.1762481" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.25113463" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
@@ -515,11 +550,6 @@
             <element signature="e#227#256#0#PHP" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/CreateStation.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-36" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/LocationModel.php">
@@ -688,13 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/TrendReport.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3180">
-          <caret line="159" selection-start-line="159" selection-end-line="159" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/GenerateLabel.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -719,16 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="57" column="14" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="14" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/TrendReportModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1228">
@@ -741,27 +754,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="110" column="61" selection-start-line="110" selection-start-column="61" selection-end-line="110" selection-end-column="61" />
+        <state relative-caret-position="-376">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
           <folding>
             <element signature="e#164#192#0#PHP" expanded="true" />
-            <element signature="e#899#1589#0#PHP" />
-            <element signature="e#1628#1692#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="40" column="48" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="48" />
+        <state relative-caret-position="178">
+          <caret line="139" column="30" selection-start-line="139" selection-start-column="18" selection-end-line="139" selection-end-column="30" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/ActivityReportModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="145" column="10" selection-start-line="145" selection-start-column="10" selection-end-line="145" selection-end-column="10" />
+        <state relative-caret-position="208">
+          <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
           <folding>
             <element signature="e#28#54#0#PHP" expanded="true" />
           </folding>
@@ -770,11 +784,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="157" column="74" selection-start-line="157" selection-start-column="49" selection-end-line="157" selection-end-column="74" />
+        <state relative-caret-position="278">
+          <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
           <folding>
             <element signature="e#10#120#0#PHP" expanded="true" />
             <element signature="e#164#192#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/CreateStation.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-348" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1073">
+          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/TrendReport.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="20" selection-end-line="95" selection-end-column="56" />
+          <folding>
+            <element signature="e#2908#2952#0#HTML" expanded="true" />
+            <element signature="e#3359#3388#0#HTML" expanded="true" />
+            <element signature="e#3826#3879#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

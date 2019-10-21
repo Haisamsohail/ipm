@@ -95,6 +95,7 @@ class ActivityReportModel extends Connection
 
     public function GetLocations($Datarequest)
     {
+        //dd($Datarequest);
         $StationListCallAPI = app(HttpClientCommunication::class);
         $response = $StationListCallAPI->storeData(self::END_POINT_USER."GetLocations", $Datarequest, true);
         return $response->body();
@@ -133,13 +134,12 @@ class ActivityReportModel extends Connection
         return $response->body();
     }
 
-    public function DailyActicityCount($stationid, $activityids)
+    public function DailyActicityCount($stationid, $activityids, $daterange)
     {
         $data = array();
-        $data = array('stationid' => $stationid, 'activityids' => $activityids);
+        $data = array('stationid' => $stationid, 'activityids' => $activityids, 'daterange' => $daterange);
         //$data = array('stationid' => $stationid, 'activityid' => $activityid);
-
-        //  dd($data);
+        //dd($data);
         $StationListCallAPI = app(HttpClientCommunication::class);
         $response = $StationListCallAPI->storeData(self::END_POINT_USER."DailyActicityCount", $data, true);
 
