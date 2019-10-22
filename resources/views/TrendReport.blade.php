@@ -93,7 +93,7 @@
                 </tr>
                 </thead>
                 <tbody style=" text-align: center; ">
-                {{--{{dd($CountActivityArrayIntoArray)}}--}}
+                {{dd($brancLocationData)}}
                     @php
                         $rowCounter = 1;
                         $Counts = [];
