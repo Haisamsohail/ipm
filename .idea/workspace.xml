@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6820b1bd-44e2-4513-b846-d08cc930b902" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/TrendReport.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/TrendReport.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="44" column="52" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="52" />
+            <state relative-caret-position="100">
+              <caret line="191" column="43" selection-start-line="191" selection-start-column="43" selection-end-line="191" selection-end-column="43" />
               <folding>
                 <element signature="e#10#120#0#PHP" expanded="true" />
                 <element signature="e#164#192#0#PHP" expanded="true" />
@@ -44,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-412">
-              <caret line="110" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="178">
+              <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="71" />
               <folding>
                 <element signature="e#164#192#0#PHP" expanded="true" />
               </folding>
@@ -56,23 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/ActivityReportModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1900">
-              <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
-              <folding>
-                <element signature="e#28#54#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="352">
+              <caret line="113" column="36" lean-forward="true" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -80,17 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/TrendReport.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/APPInput.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="740">
-              <caret line="97" column="46" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="46" />
+            <state relative-caret-position="343">
+              <caret line="109" column="57" lean-forward="true" selection-start-line="109" selection-start-column="57" selection-end-line="109" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -107,8 +89,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$ChemicalMod</find>
-      <find>$DataIntoArray</find>
       <find>$nameArrayElement</find>
       <find>StationListOnSearch</find>
       <find>$MainArrayElement</find>
@@ -125,7 +105,6 @@
       <find>SearchPaymentAndFormListForm</find>
       <find>//dd($response-&gt;response);</find>
       <find>$ResponseActivityCountObj</find>
-      <find>$CountActivityArrayIntoArray</find>
       <find>$AllStationInArray</find>
       <find>$TestArray</find>
       <find>ActivityReport</find>
@@ -137,6 +116,9 @@
       <find>DailyActicityCount</find>
       <find>GetLocations</find>
       <find>$brancLocationDataSingle</find>
+      <find>$TestArrayTemp</find>
+      <find>$CountActivityArrayIntoArray</find>
+      <find>Obj_ActivityReportModel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,14 +144,14 @@
         <option value="$PROJECT_DIR$/public/js/daterangepicker.min.js" />
         <option value="$PROJECT_DIR$/public/css/daterangepicker.css" />
         <option value="$PROJECT_DIR$/resources/views/Templates/header.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Templates/footer.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Models/TrendReportModel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php" />
         <option value="$PROJECT_DIR$/app/Models/ActivityReportModel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" />
         <option value="$PROJECT_DIR$/resources/views/TrendReport.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php" />
+        <option value="$PROJECT_DIR$/resources/views/ActivityReport.blade.php" />
       </list>
     </option>
   </component>
@@ -276,7 +258,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -323,6 +304,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -405,18 +387,19 @@
       <workItem from="1571634274766" duration="95000" />
       <workItem from="1571639433615" duration="3548000" />
       <workItem from="1571737224413" duration="2319000" />
+      <workItem from="1571833007294" duration="4154000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="182987000" />
+    <option name="totallyTimeSpent" value="187141000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.22919819" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.21709532" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
@@ -747,16 +730,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/APPInput.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        <state relative-caret-position="1940">
+          <caret line="97" column="46" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/ActivityReportModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
+        <state relative-caret-position="520">
           <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
           <folding>
             <element signature="e#28#54#0#PHP" expanded="true" />
@@ -764,17 +747,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/APPInput.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="97" column="46" selection-start-line="97" selection-start-column="43" selection-end-line="97" selection-end-column="46" />
+        <state relative-caret-position="178">
+          <caret line="84" column="12" selection-start-line="84" selection-start-column="12" selection-end-line="84" selection-end-column="71" />
+          <folding>
+            <element signature="e#164#192#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ActivityReportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="44" column="52" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="52" />
+        <state relative-caret-position="100">
+          <caret line="191" column="43" selection-start-line="191" selection-start-column="43" selection-end-line="191" selection-end-column="43" />
           <folding>
             <element signature="e#10#120#0#PHP" expanded="true" />
             <element signature="e#164#192#0#PHP" expanded="true" />
@@ -784,18 +770,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/TrendReport.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="95" column="39" selection-start-line="95" selection-start-column="39" selection-end-line="95" selection-end-column="39" />
+        <state relative-caret-position="343">
+          <caret line="109" column="57" lean-forward="true" selection-start-line="109" selection-start-column="57" selection-end-line="109" selection-end-column="90" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TrendReportController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/ActivityReport.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-412">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-          <folding>
-            <element signature="e#164#192#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="352">
+          <caret line="113" column="36" lean-forward="true" selection-start-line="113" selection-start-column="36" selection-end-line="113" selection-end-column="36" />
         </state>
       </provider>
     </entry>

@@ -143,10 +143,10 @@
                             {
                                 foreach ($ResponseActivityCountObj->response as $KeyCount => $CountValue)
                                 {
-                                    $CountActivityArrayIntoArray[$stationid2][$CountValue->activityid] = $CountValue->CounT;
+                                    $CountActivityArrayIntoArray[$stationapplyid2][$CountValue->activityid] = $CountValue->CounT;
                                 }
                             }
-
+                                //dd($CountActivityArrayIntoArray);
 
 
 //                            echo "<pre>";print_r($CountActivityArrayIntoArray);echo "</pre>";die('Call');
@@ -162,9 +162,11 @@
                             $Start++;
                         }
                     }
-//                    echo "<pre>";print_r($CountActivityArrayIntoArray);echo "</pre>";
-//                    die('Call');
+
                 }
+//
+//                echo "<pre>";print_r($CountActivityArrayIntoArray);echo "</pre>";
+//                die('Call');
 
 //                Debugbar::info($CountActivityArrayIntoArray);
 //                Debugbar::error('Error!');

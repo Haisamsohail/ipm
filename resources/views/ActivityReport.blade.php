@@ -87,11 +87,13 @@
                   <th>Station Number</th>
                     @foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)
                     <th>
-                        {{$Heading}}
+                        {{$Heading.'__'.$HeadingIndex}}
                     </th>
                     @endforeach
                 </tr>
                 </thead>
+
+                  {{--{{dd($CountActivityArrayIntoArray)}}--}}
                 <tbody style=" text-align: center; ">
                 {{--{{dd($CountActivityArrayIntoArray)}}--}}
                     @php
@@ -104,14 +106,14 @@
                         @if($rowCounter == 1)
                         <td style=" text-align: center; vertical-align: middle; " rowspan="{!! count($brancLocationData) !!}">{{$brancLocationDataSingle[3]}}</td>
                         @endif
-                            <td>{{$brancLocationDataSingle[5]}} </td>
+                            <td>{{$brancLocationDataSingle[6]}} </td>
 
 
 
                             @foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)
                                 <td>
                                         @foreach($CountActivityArrayIntoArray[$brancLocationDataSingle[6]]  as $CountActivityIndex => $CountActivitystationid)
-                                            @if($HeadingIndex== $CountActivityIndex)
+                                            @if($HeadingIndex == $CountActivityIndex)
                                                 @php
                                                         if($OneOrZero == 0)
                                                         {
@@ -146,12 +148,12 @@
                 {{--{{dd($Counts)}}--}}
                     <tr style="background: #86ad55; color: white;">
                         <td colspan="2" style=" text-align: center; vertical-align: middle; ">Count</td>
-
-                        @foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)
-                            <td>
-                                {{$Counts[$HeadingIndex]}}
-                            </td>
-                        @endforeach
+**
+                        {{--@foreach($ProductHeading[$Station->stationid]  as $HeadingIndex => $Heading)--}}
+                            {{--<td>--}}
+                                {{--{{$Counts[$HeadingIndex]}}--}}
+                            {{--</td>--}}
+                        {{--@endforeach--}}
                     </tr>
                 </tbody>
               </table>

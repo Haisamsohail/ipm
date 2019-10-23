@@ -93,7 +93,7 @@
                 </tr>
                 </thead>
                 <tbody style=" text-align: center; ">
-                {{dd($brancLocationData)}}
+                {{--{{dd($brancLocationData)}}--}}
                     @php
                         $rowCounter = 1;
                         $Counts = [];
@@ -107,9 +107,9 @@
                             {{$brancLocationDataSingle[3]}}
                         </td>
                         @endif
-                        <td>{{$brancLocationDataSingle[5]}} </td>
+                        <td>{{$brancLocationDataSingle[5].'--'.$brancLocationDataSingle[6]}} </td>
                       </tr>
-
+                        {{--{{dd($CountActivityArrayIntoArray)}}--}}
                       @php
                         $rowCounter++;
                       @endphp
