@@ -63,29 +63,31 @@
 @foreach($PageArray as $key => $Page)
 
   <div style=" border-radius: 10px;border: 2px solid black; padding: 5px; height: 192px; background: white">
+    
 
-    <div style="width: 40%;float: left;font-size: 8px;line-height: 15px;">
-      <br>
-      <p style="text-align: center"><img src="{{ asset('/public/assets/images/logoeco.png')}}" class="center"  /></p>
-    </div>
-    <div style="width: 60%;float: right;  height: 25px;  font-size: 18px;text-align: right; vertical-align: middle; line-height: 1.5em;">
-      <p style="float: right ">
-        <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(65)->generate($Page[3])) }} ">
+     <p style="margin: 0px;">
+        <img src="data:image/png;base64, {{ base64_encode(QrCode::format('png')->size(2)->generate($Page[3])) }} " style="background: green; height: 150px; width: 150px; display: block; margin-left: auto; margin-right: auto; margin-top: 0px; padding-top: -22px; ">
       </p>
-    </div>
+    
+
 
     <div style="clear: both;"></div>
 
-    <p style="text-align: center" style=" background: black; text-align: center; font-size: 12px; margin: 0px;line-height: 15px; margin-bottom: 10px; padding: 0px; border: 1px solid black; color: white " >{{ $Page[0] }}</p>
+<!--     <p style="text-align: center" style=" background: black; text-align: center; font-size: 12px; margin: 0px;line-height: 15px; margin-bottom: 10px; padding: 0px; border: 1px solid black; color: white " >{{ $Page[0] }}</p> -->
 
-    <div style="width: 70%;float: left;font-size: 14px;line-height: 15px;color: black;">
-      &#9656; {{ $Page[1] }}
-      <br>
-      &#9656; {{ $Page[2] }}
+    <div style=" " >
+      
+    
+      <div style="width: 70%;float: left;font-size: 14px;line-height: 15px;color: black;">
+        &#9656; {{ $Page[1] }}
+        <br>
+        &#9656; {{ $Page[2] }}
+      </div>
+      <div style=" border-radius: 5px;width: 30%;float: right; background: black; color: white; height: 25px;  font-size: 18px;text-align: center; vertical-align: middle; line-height: 1.5em;">
+        {{$Page[4]}}
+      </div>
     </div>
-    <div style=" border-radius: 5px;width: 30%;float: right; background: black; color: white; height: 25px;  font-size: 18px;text-align: center; vertical-align: middle; line-height: 1.5em;">
-      {{$Page[4]}}
-    </div>
+
 
   </div>
 

@@ -113,8 +113,8 @@ class LocationController extends Controller
                 'margin_top'           => 1,
                 'margin_bottom'        => 1,
             ]);
-            //return $pdf->stream();
-            return $pdf->download($response->response[0]->stationapplyid.'Station.pdf');
+            return $pdf->stream();
+            //..    return $pdf->download($response->response[0]->stationapplyid.'Station.pdf');
         }
         else
         {
